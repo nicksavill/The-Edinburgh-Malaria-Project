@@ -12,7 +12,7 @@
 | geotiff.ipynb                    | Notebook for processing MAP and WordPop geotiff files          |
 | interactive.ipynb                | Interactive Jupyter notebook of the model using Bokeh          |
 | paper_figs.ipynb                 | Notebook for generating paper figures                          |
-| noteboog_figs.ipynb              | Notebook for generating figures for Notebook S1                |
+| notebook_figs.ipynb              | Notebook for generating figures for Notebook S1                |
 | papers.bib                       | Bibliography file for references                               |
 | S1_model_summary.ipynb           | Model summary notebook (Supplement 1)                          |
 | S2_cohort_vs_population.ipynb    | Cohort vs population comparison (Supplement 2)                 |
