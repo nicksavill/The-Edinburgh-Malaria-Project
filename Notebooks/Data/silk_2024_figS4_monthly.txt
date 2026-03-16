@@ -1,0 +1,7 @@
+#DataThief /home/njs/ownCloud/DocSyncUoE/CHMI/Malaria_Vaccination/Notebooks/Data_from_papers/silk_2022_figS4.png Friday 14-Feb-2025 2:48:06 pm
+195.7287, 336.1214
+209.7311, 311.7492
+265.312, 87.9858
+293.17, 61.6198
+491, 27.3543
+856, 17.7244

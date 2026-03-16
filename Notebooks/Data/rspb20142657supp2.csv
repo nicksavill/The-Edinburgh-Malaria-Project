@@ -1,0 +1,1990 @@
+,region,district,ward,died,age (years),severe anaemia,respiratory distress,cerebral malaria,"altitude (metres, population-weighted by ward)",altitude band
+0,Kilimanjaro,Hai,Hai Mjini,0,8.0,0,1,1,924.1087,2
+1,Kilimanjaro,Hai,Hai Mjini,0,1.347023,0,0,0,924.1087,2
+2,Kilimanjaro,Hai,Hai Mjini,0,2.0,1,0,0,924.1087,2
+3,Kilimanjaro,Hai,Hai Mjini,0,11.0,0,0,0,924.1087,2
+4,Kilimanjaro,Hai,Hai Mjini,1,8.221766,0,1,0,924.1087,2
+5,Kilimanjaro,Hai,Hai Mjini,0,22.0,0,0,0,924.1087,2
+6,Kilimanjaro,Hai,Hai Mjini,0,3.288159,1,0,1,924.1087,2
+7,Kilimanjaro,Hai,Hai Mjini,0,11.0,0,0,1,924.1087,2
+8,Kilimanjaro,Hai,Hai Mjini,0,2.171116,0,1,0,924.1087,2
+9,Kilimanjaro,Hai,Hai Mjini,0,2.436687,0,0,0,924.1087,2
+10,Kilimanjaro,Hai,Hai Mjini,0,2.149213,0,0,0,924.1087,2
+11,Kilimanjaro,Hai,Hai Mjini,0,0.6214921,0,0,0,924.1087,2
+12,Kilimanjaro,Hai,Hai Mjini,0,4.785763,0,0,0,924.1087,2
+13,Kilimanjaro,Hai,Hai Mjini,0,7.19781,0,0,0,924.1087,2
+14,Kilimanjaro,Hai,Hai Mjini,0,2.105407,0,0,0,924.1087,2
+15,Kilimanjaro,Hai,Machame Kaskazini,0,2.669405,0,0,0,1108.347,2
+16,Kilimanjaro,Hai,Machame Kusini,0,0.843258,1,0,0,894.4426,2
+17,Kilimanjaro,Hai,Machame Kusini,0,2.735113,1,0,0,894.4426,2
+18,Kilimanjaro,Hai,Machame Kusini,0,2.494182,0,0,0,894.4426,2
+19,Kilimanjaro,Hai,Machame Kusini,0,0.386037,0,0,0,894.4426,2
+20,Kilimanjaro,Hai,Machame Kusini,0,2.0,1,0,0,894.4426,2
+21,Kilimanjaro,Hai,Machame Kusini,0,3.512663,0,0,0,894.4426,2
+22,Kilimanjaro,Hai,Machame Kusini,0,1.982204,0,0,0,894.4426,2
+23,Kilimanjaro,Hai,Machame Kusini,0,0.9637235,0,0,0,894.4426,2
+24,Kilimanjaro,Hai,Machame Kusini,0,0.3175907,1,0,0,894.4426,2
+25,Kilimanjaro,Hai,Machame Kusini,0,1.894593,0,0,0,894.4426,2
+26,Kilimanjaro,Hai,Machame Kusini,0,1.678303,1,0,0,894.4426,2
+27,Kilimanjaro,Hai,Machame Kusini,0,4.194387,0,0,1,894.4426,2
+28,Kilimanjaro,Hai,Machame Kusini,0,35.8193,0,0,0,894.4426,2
+29,Kilimanjaro,Hai,Machame Kusini,0,2.042437,0,0,0,894.4426,2
+30,Kilimanjaro,Hai,Machame Kusini,0,8.0,0,0,0,894.4426,2
+31,Kilimanjaro,Hai,Machame Kusini,0,14.0,0,0,0,894.4426,2
+32,Kilimanjaro,Hai,Machame Kusini,0,4.005476,0,0,0,894.4426,2
+33,Kilimanjaro,Hai,Machame Kusini,0,1.883641,0,0,1,894.4426,2
+34,Kilimanjaro,Hai,Machame Kusini,0,2.642026,0,0,0,894.4426,2
+35,Kilimanjaro,Hai,Machame Kusini,0,16.15606,0,0,0,894.4426,2
+36,Kilimanjaro,Hai,Machame Kusini,0,0.91718,0,0,0,894.4426,2
+37,Kilimanjaro,Hai,Machame Kusini,0,2.269678,0,0,0,894.4426,2
+38,Kilimanjaro,Hai,Machame Kusini,0,3.518138,0,0,1,894.4426,2
+39,Kilimanjaro,Hai,Machame Kusini,0,3.151266,0,0,0,894.4426,2
+40,Kilimanjaro,Hai,Machame Kusini,0,3.011636,1,1,0,894.4426,2
+41,Kilimanjaro,Hai,Machame Kusini,0,27.0,0,0,0,894.4426,2
+42,Kilimanjaro,Hai,Machame Kusini,0,5.730322,0,0,0,894.4426,2
+43,Kilimanjaro,Hai,Machame Kusini,0,3.351129,0,0,0,894.4426,2
+44,Kilimanjaro,Hai,Machame Kusini,0,0.7255304,0,0,0,894.4426,2
+45,Kilimanjaro,Hai,Machame Kusini,0,2.28063,0,0,0,894.4426,2
+46,Kilimanjaro,Hai,Machame Kusini,0,3.011636,0,0,0,894.4426,2
+47,Kilimanjaro,Hai,Machame Kusini,0,1.626283,0,0,0,894.4426,2
+48,Kilimanjaro,Hai,Machame Kusini,0,4.347707,0,0,0,894.4426,2
+49,Kilimanjaro,Hai,Machame Kusini,0,3.304586,0,0,0,894.4426,2
+50,Kilimanjaro,Hai,Machame Kusini,0,2.658453,1,0,0,894.4426,2
+51,Kilimanjaro,Hai,Machame Kusini,0,5.0,0,0,0,894.4426,2
+52,Kilimanjaro,Hai,Machame Kusini,0,4.0,1,0,0,894.4426,2
+53,Kilimanjaro,Hai,Machame Kusini,0,0.9199179,1,0,0,894.4426,2
+54,Kilimanjaro,Hai,Machame Kusini,0,2.934976,1,0,0,894.4426,2
+55,Kilimanjaro,Hai,Machame Kusini,0,0.659822,0,0,0,894.4426,2
+56,Kilimanjaro,Hai,Machame Kusini,0,45.0,0,1,0,894.4426,2
+57,Kilimanjaro,Hai,Machame Kusini,0,4.281999,0,0,0,894.4426,2
+58,Kilimanjaro,Hai,Machame Kusini,0,2.803559,1,0,0,894.4426,2
+59,Kilimanjaro,Hai,Machame Kusini,0,2.694045,0,0,0,894.4426,2
+60,Kilimanjaro,Hai,Machame Kusini,0,1.754962,0,0,0,894.4426,2
+61,Kilimanjaro,Hai,Machame Kusini,0,2.907598,0,0,0,894.4426,2
+62,Kilimanjaro,Hai,Machame Kusini,0,3.701574,0,0,0,894.4426,2
+63,Kilimanjaro,Hai,Machame Kusini,0,2.116359,0,0,1,894.4426,2
+64,Kilimanjaro,Hai,Machame Kusini,0,1.489391,1,0,1,894.4426,2
+65,Kilimanjaro,Hai,Machame Kusini,0,1.445585,0,0,0,894.4426,2
+66,Kilimanjaro,Hai,Machame Kusini,0,2.740589,1,0,1,894.4426,2
+67,Kilimanjaro,Hai,Machame Kusini,0,0.7227926,1,0,0,894.4426,2
+68,Kilimanjaro,Hai,Machame Kusini,0,1.0,1,0,0,894.4426,2
+69,Kilimanjaro,Hai,Machame Kusini,0,2.529774,0,0,0,894.4426,2
+70,Kilimanjaro,Hai,Machame Kusini,0,37.0,0,0,0,894.4426,2
+71,Kilimanjaro,Hai,Machame Kusini,0,2.970568,0,0,0,894.4426,2
+72,Kilimanjaro,Hai,Machame Kusini,0,15.0,1,0,0,894.4426,2
+73,Kilimanjaro,Hai,Machame Kusini,0,3.416838,1,0,0,894.4426,2
+74,Kilimanjaro,Hai,Machame Kusini,0,3.0,1,0,0,894.4426,2
+75,Kilimanjaro,Hai,Machame Kusini,0,20.0,0,0,0,894.4426,2
+76,Kilimanjaro,Hai,Machame Kusini,0,2.0,0,0,0,894.4426,2
+77,Kilimanjaro,Hai,Machame Kusini,0,2.0,0,0,0,894.4426,2
+78,Kilimanjaro,Hai,Machame Kusini,0,2.661191,0,0,0,894.4426,2
+79,Kilimanjaro,Hai,Machame Kusini,0,4.884326,0,0,0,894.4426,2
+80,Kilimanjaro,Hai,Machame Kusini,0,4.021903,0,0,0,894.4426,2
+81,Kilimanjaro,Hai,Machame Kusini,0,4.251882,0,0,0,894.4426,2
+82,Kilimanjaro,Hai,Machame Kusini,0,2.0,0,0,0,894.4426,2
+83,Kilimanjaro,Hai,Machame Kusini,0,4.273785,0,0,0,894.4426,2
+84,Kilimanjaro,Hai,Machame Kusini,0,4.449008,0,0,0,894.4426,2
+85,Kilimanjaro,Hai,Machame Kusini,0,0.3203285,1,0,0,894.4426,2
+86,Kilimanjaro,Hai,Machame Kusini,0,4.125941,0,0,0,894.4426,2
+87,Kilimanjaro,Hai,Machame Kusini,0,4.0,0,0,0,894.4426,2
+88,Kilimanjaro,Hai,Machame Kusini,0,6.0,0,0,0,894.4426,2
+89,Kilimanjaro,Hai,Machame Kusini,0,1.938398,1,0,0,894.4426,2
+90,Kilimanjaro,Hai,Machame Kusini,0,0.3340178,1,0,0,894.4426,2
+91,Kilimanjaro,Hai,Machame Kusini,0,1.64271,1,0,0,894.4426,2
+92,Kilimanjaro,Hai,Machame Kusini,0,3.186858,0,0,0,894.4426,2
+93,Kilimanjaro,Hai,Machame Kusini,0,0.6297057,1,0,0,894.4426,2
+94,Kilimanjaro,Hai,Machame Kusini,0,2.20397,1,0,0,894.4426,2
+95,Kilimanjaro,Hai,Machame Kusini,0,3.638604,1,0,0,894.4426,2
+96,Kilimanjaro,Hai,Machame Kusini,0,0.3887748,0,0,0,894.4426,2
+97,Kilimanjaro,Hai,Machame Kusini,0,3.318275,1,0,0,894.4426,2
+98,Kilimanjaro,Hai,Machame Kusini,0,1.653662,0,0,0,894.4426,2
+99,Kilimanjaro,Hai,Machame Kusini,0,4.731006,0,0,0,894.4426,2
+100,Kilimanjaro,Hai,Machame Kusini,0,0.8350445,0,0,0,894.4426,2
+101,Kilimanjaro,Hai,Machame Kusini,0,1.015743,0,1,0,894.4426,2
+102,Kilimanjaro,Hai,Machame Kusini,0,3.575633,0,0,0,894.4426,2
+103,Kilimanjaro,Hai,Machame Kusini,0,11.06639,0,0,1,894.4426,2
+104,Kilimanjaro,Hai,Machame Kusini,0,1.437372,0,0,0,894.4426,2
+105,Kilimanjaro,Hai,Machame Kusini,0,2.001369,1,0,0,894.4426,2
+106,Kilimanjaro,Hai,Machame Kusini,0,1.497604,0,0,0,894.4426,2
+107,Kilimanjaro,Hai,Machame Kusini,0,1.921971,0,0,1,894.4426,2
+108,Kilimanjaro,Hai,Machame Kusini,0,1.6564,0,0,0,894.4426,2
+109,Kilimanjaro,Hai,Machame Kusini,0,12.63518,0,0,0,894.4426,2
+110,Kilimanjaro,Hai,Machame Kusini,0,2.579056,0,0,0,894.4426,2
+111,Kilimanjaro,Hai,Machame Kusini,0,1.848049,0,0,0,894.4426,2
+112,Kilimanjaro,Hai,Machame Kusini,0,4.060233,1,0,0,894.4426,2
+113,Kilimanjaro,Hai,Machame Kusini,0,0.4791239,0,1,0,894.4426,2
+114,Kilimanjaro,Hai,Machame Kusini,0,1.075975,1,0,0,894.4426,2
+115,Kilimanjaro,Hai,Machame Kusini,0,2.67488,0,0,0,894.4426,2
+116,Kilimanjaro,Hai,Machame Kusini,0,4.788501,0,0,0,894.4426,2
+117,Kilimanjaro,Hai,Machame Kusini,0,3.556468,0,0,0,894.4426,2
+118,Kilimanjaro,Hai,Machame Kusini,0,0.1149897,0,0,0,894.4426,2
+119,Kilimanjaro,Hai,Machame Kusini,0,1.371663,0,0,0,894.4426,2
+120,Kilimanjaro,Hai,Machame Kusini,0,8.0,0,0,0,894.4426,2
+121,Kilimanjaro,Hai,Machame Kusini,0,1.648186,0,0,0,894.4426,2
+122,Kilimanjaro,Hai,Machame Kusini,0,2.839151,1,0,0,894.4426,2
+123,Kilimanjaro,Hai,Machame Kusini,0,2.168378,0,1,0,894.4426,2
+124,Kilimanjaro,Hai,Machame Kusini,0,25.0,1,0,0,894.4426,2
+125,Kilimanjaro,Hai,Machame Kusini,0,2.143737,0,0,0,894.4426,2
+126,Kilimanjaro,Hai,Machame Kusini,0,1.319644,0,0,1,894.4426,2
+127,Kilimanjaro,Hai,Machame Kusini,0,0.8870637,0,0,0,894.4426,2
+128,Kilimanjaro,Hai,Machame Kusini,0,3.0,0,0,0,894.4426,2
+129,Kilimanjaro,Hai,Machame Kusini,0,3.59206,0,0,1,894.4426,2
+130,Kilimanjaro,Hai,Machame Kusini,0,2.20397,0,0,0,894.4426,2
+131,Kilimanjaro,Hai,Machame Kusini,0,3.091033,0,0,0,894.4426,2
+132,Kilimanjaro,Hai,Machame Kusini,0,2.71321,0,0,0,894.4426,2
+133,Kilimanjaro,Hai,Machame Kusini,0,27.09925,1,0,0,894.4426,2
+134,Kilimanjaro,Hai,Machame Kusini,0,0.5804244,1,0,0,894.4426,2
+135,Kilimanjaro,Hai,Machame Kusini,0,25.0,0,0,1,894.4426,2
+136,Kilimanjaro,Hai,Machame Kusini,0,0.3887748,0,0,0,894.4426,2
+137,Kilimanjaro,Hai,Machame Kusini,0,0.991102,0,0,0,894.4426,2
+138,Kilimanjaro,Hai,Machame Kusini,0,4.271047,1,0,0,894.4426,2
+139,Kilimanjaro,Hai,Machame Kusini,0,5.0,1,0,0,894.4426,2
+140,Kilimanjaro,Hai,Machame Kusini,0,1.13347,0,0,0,894.4426,2
+141,Kilimanjaro,Hai,Machame Kusini,0,4.421629,0,0,1,894.4426,2
+142,Kilimanjaro,Hai,Machame Kusini,0,1.0,0,0,1,894.4426,2
+143,Kilimanjaro,Hai,Machame Kusini,0,2.31896,0,0,0,894.4426,2
+144,Kilimanjaro,Hai,Machame Kusini,0,2.795346,0,0,0,894.4426,2
+145,Kilimanjaro,Hai,Machame Kusini,0,2.245038,0,0,0,894.4426,2
+146,Kilimanjaro,Hai,Machame Kusini,0,2.499658,0,0,0,894.4426,2
+147,Kilimanjaro,Hai,Machame Kusini,0,2.740589,0,0,0,894.4426,2
+148,Kilimanjaro,Hai,Machame Mashariki,1,5.804244,0,1,0,1179.299,2
+149,Kilimanjaro,Hai,Machame Mashariki,1,10.0,0,1,1,1179.299,2
+150,Kilimanjaro,Hai,Masama Kusini,0,1.880903,0,1,0,988.2512,2
+151,Kilimanjaro,Hai,Masama Kusini,0,0.4626968,1,0,1,988.2512,2
+152,Kilimanjaro,Hai,Masama Kusini,0,0.8049281,1,0,0,988.2512,2
+153,Kilimanjaro,Hai,Masama Kusini,0,25.20465,0,0,0,988.2512,2
+154,Kilimanjaro,Hai,Masama Kusini,0,4.462697,0,0,0,988.2512,2
+155,Kilimanjaro,Hai,Masama Kusini,0,1.314168,0,0,0,988.2512,2
+156,Kilimanjaro,Hai,Masama Kusini,0,24.4846,0,0,0,988.2512,2
+157,Kilimanjaro,Hai,Masama Kusini,0,0.4544832,0,0,0,988.2512,2
+158,Kilimanjaro,Hai,Masama Kusini,0,20.39699,0,0,0,988.2512,2
+159,Kilimanjaro,Hai,Masama Kusini,0,0.5667351,0,1,1,988.2512,2
+160,Kilimanjaro,Hai,Masama Kusini,0,3.45243,0,0,0,988.2512,2
+161,Kilimanjaro,Hai,Masama Kusini,0,28.0,0,0,0,988.2512,2
+162,Kilimanjaro,Hai,Masama Kusini,0,34.0,0,0,0,988.2512,2
+163,Kilimanjaro,Hai,Masama Kusini,0,20.8104,0,0,0,988.2512,2
+164,Kilimanjaro,Hai,Masama Kusini,0,19.32923,0,1,0,988.2512,2
+165,Kilimanjaro,Hai,Masama Kusini,0,5.0,0,0,0,988.2512,2
+166,Kilimanjaro,Hai,Masama Kusini,0,0.9390828,0,0,0,988.2512,2
+167,Kilimanjaro,Hai,Masama Kusini,0,2.146475,0,0,0,988.2512,2
+168,Kilimanjaro,Hai,Masama Kusini,0,2.59822,0,0,1,988.2512,2
+169,Kilimanjaro,Hai,Masama Kusini,0,2.485969,0,0,0,988.2512,2
+170,Kilimanjaro,Hai,Masama Kusini,0,27.0,0,0,0,988.2512,2
+171,Kilimanjaro,Hai,Masama Kusini,0,3.0,0,0,0,988.2512,2
+172,Kilimanjaro,Hai,Masama Kusini,0,2.275154,0,0,0,988.2512,2
+173,Kilimanjaro,Hai,Masama Magharibi,0,55.0,1,0,0,1337.806,3
+174,Kilimanjaro,Hai,Masama Magharibi,0,26.39288,0,0,0,1337.806,3
+175,Kilimanjaro,Hai,Masama Magharibi,0,18.0,0,1,0,1337.806,3
+176,Kilimanjaro,Hai,Masama Magharibi,0,5.0,0,1,0,1337.806,3
+177,Kilimanjaro,Hai,Masama Magharibi,0,24.57221,0,0,0,1337.806,3
+178,Kilimanjaro,Hai,Masama Rundugai,0,3.143053,0,0,0,902.1819,2
+179,Kilimanjaro,Hai,Masama Rundugai,0,1.481177,1,0,0,902.1819,2
+180,Kilimanjaro,Hai,Masama Rundugai,0,0.4298426,0,0,1,902.1819,2
+181,Kilimanjaro,Hai,Masama Rundugai,0,10.0,1,0,0,902.1819,2
+182,Kilimanjaro,Hai,Masama Rundugai,0,0.1697467,0,0,0,902.1819,2
+183,Kilimanjaro,Hai,Masama Rundugai,0,2.160164,0,0,0,902.1819,2
+184,Kilimanjaro,Hai,Masama Rundugai,0,10.0,0,0,1,902.1819,2
+185,Kilimanjaro,Hai,Masama Rundugai,0,3.208761,0,0,0,902.1819,2
+186,Kilimanjaro,Hai,Masama Rundugai,0,0.8706365,0,0,0,902.1819,2
+187,Kilimanjaro,Hai,Masama Rundugai,0,61.0,0,1,0,902.1819,2
+188,Kilimanjaro,Hai,Masama Rundugai,0,4.865161,0,0,0,902.1819,2
+189,Kilimanjaro,Hai,Masama Rundugai,0,2.023272,1,0,0,902.1819,2
+190,Kilimanjaro,Hai,Masama Rundugai,0,2.390144,0,0,0,902.1819,2
+191,Kilimanjaro,Hai,Masama Rundugai,0,3.613963,0,0,0,902.1819,2
+192,Kilimanjaro,Hai,Masama Rundugai,0,5.585216,1,1,0,902.1819,2
+193,Kilimanjaro,Hai,Masama Rundugai,0,2.006845,0,0,0,902.1819,2
+194,Kilimanjaro,Hai,Masama Rundugai,0,20.06571,0,0,0,902.1819,2
+195,Kilimanjaro,Hai,Masama Rundugai,0,0.3449692,0,0,0,902.1819,2
+196,Kilimanjaro,Hai,Masama Rundugai,0,1.341547,1,0,0,902.1819,2
+197,Kilimanjaro,Hai,Masama Rundugai,0,22.28337,1,0,0,902.1819,2
+198,Kilimanjaro,Hai,Masama Rundugai,0,11.0,0,0,0,902.1819,2
+199,Kilimanjaro,Hai,Siha Kaskazini,0,30.5243,1,0,0,1248.134,3
+200,Kilimanjaro,Hai,Siha Kaskazini,0,13.0,0,0,0,1248.134,3
+201,Kilimanjaro,Hai,Siha Kati,1,30.0,0,0,0,1236.646,3
+202,Kilimanjaro,Hai,Siha Kati,0,8.0,1,0,0,1236.646,3
+203,Kilimanjaro,Hai,Siha Kati,0,6.442163,0,0,1,1236.646,3
+204,Kilimanjaro,Hai,Siha Kati,0,0.5995893,0,1,1,1236.646,3
+205,Kilimanjaro,Hai,Siha Kati,0,18.0,0,0,0,1236.646,3
+206,Kilimanjaro,Hai,Siha Kati,0,0.8377823,1,0,1,1236.646,3
+207,Kilimanjaro,Hai,Siha Kati,0,0.4298426,0,0,1,1236.646,3
+208,Kilimanjaro,Hai,Siha Kati,0,1.382615,0,0,0,1236.646,3
+209,Kilimanjaro,Hai,Siha Kati,0,1.596167,0,0,0,1236.646,3
+210,Kilimanjaro,Hai,Siha Kati,0,70.0,0,0,0,1236.646,3
+211,Kilimanjaro,Hai,Siha Magharibi,0,39.0,0,0,0,1396.968,3
+212,Kilimanjaro,Hai,Siha Mashariki,0,4.536619,0,1,0,1312.577,3
+213,Kilimanjaro,Hai,Siha Mashariki,0,1.434634,0,1,0,1312.577,3
+214,Kilimanjaro,Hai,Siha Mashariki,0,12.0,0,0,0,1312.577,3
+215,Kilimanjaro,Moshi Rural,Arusha Chini,1,2.934976,1,0,0,860.7653,2
+216,Kilimanjaro,Moshi Rural,Arusha Chini,0,1.0,1,0,0,860.7653,2
+217,Kilimanjaro,Moshi Rural,Arusha Chini,1,0.6160164,0,1,1,860.7653,2
+218,Kilimanjaro,Moshi Rural,Arusha Chini,0,1.013005,0,0,0,860.7653,2
+219,Kilimanjaro,Moshi Rural,Arusha Chini,0,3.0,0,1,1,860.7653,2
+220,Kilimanjaro,Moshi Rural,Arusha Chini,0,1.0,1,0,0,860.7653,2
+221,Kilimanjaro,Moshi Rural,Arusha Chini,0,0.4544832,1,0,0,860.7653,2
+222,Kilimanjaro,Moshi Rural,Arusha Chini,0,31.0,0,0,1,860.7653,2
+223,Kilimanjaro,Moshi Rural,Arusha Chini,0,8.0,1,0,0,860.7653,2
+224,Kilimanjaro,Moshi Rural,Arusha Chini,0,14.97331,0,0,0,860.7653,2
+225,Kilimanjaro,Moshi Rural,Arusha Chini,0,4.188912,0,0,1,860.7653,2
+226,Kilimanjaro,Moshi Rural,Arusha Chini,0,4.821355,1,0,0,860.7653,2
+227,Kilimanjaro,Moshi Rural,Arusha Chini,0,20.10678,0,0,0,860.7653,2
+228,Kilimanjaro,Moshi Rural,Arusha Chini,0,2.045175,1,0,0,860.7653,2
+229,Kilimanjaro,Moshi Rural,Arusha Chini,0,30.0,0,0,0,860.7653,2
+230,Kilimanjaro,Moshi Rural,Arusha Chini,0,4.0,1,0,0,860.7653,2
+231,Kilimanjaro,Moshi Rural,Arusha Chini,0,12.0,0,0,0,860.7653,2
+232,Kilimanjaro,Moshi Rural,Arusha Chini,0,11.0,0,0,0,860.7653,2
+233,Kilimanjaro,Moshi Rural,Arusha Chini,0,1.938398,0,0,0,860.7653,2
+234,Kilimanjaro,Moshi Rural,Arusha Chini,0,2.009583,1,0,1,860.7653,2
+235,Kilimanjaro,Moshi Rural,Arusha Chini,0,4.279261,1,0,0,860.7653,2
+236,Kilimanjaro,Moshi Rural,Arusha Chini,0,5.0,1,0,1,860.7653,2
+237,Kilimanjaro,Moshi Rural,Kahe,0,0.5174538,0,0,0,867.3628,2
+238,Kilimanjaro,Moshi Rural,Kahe,0,3.156742,0,0,0,867.3628,2
+239,Kilimanjaro,Moshi Rural,Kahe,0,2.015058,1,0,1,867.3628,2
+240,Kilimanjaro,Moshi Rural,Kahe,0,2.863792,1,0,0,867.3628,2
+241,Kilimanjaro,Moshi Rural,Kahe,0,22.0,0,0,0,867.3628,2
+242,Kilimanjaro,Moshi Rural,Kahe,1,5.533196,0,0,1,867.3628,2
+243,Kilimanjaro,Moshi Rural,Kahe,0,20.9692,0,0,0,867.3628,2
+244,Kilimanjaro,Moshi Rural,Kahe,0,3.394935,1,1,1,867.3628,2
+245,Kilimanjaro,Moshi Rural,Kahe,0,1.924709,1,0,1,867.3628,2
+246,Kilimanjaro,Moshi Rural,Kahe,0,2.439425,1,0,0,867.3628,2
+247,Kilimanjaro,Moshi Rural,Kahe,0,1.0,1,0,0,867.3628,2
+248,Kilimanjaro,Moshi Rural,Kahe,0,4.867898,0,0,0,867.3628,2
+249,Kilimanjaro,Moshi Rural,Kahe,0,3.0,1,0,1,867.3628,2
+250,Kilimanjaro,Moshi Rural,Kahe,0,3.0,0,0,0,867.3628,2
+251,Kilimanjaro,Moshi Rural,Kahe,0,3.868583,1,0,1,867.3628,2
+252,Kilimanjaro,Moshi Rural,Kahe,0,22.0,0,0,0,867.3628,2
+253,Kilimanjaro,Moshi Rural,Kahe,0,4.0,0,0,0,867.3628,2
+254,Kilimanjaro,Moshi Rural,Kahe,1,2.748802,1,1,1,867.3628,2
+255,Kilimanjaro,Moshi Rural,Kahe,0,3.0,1,0,0,867.3628,2
+256,Kilimanjaro,Moshi Rural,Kahe,0,2.439425,0,0,0,867.3628,2
+257,Kilimanjaro,Moshi Rural,Kahe,0,4.375085,0,0,0,867.3628,2
+258,Kilimanjaro,Moshi Rural,Kahe,0,2.067077,0,0,1,867.3628,2
+259,Kilimanjaro,Moshi Rural,Kahe,0,0.5201917,1,0,0,867.3628,2
+260,Kilimanjaro,Moshi Rural,Kahe,0,1.062286,1,0,0,867.3628,2
+261,Kilimanjaro,Moshi Rural,Kahe,1,2.225873,0,1,1,867.3628,2
+262,Kilimanjaro,Moshi Rural,Kahe,0,2.85284,1,0,1,867.3628,2
+263,Kilimanjaro,Moshi Rural,Kahe,0,12.0,0,0,0,867.3628,2
+264,Kilimanjaro,Moshi Rural,Kahe,0,11.17043,1,0,0,867.3628,2
+265,Kilimanjaro,Moshi Rural,Kahe,0,6.732375,0,0,1,867.3628,2
+266,Kilimanjaro,Moshi Rural,Kahe,0,2.945927,1,0,0,867.3628,2
+267,Kilimanjaro,Moshi Rural,Kahe,0,3.838467,1,0,0,867.3628,2
+268,Kilimanjaro,Moshi Rural,Kahe,0,3.285421,1,0,0,867.3628,2
+269,Kilimanjaro,Moshi Rural,Kahe,0,8.689939,1,0,0,867.3628,2
+270,Kilimanjaro,Moshi Rural,Kahe,0,3.271732,0,0,1,867.3628,2
+271,Kilimanjaro,Moshi Rural,Kahe,0,22.21218,1,0,0,867.3628,2
+272,Kilimanjaro,Moshi Rural,Kahe,0,0.9418207,1,0,0,867.3628,2
+273,Kilimanjaro,Moshi Rural,Kahe,0,4.035592,1,0,0,867.3628,2
+274,Kilimanjaro,Moshi Rural,Kahe,1,10.8501,0,1,1,867.3628,2
+275,Kilimanjaro,Moshi Rural,Kahe,0,2.264203,1,1,1,867.3628,2
+276,Kilimanjaro,Moshi Rural,Kahe,1,2.0,0,0,1,867.3628,2
+277,Kilimanjaro,Moshi Rural,Kahe,0,2.015058,1,0,1,867.3628,2
+278,Kilimanjaro,Moshi Rural,Kahe,0,0.3477071,0,0,0,867.3628,2
+279,Kilimanjaro,Moshi Rural,Kahe,0,0.6160164,0,0,0,867.3628,2
+280,Kilimanjaro,Moshi Rural,Kahe,0,1.546886,1,0,1,867.3628,2
+281,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,7.0,1,0,0,868.6373,2
+282,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,2.847365,0,0,0,868.6373,2
+283,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,15.02259,1,0,0,868.6373,2
+284,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,0.9007529,0,0,0,868.6373,2
+285,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,6.0,0,0,0,868.6373,2
+286,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.276523,0,0,0,868.6373,2
+287,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.0,0,0,0,868.6373,2
+288,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,1.544148,1,0,0,868.6373,2
+289,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,2.176591,0,0,0,868.6373,2
+290,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.39425,0,0,0,868.6373,2
+291,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,5.262149,0,0,0,868.6373,2
+292,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,2.179329,0,0,0,868.6373,2
+293,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,3.830253,0,0,0,868.6373,2
+294,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.640657,0,0,0,868.6373,2
+295,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.610541,1,0,0,868.6373,2
+296,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,6.444901,0,0,0,868.6373,2
+297,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,0.62423,0,0,0,868.6373,2
+298,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,0.7227926,0,0,1,868.6373,2
+299,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,6.0,1,0,0,868.6373,2
+300,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,4.0,0,0,0,868.6373,2
+301,Kilimanjaro,Moshi Rural,Kahe Mashariki,0,27.45517,0,0,0,868.6373,2
+302,Kilimanjaro,Moshi Rural,Kibosho Magharibi,0,70.0,0,0,1,1192.6,2
+303,Kilimanjaro,Moshi Rural,Kibosho Mashariki,0,14.0,0,0,0,1274.979,3
+304,Kilimanjaro,Moshi Rural,Kilema Kati,1,80.0,0,0,0,1459.099,3
+305,Kilimanjaro,Moshi Rural,Kilema Kusini,0,28.28747,0,0,0,967.8781,2
+306,Kilimanjaro,Moshi Rural,Kilema Kusini,0,2.0,1,0,0,967.8781,2
+307,Kilimanjaro,Moshi Rural,Kilema Kusini,0,7.0,0,0,0,967.8781,2
+308,Kilimanjaro,Moshi Rural,Kilema Kusini,0,3.268994,1,1,0,967.8781,2
+309,Kilimanjaro,Moshi Rural,Kilema Kusini,0,1.826146,0,0,0,967.8781,2
+310,Kilimanjaro,Moshi Rural,Kilema Kusini,0,10.0,0,0,0,967.8781,2
+311,Kilimanjaro,Moshi Rural,Kimochi,0,2.677618,0,0,1,927.3541,2
+312,Kilimanjaro,Moshi Rural,Kimochi,0,5.349761,0,0,0,927.3541,2
+313,Kilimanjaro,Moshi Rural,Kimochi,0,2.677618,1,0,0,927.3541,2
+314,Kilimanjaro,Moshi Rural,Kindi,0,4.451746,0,0,0,970.811,2
+315,Kilimanjaro,Moshi Rural,Kindi,0,3.392197,0,0,0,970.811,2
+316,Kilimanjaro,Moshi Rural,Kindi,0,4.36961,0,0,0,970.811,2
+317,Kilimanjaro,Moshi Rural,Kindi,0,4.336756,0,0,0,970.811,2
+318,Kilimanjaro,Moshi Rural,Kindi,0,2.647502,1,0,0,970.811,2
+319,Kilimanjaro,Moshi Rural,Kindi,0,2.179329,0,0,0,970.811,2
+320,Kilimanjaro,Moshi Rural,Kindi,0,1.905544,0,0,0,970.811,2
+321,Kilimanjaro,Moshi Rural,Kindi,0,1.557837,0,0,0,970.811,2
+322,Kilimanjaro,Moshi Rural,Kindi,0,4.996578,0,0,0,970.811,2
+323,Kilimanjaro,Moshi Rural,Kindi,0,1.051335,0,0,0,970.811,2
+324,Kilimanjaro,Moshi Rural,Kindi,0,0.9089665,1,0,0,970.811,2
+325,Kilimanjaro,Moshi Rural,Kindi,0,10.59001,0,0,0,970.811,2
+326,Kilimanjaro,Moshi Rural,Kindi,0,10.0,0,0,0,970.811,2
+327,Kilimanjaro,Moshi Rural,Kindi,0,0.9226557,0,0,0,970.811,2
+328,Kilimanjaro,Moshi Rural,Kindi,0,3.537303,1,0,0,970.811,2
+329,Kilimanjaro,Moshi Rural,Kindi,0,2.836413,1,0,0,970.811,2
+330,Kilimanjaro,Moshi Rural,Kindi,0,0.9308693,0,0,1,970.811,2
+331,Kilimanjaro,Moshi Rural,Kindi,0,18.0,0,0,0,970.811,2
+332,Kilimanjaro,Moshi Rural,Kindi,0,4.542094,1,0,0,970.811,2
+333,Kilimanjaro,Moshi Rural,Kindi,0,1.147159,0,0,1,970.811,2
+334,Kilimanjaro,Moshi Rural,Kindi,0,26.43942,0,0,0,970.811,2
+335,Kilimanjaro,Moshi Rural,Kindi,0,0.6516085,1,0,0,970.811,2
+336,Kilimanjaro,Moshi Rural,Kindi,0,1.314168,0,0,0,970.811,2
+337,Kilimanjaro,Moshi Rural,Kindi,0,1.963039,0,0,0,970.811,2
+338,Kilimanjaro,Moshi Rural,Kindi,0,1.577002,0,0,0,970.811,2
+339,Kilimanjaro,Moshi Rural,Kindi,0,2.116359,0,0,0,970.811,2
+340,Kilimanjaro,Moshi Rural,Kindi,0,0.4900753,1,1,0,970.811,2
+341,Kilimanjaro,Moshi Rural,Kindi,1,4.0,0,1,1,970.811,2
+342,Kilimanjaro,Moshi Rural,Kindi,0,25.0,0,0,1,970.811,2
+343,Kilimanjaro,Moshi Rural,Kindi,0,2.822724,0,0,0,970.811,2
+344,Kilimanjaro,Moshi Rural,Kindi,1,27.0,0,1,1,970.811,2
+345,Kilimanjaro,Moshi Rural,Kindi,0,16.0,0,1,0,970.811,2
+346,Kilimanjaro,Moshi Rural,Kindi,0,0.862423,0,0,0,970.811,2
+347,Kilimanjaro,Moshi Rural,Kindi,0,4.0,0,0,1,970.811,2
+348,Kilimanjaro,Moshi Rural,Kindi,0,2.53525,1,0,1,970.811,2
+349,Kilimanjaro,Moshi Rural,Kindi,0,3.518138,0,0,0,970.811,2
+350,Kilimanjaro,Moshi Rural,Kindi,0,27.90965,0,0,0,970.811,2
+351,Kilimanjaro,Moshi Rural,Kindi,0,1.511294,0,0,0,970.811,2
+352,Kilimanjaro,Moshi Rural,Kindi,0,3.518138,0,0,1,970.811,2
+353,Kilimanjaro,Moshi Rural,Kindi,0,1.817933,1,0,0,970.811,2
+354,Kilimanjaro,Moshi Rural,Kindi,0,44.0,0,0,1,970.811,2
+355,Kilimanjaro,Moshi Rural,Kindi,0,2.732375,0,0,0,970.811,2
+356,Kilimanjaro,Moshi Rural,Kirima,0,25.0,0,0,0,1068.88,2
+357,Kilimanjaro,Moshi Rural,Kirima,0,22.10814,0,0,0,1068.88,2
+358,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,31.0,0,0,0,912.5162,2
+359,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,3.080082,0,0,0,912.5162,2
+360,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,2.162902,0,0,0,912.5162,2
+361,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,0.9691992,0,0,0,912.5162,2
+362,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,5.0,0,0,0,912.5162,2
+363,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,6.0,0,0,1,912.5162,2
+364,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,1.259411,1,0,0,912.5162,2
+365,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,2.0,0,0,0,912.5162,2
+366,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,32.19986,0,1,0,912.5162,2
+367,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,4.889802,0,0,0,912.5162,2
+368,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,7.0,0,0,0,912.5162,2
+369,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,3.0,0,0,0,912.5162,2
+370,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,1.253936,1,0,0,912.5162,2
+371,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,29.69747,1,0,0,912.5162,2
+372,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,2.190281,1,0,0,912.5162,2
+373,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,1,10.0,1,1,1,912.5162,2
+374,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,30.79535,0,0,0,912.5162,2
+375,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,0.7638603,1,0,0,912.5162,2
+376,Kilimanjaro,Moshi Rural,Kirua Vunjo Kusini,0,85.0,0,0,0,912.5162,2
+377,Kilimanjaro,Moshi Rural,Kirua Vunjo Magharibi,0,39.0,0,0,1,1542.37,3
+378,Kilimanjaro,Moshi Rural,Kirua Vunjo Magharibi,1,16.0,0,1,0,1542.37,3
+379,Kilimanjaro,Moshi Rural,Kirua Vunjo Mashariki,0,52.0,0,0,0,1385.253,3
+380,Kilimanjaro,Moshi Rural,Kirua Vunjo Mashariki,0,2.26694,0,0,0,1385.253,3
+381,Kilimanjaro,Moshi Rural,Mabogini,0,5.845312,0,0,0,874.7966,2
+382,Kilimanjaro,Moshi Rural,Mabogini,0,7.186858,1,0,0,874.7966,2
+383,Kilimanjaro,Moshi Rural,Mabogini,0,6.0,0,0,0,874.7966,2
+384,Kilimanjaro,Moshi Rural,Mabogini,0,1.511294,1,0,0,874.7966,2
+385,Kilimanjaro,Moshi Rural,Mabogini,0,2.546201,0,0,0,874.7966,2
+386,Kilimanjaro,Moshi Rural,Mabogini,0,1.0,0,1,0,874.7966,2
+387,Kilimanjaro,Moshi Rural,Mabogini,0,2.666667,0,0,0,874.7966,2
+388,Kilimanjaro,Moshi Rural,Mabogini,0,3.934292,0,0,0,874.7966,2
+389,Kilimanjaro,Moshi Rural,Mabogini,0,3.0,0,0,0,874.7966,2
+390,Kilimanjaro,Moshi Rural,Mabogini,0,2.0,1,0,0,874.7966,2
+391,Kilimanjaro,Moshi Rural,Mabogini,0,1.147159,0,0,0,874.7966,2
+392,Kilimanjaro,Moshi Rural,Mabogini,0,1.081451,0,0,1,874.7966,2
+393,Kilimanjaro,Moshi Rural,Mabogini,0,3.156742,0,0,0,874.7966,2
+394,Kilimanjaro,Moshi Rural,Mabogini,0,4.0,0,0,0,874.7966,2
+395,Kilimanjaro,Moshi Rural,Mabogini,0,1.511294,1,1,0,874.7966,2
+396,Kilimanjaro,Moshi Rural,Mabogini,0,4.350445,0,0,1,874.7966,2
+397,Kilimanjaro,Moshi Rural,Mabogini,0,1.0,1,1,0,874.7966,2
+398,Kilimanjaro,Moshi Rural,Mabogini,0,3.578371,1,0,0,874.7966,2
+399,Kilimanjaro,Moshi Rural,Mabogini,0,4.421629,0,0,0,874.7966,2
+400,Kilimanjaro,Moshi Rural,Mabogini,0,3.0,1,0,0,874.7966,2
+401,Kilimanjaro,Moshi Rural,Mabogini,0,7.0,0,0,0,874.7966,2
+402,Kilimanjaro,Moshi Rural,Mabogini,0,0.2518823,0,0,0,874.7966,2
+403,Kilimanjaro,Moshi Rural,Mabogini,0,5.0,0,0,0,874.7966,2
+404,Kilimanjaro,Moshi Rural,Mabogini,0,5.889117,0,0,0,874.7966,2
+405,Kilimanjaro,Moshi Rural,Mabogini,0,30.05339,0,0,0,874.7966,2
+406,Kilimanjaro,Moshi Rural,Mabogini,0,17.0,1,0,0,874.7966,2
+407,Kilimanjaro,Moshi Rural,Mabogini,0,2.548939,0,0,0,874.7966,2
+408,Kilimanjaro,Moshi Rural,Mabogini,0,5.0,1,0,0,874.7966,2
+409,Kilimanjaro,Moshi Rural,Mabogini,0,22.1629,1,0,0,874.7966,2
+410,Kilimanjaro,Moshi Rural,Mabogini,0,3.641341,0,0,0,874.7966,2
+411,Kilimanjaro,Moshi Rural,Mabogini,0,0.7802874,0,0,1,874.7966,2
+412,Kilimanjaro,Moshi Rural,Mabogini,0,11.77823,0,0,0,874.7966,2
+413,Kilimanjaro,Moshi Rural,Makuyuni,1,6.0,1,1,0,894.9645,2
+414,Kilimanjaro,Moshi Rural,Makuyuni,0,3.145791,0,0,0,894.9645,2
+415,Kilimanjaro,Moshi Rural,Makuyuni,0,19.0,0,1,1,894.9645,2
+416,Kilimanjaro,Moshi Rural,Makuyuni,0,4.027379,1,0,0,894.9645,2
+417,Kilimanjaro,Moshi Rural,Makuyuni,0,4.454483,0,0,0,894.9645,2
+418,Kilimanjaro,Moshi Rural,Mamba Kusini,0,22.0,0,0,0,1288.763,3
+419,Kilimanjaro,Moshi Rural,Mamba Kusini,0,1.713895,1,0,0,1288.763,3
+420,Kilimanjaro,Moshi Rural,Marangu Magharibi,1,72.0,0,0,1,1709.151,3
+421,Kilimanjaro,Moshi Rural,Marangu Magharibi,0,43.0,0,0,0,1709.151,3
+422,Kilimanjaro,Moshi Rural,Marangu Magharibi,0,15.0,0,0,0,1709.151,3
+423,Kilimanjaro,Moshi Rural,Mbokomu,0,65.0,0,0,0,956.8514,2
+424,Kilimanjaro,Moshi Rural,Mbokomu,0,1.0,0,0,0,956.8514,2
+425,Kilimanjaro,Moshi Rural,Mbokomu,0,2.193018,1,0,0,956.8514,2
+426,Kilimanjaro,Moshi Rural,Mbokomu,1,31.0,0,1,1,956.8514,2
+427,Kilimanjaro,Moshi Rural,Mbokomu,0,2.0,0,0,1,956.8514,2
+428,Kilimanjaro,Moshi Rural,Mwika Kusini,1,68.0,0,1,1,1121.125,2
+429,Kilimanjaro,Moshi Rural,Old Moshi West,0,4.235455,0,0,0,1099.303,2
+430,Kilimanjaro,Moshi Rural,Old Moshi West,0,21.92197,0,0,0,1099.303,2
+431,Kilimanjaro,Moshi Rural,Old Moshi West,0,4.104038,1,0,0,1099.303,2
+432,Kilimanjaro,Moshi Rural,Old Moshi West,0,4.684463,0,0,0,1099.303,2
+433,Kilimanjaro,Moshi Rural,Old Moshi West,0,1.659138,0,0,0,1099.303,2
+434,Kilimanjaro,Moshi Rural,Uru Mashariki,0,67.0,0,0,0,1113.501,2
+435,Kilimanjaro,Moshi Rural,Uru Mashariki,0,52.0,0,0,0,1113.501,2
+436,Kilimanjaro,Moshi Rural,Uru Mashariki,0,3.0,0,0,0,1113.501,2
+437,Kilimanjaro,Moshi Rural,Uru Mashariki,0,0.257358,0,0,0,1113.501,2
+438,Kilimanjaro,Moshi Rural,Uru Mashariki,0,4.676249,1,0,0,1113.501,2
+439,Kilimanjaro,Moshi Rural,Uru Mashariki,0,29.0,0,0,0,1113.501,2
+440,Kilimanjaro,Moshi Rural,Uru Shimbwe,0,3.181383,0,0,0,1641.883,3
+441,Kilimanjaro,Moshi Rural,Uru Shimbwe,0,2.187543,0,1,0,1641.883,3
+442,Kilimanjaro,Moshi Rural,Uru South Mawela,0,1.0,0,0,0,988.8561,2
+443,Kilimanjaro,Moshi Rural,Uru South Mawela,0,3.0,1,0,1,988.8561,2
+444,Kilimanjaro,Moshi Rural,Uru South Mawela,0,6.028748,0,0,0,988.8561,2
+445,Kilimanjaro,Moshi Rural,Uru South Mawela,0,10.0,0,0,0,988.8561,2
+446,Kilimanjaro,Moshi Rural,Uru South Mawela,0,58.0,0,0,0,988.8561,2
+447,Kilimanjaro,Moshi Rural,Uru South Mawela,0,23.21971,1,0,1,988.8561,2
+448,Kilimanjaro,Moshi Rural,Uru South Mawela,0,24.0,0,0,0,988.8561,2
+449,Kilimanjaro,Moshi Rural,Uru South Mawela,0,77.0,0,0,0,988.8561,2
+450,Kilimanjaro,Moshi Urban,Bondeni,0,43.0,1,0,0,888.0,2
+451,Kilimanjaro,Moshi Urban,Bondeni,0,5.0,1,0,0,888.0,2
+452,Kilimanjaro,Moshi Urban,Bondeni,0,4.257358,0,0,0,888.0,2
+453,Kilimanjaro,Moshi Urban,Bondeni,0,3.485284,0,0,0,888.0,2
+454,Kilimanjaro,Moshi Urban,Kaloleni,0,19.0,0,0,0,884.5829,2
+455,Kilimanjaro,Moshi Urban,Kaloleni,0,3.0,0,0,0,884.5829,2
+456,Kilimanjaro,Moshi Urban,Kaloleni,0,1.738535,0,0,0,884.5829,2
+457,Kilimanjaro,Moshi Urban,Kaloleni,0,21.0,0,0,0,884.5829,2
+458,Kilimanjaro,Moshi Urban,Kaloleni,0,1.308693,0,0,0,884.5829,2
+459,Kilimanjaro,Moshi Urban,Karanga,0,2.71321,0,0,0,911.8116,2
+460,Kilimanjaro,Moshi Urban,Karanga,0,1.724846,0,0,0,911.8116,2
+461,Kilimanjaro,Moshi Urban,Karanga,0,0.9117043,1,0,1,911.8116,2
+462,Kilimanjaro,Moshi Urban,Karanga,0,2.294319,0,0,0,911.8116,2
+463,Kilimanjaro,Moshi Urban,Karanga,0,2.642026,0,0,0,911.8116,2
+464,Kilimanjaro,Moshi Urban,Karanga,0,19.0,0,0,0,911.8116,2
+465,Kilimanjaro,Moshi Urban,Karanga,0,1.64271,0,0,0,911.8116,2
+466,Kilimanjaro,Moshi Urban,Karanga,0,0.5804244,0,0,0,911.8116,2
+467,Kilimanjaro,Moshi Urban,Karanga,0,2.858316,0,0,0,911.8116,2
+468,Kilimanjaro,Moshi Urban,Karanga,0,1.013005,0,0,0,911.8116,2
+469,Kilimanjaro,Moshi Urban,Karanga,0,5.0,0,0,0,911.8116,2
+470,Kilimanjaro,Moshi Urban,Karanga,0,4.626968,0,0,0,911.8116,2
+471,Kilimanjaro,Moshi Urban,Karanga,0,2.49692,0,0,0,911.8116,2
+472,Kilimanjaro,Moshi Urban,Karanga,0,63.0,1,0,0,911.8116,2
+473,Kilimanjaro,Moshi Urban,Karanga,0,55.0,0,0,0,911.8116,2
+474,Kilimanjaro,Moshi Urban,Karanga,0,44.0,0,0,0,911.8116,2
+475,Kilimanjaro,Moshi Urban,Karanga,0,0.9281314,0,0,0,911.8116,2
+476,Kilimanjaro,Moshi Urban,Karanga,0,11.75359,1,0,0,911.8116,2
+477,Kilimanjaro,Moshi Urban,Karanga,0,0.5366188,0,0,0,911.8116,2
+478,Kilimanjaro,Moshi Urban,Karanga,0,0.6351814,0,0,0,911.8116,2
+479,Kilimanjaro,Moshi Urban,Karanga,0,7.0,0,1,0,911.8116,2
+480,Kilimanjaro,Moshi Urban,Karanga,0,22.0,0,0,0,911.8116,2
+481,Kilimanjaro,Moshi Urban,Karanga,0,1.338809,1,0,0,911.8116,2
+482,Kilimanjaro,Moshi Urban,Karanga,0,22.0,0,0,0,911.8116,2
+483,Kilimanjaro,Moshi Urban,Karanga,0,1.0,0,0,0,911.8116,2
+484,Kilimanjaro,Moshi Urban,Kiboriloni,1,34.0,0,1,1,884.662,2
+485,Kilimanjaro,Moshi Urban,Kiboriloni,0,7.876797,0,0,0,884.662,2
+486,Kilimanjaro,Moshi Urban,Kiboriloni,0,20.0,0,0,0,884.662,2
+487,Kilimanjaro,Moshi Urban,Kiboriloni,1,46.0,1,0,0,884.662,2
+488,Kilimanjaro,Moshi Urban,Kiboriloni,0,24.0,1,0,1,884.662,2
+489,Kilimanjaro,Moshi Urban,Kiboriloni,0,30.0,0,0,0,884.662,2
+490,Kilimanjaro,Moshi Urban,Kiboriloni,0,5.826147,0,0,0,884.662,2
+491,Kilimanjaro,Moshi Urban,Kiboriloni,0,15.0,0,0,0,884.662,2
+492,Kilimanjaro,Moshi Urban,Kiboriloni,0,6.0,0,0,0,884.662,2
+493,Kilimanjaro,Moshi Urban,Kilimanjaro,0,19.0,0,0,0,899.5179,2
+494,Kilimanjaro,Moshi Urban,Kilimanjaro,0,31.0,0,1,1,899.5179,2
+495,Kilimanjaro,Moshi Urban,Kilimanjaro,0,5.117043,0,0,0,899.5179,2
+496,Kilimanjaro,Moshi Urban,Kilimanjaro,0,13.4976,0,0,0,899.5179,2
+497,Kilimanjaro,Moshi Urban,Kilimanjaro,0,36.0,1,0,0,899.5179,2
+498,Kilimanjaro,Moshi Urban,Kiusa,0,0.2108145,0,0,0,894.3586,2
+499,Kilimanjaro,Moshi Urban,Kiusa,0,25.44285,0,0,1,894.3586,2
+500,Kilimanjaro,Moshi Urban,Kiusa,0,1.182752,0,0,0,894.3586,2
+501,Kilimanjaro,Moshi Urban,Korongoni,0,4.0,1,0,0,889.9831,2
+502,Kilimanjaro,Moshi Urban,Korongoni,0,15.14579,0,0,1,889.9831,2
+503,Kilimanjaro,Moshi Urban,Korongoni,0,4.709104,1,0,0,889.9831,2
+504,Kilimanjaro,Moshi Urban,Korongoni,0,40.57221,0,0,0,889.9831,2
+505,Kilimanjaro,Moshi Urban,Korongoni,0,9.900068,0,0,0,889.9831,2
+506,Kilimanjaro,Moshi Urban,Korongoni,0,1.292266,0,0,0,889.9831,2
+507,Kilimanjaro,Moshi Urban,Korongoni,0,1.314168,1,0,0,889.9831,2
+508,Kilimanjaro,Moshi Urban,Korongoni,0,6.370979,0,0,0,889.9831,2
+509,Kilimanjaro,Moshi Urban,Longuo,0,20.0,0,0,0,935.3297,2
+510,Kilimanjaro,Moshi Urban,Longuo,0,4.930869,0,0,0,935.3297,2
+511,Kilimanjaro,Moshi Urban,Longuo,0,9.768652,0,0,0,935.3297,2
+512,Kilimanjaro,Moshi Urban,Majengo,0,41.0,0,0,0,886.9797,2
+513,Kilimanjaro,Moshi Urban,Majengo,0,4.22998,0,0,0,886.9797,2
+514,Kilimanjaro,Moshi Urban,Majengo,0,4.17796,0,0,0,886.9797,2
+515,Kilimanjaro,Moshi Urban,Majengo,0,2.480493,0,0,0,886.9797,2
+516,Kilimanjaro,Moshi Urban,Majengo,0,3.78371,0,0,0,886.9797,2
+517,Kilimanjaro,Moshi Urban,Majengo,0,1.634497,0,0,0,886.9797,2
+518,Kilimanjaro,Moshi Urban,Majengo,0,7.827516,0,0,0,886.9797,2
+519,Kilimanjaro,Moshi Urban,Majengo,0,24.0,0,0,0,886.9797,2
+520,Kilimanjaro,Moshi Urban,Majengo,0,0.9965777,0,0,0,886.9797,2
+521,Kilimanjaro,Moshi Urban,Majengo,0,1.982204,0,0,0,886.9797,2
+522,Kilimanjaro,Moshi Urban,Majengo,0,0.6680356,0,0,0,886.9797,2
+523,Kilimanjaro,Moshi Urban,Majengo,0,1.437372,0,0,0,886.9797,2
+524,Kilimanjaro,Moshi Urban,Majengo,0,1.462012,0,0,0,886.9797,2
+525,Kilimanjaro,Moshi Urban,Majengo,0,2.885695,0,0,0,886.9797,2
+526,Kilimanjaro,Moshi Urban,Mawenzi,0,4.0,0,0,0,891.9711,2
+527,Kilimanjaro,Moshi Urban,Mawenzi,0,1.793292,0,0,0,891.9711,2
+528,Kilimanjaro,Moshi Urban,Mji Mpya,0,0.4626968,0,0,0,881.2614,2
+529,Kilimanjaro,Moshi Urban,Mji Mpya,0,2.349076,0,0,0,881.2614,2
+530,Kilimanjaro,Moshi Urban,Mji Mpya,0,3.0,0,0,0,881.2614,2
+531,Kilimanjaro,Moshi Urban,Mji Mpya,0,5.0,0,0,0,881.2614,2
+532,Kilimanjaro,Moshi Urban,Mji Mpya,0,3.244353,0,0,0,881.2614,2
+533,Kilimanjaro,Moshi Urban,Msaranga,0,0.9166667,0,0,0,876.4617,2
+534,Kilimanjaro,Moshi Urban,Msaranga,0,5.0,0,0,0,876.4617,2
+535,Kilimanjaro,Moshi Urban,Msaranga,0,3.15948,1,0,0,876.4617,2
+536,Kilimanjaro,Moshi Urban,Msaranga,0,7.882272,0,0,1,876.4617,2
+537,Kilimanjaro,Moshi Urban,Njoro,0,4.821355,1,0,0,886.3468,2
+538,Kilimanjaro,Moshi Urban,Njoro,0,1.634497,0,0,0,886.3468,2
+539,Kilimanjaro,Moshi Urban,Njoro,1,1.24846,0,1,1,886.3468,2
+540,Kilimanjaro,Moshi Urban,Njoro,0,1.880903,0,1,1,886.3468,2
+541,Kilimanjaro,Moshi Urban,Njoro,0,3.134839,0,0,0,886.3468,2
+542,Kilimanjaro,Moshi Urban,Njoro,0,3.156742,0,0,0,886.3468,2
+543,Kilimanjaro,Moshi Urban,Njoro,0,20.84326,0,0,0,886.3468,2
+544,Kilimanjaro,Moshi Urban,Njoro,0,4.843258,0,0,0,886.3468,2
+545,Kilimanjaro,Moshi Urban,Njoro,0,3.624914,0,0,0,886.3468,2
+546,Kilimanjaro,Moshi Urban,Njoro,0,23.0,0,0,0,886.3468,2
+547,Kilimanjaro,Moshi Urban,Njoro,0,21.0,0,0,0,886.3468,2
+548,Kilimanjaro,Moshi Urban,Njoro,1,0.0520192,0,0,0,886.3468,2
+549,Kilimanjaro,Moshi Urban,Njoro,0,1.492129,0,0,0,886.3468,2
+550,Kilimanjaro,Moshi Urban,Njoro,0,7.611225,0,0,0,886.3468,2
+551,Kilimanjaro,Moshi Urban,Njoro,0,2.351814,0,0,0,886.3468,2
+552,Kilimanjaro,Moshi Urban,Njoro,0,27.0,0,0,0,886.3468,2
+553,Kilimanjaro,Moshi Urban,Njoro,0,10.0,0,0,0,886.3468,2
+554,Kilimanjaro,Moshi Urban,Njoro,0,15.0,0,0,0,886.3468,2
+555,Kilimanjaro,Moshi Urban,Njoro,0,0.9253936,0,0,0,886.3468,2
+556,Kilimanjaro,Moshi Urban,Njoro,0,3.052704,0,0,0,886.3468,2
+557,Kilimanjaro,Moshi Urban,Njoro,0,18.0,0,0,0,886.3468,2
+558,Kilimanjaro,Moshi Urban,Njoro,0,3.816564,0,0,0,886.3468,2
+559,Kilimanjaro,Moshi Urban,Njoro,0,1.03217,0,0,0,886.3468,2
+560,Kilimanjaro,Moshi Urban,Njoro,0,25.0,0,0,0,886.3468,2
+561,Kilimanjaro,Moshi Urban,Njoro,0,2.600958,0,0,0,886.3468,2
+562,Kilimanjaro,Moshi Urban,Njoro,0,3.583847,0,1,1,886.3468,2
+563,Kilimanjaro,Moshi Urban,Njoro,0,0.5557837,0,0,0,886.3468,2
+564,Kilimanjaro,Moshi Urban,Njoro,0,32.8679,0,0,0,886.3468,2
+565,Kilimanjaro,Moshi Urban,Njoro,0,1.316906,0,0,0,886.3468,2
+566,Kilimanjaro,Moshi Urban,Njoro,0,0.4572211,0,0,0,886.3468,2
+567,Kilimanjaro,Moshi Urban,Njoro,1,20.0,0,0,0,886.3468,2
+568,Kilimanjaro,Moshi Urban,Njoro,0,14.07529,0,1,0,886.3468,2
+569,Kilimanjaro,Moshi Urban,Njoro,0,6.151951,0,0,1,886.3468,2
+570,Kilimanjaro,Moshi Urban,Njoro,0,29.0,0,0,0,886.3468,2
+571,Kilimanjaro,Moshi Urban,Njoro,0,25.34428,0,0,0,886.3468,2
+572,Kilimanjaro,Moshi Urban,Pasua,0,2.384668,0,0,0,883.7689,2
+573,Kilimanjaro,Moshi Urban,Pasua,1,74.0,0,1,1,883.7689,2
+574,Kilimanjaro,Moshi Urban,Pasua,0,4.629706,0,0,0,883.7689,2
+575,Kilimanjaro,Moshi Urban,Pasua,0,26.0,0,0,0,883.7689,2
+576,Kilimanjaro,Moshi Urban,Pasua,0,0.4626968,0,0,0,883.7689,2
+577,Kilimanjaro,Moshi Urban,Pasua,0,0.8596851,0,0,0,883.7689,2
+578,Kilimanjaro,Moshi Urban,Pasua,1,17.69199,0,1,1,883.7689,2
+579,Kilimanjaro,Moshi Urban,Pasua,0,18.0,0,0,0,883.7689,2
+580,Kilimanjaro,Moshi Urban,Pasua,0,4.479124,0,0,0,883.7689,2
+581,Kilimanjaro,Moshi Urban,Pasua,0,4.944559,1,0,0,883.7689,2
+582,Kilimanjaro,Moshi Urban,Pasua,0,3.603012,0,0,0,883.7689,2
+583,Kilimanjaro,Moshi Urban,Pasua,0,50.0,0,0,0,883.7689,2
+584,Kilimanjaro,Moshi Urban,Pasua,0,2.26694,1,0,0,883.7689,2
+585,Kilimanjaro,Moshi Urban,Pasua,1,2.086242,1,0,1,883.7689,2
+586,Kilimanjaro,Moshi Urban,Pasua,0,7.876797,0,0,0,883.7689,2
+587,Kilimanjaro,Moshi Urban,Pasua,0,2.406571,0,0,0,883.7689,2
+588,Kilimanjaro,Moshi Urban,Pasua,0,1.563313,0,0,0,883.7689,2
+589,Kilimanjaro,Moshi Urban,Pasua,0,0.7063655,1,0,0,883.7689,2
+590,Kilimanjaro,Moshi Urban,Pasua,0,50.0,0,0,0,883.7689,2
+591,Kilimanjaro,Moshi Urban,Pasua,0,3.394935,0,0,0,883.7689,2
+592,Kilimanjaro,Moshi Urban,Pasua,0,1.21013,0,0,0,883.7689,2
+593,Kilimanjaro,Moshi Urban,Pasua,0,43.0,0,1,0,883.7689,2
+594,Kilimanjaro,Moshi Urban,Pasua,0,23.41684,0,0,0,883.7689,2
+595,Kilimanjaro,Moshi Urban,Pasua,0,1.278576,0,0,0,883.7689,2
+596,Kilimanjaro,Moshi Urban,Pasua,0,33.39631,0,0,0,883.7689,2
+597,Kilimanjaro,Moshi Urban,Pasua,0,7.679671,0,1,0,883.7689,2
+598,Kilimanjaro,Moshi Urban,Pasua,0,2.119097,0,0,0,883.7689,2
+599,Kilimanjaro,Moshi Urban,Pasua,0,0.5667351,0,0,0,883.7689,2
+600,Kilimanjaro,Moshi Urban,Pasua,0,3.890486,0,0,0,883.7689,2
+601,Kilimanjaro,Moshi Urban,Pasua,0,0.7063655,1,0,0,883.7689,2
+602,Kilimanjaro,Moshi Urban,Pasua,0,1.850787,0,0,0,883.7689,2
+603,Kilimanjaro,Moshi Urban,Pasua,0,4.0,0,0,0,883.7689,2
+604,Kilimanjaro,Moshi Urban,Pasua,0,2.532512,1,0,0,883.7689,2
+605,Kilimanjaro,Moshi Urban,Rau,0,4.0,0,0,0,896.962,2
+606,Kilimanjaro,Moshi Urban,Rau,0,25.0,0,0,1,896.962,2
+607,Kilimanjaro,Mwanga,Jipe,0,5.086927,0,0,0,849.5931,2
+608,Kilimanjaro,Mwanga,Jipe,0,6.502396,0,0,0,849.5931,2
+609,Kilimanjaro,Mwanga,Kileo,0,2.373717,0,0,0,857.2094,2
+610,Kilimanjaro,Mwanga,Kileo,0,3.104723,1,0,0,857.2094,2
+611,Kilimanjaro,Mwanga,Kileo,0,17.55236,0,0,0,857.2094,2
+612,Kilimanjaro,Mwanga,Kileo,0,2.0,0,0,0,857.2094,2
+613,Kilimanjaro,Mwanga,Kileo,0,10.48049,0,0,1,857.2094,2
+614,Kilimanjaro,Mwanga,Kileo,0,9.456536,0,0,1,857.2094,2
+615,Kilimanjaro,Mwanga,Kileo,0,3.482546,0,0,0,857.2094,2
+616,Kilimanjaro,Mwanga,Kileo,0,2.655715,0,0,0,857.2094,2
+617,Kilimanjaro,Mwanga,Kileo,0,2.622861,1,0,0,857.2094,2
+618,Kilimanjaro,Mwanga,Kileo,1,3.575633,0,0,1,857.2094,2
+619,Kilimanjaro,Mwanga,Kileo,0,1.552361,1,0,0,857.2094,2
+620,Kilimanjaro,Mwanga,Kileo,0,5.0,0,0,0,857.2094,2
+621,Kilimanjaro,Mwanga,Kileo,0,4.476386,1,0,0,857.2094,2
+622,Kilimanjaro,Mwanga,Kileo,0,3.0,0,0,0,857.2094,2
+623,Kilimanjaro,Mwanga,Kirya,0,5.021218,0,0,0,878.712,2
+624,Kilimanjaro,Mwanga,Kirya,0,18.0,0,0,0,878.712,2
+625,Kilimanjaro,Mwanga,Kirya,0,22.0,1,0,0,878.712,2
+626,Kilimanjaro,Mwanga,Kirya,0,3.0,0,0,0,878.712,2
+627,Kilimanjaro,Mwanga,Kirya,0,3.849418,0,0,0,878.712,2
+628,Kilimanjaro,Mwanga,Kirya,0,1.533196,0,0,0,878.712,2
+629,Kilimanjaro,Mwanga,Kwakoa,0,10.0,1,0,0,906.4874,2
+630,Kilimanjaro,Mwanga,Kwakoa,0,14.0,1,0,0,906.4874,2
+631,Kilimanjaro,Mwanga,Kwakoa,0,17.0,0,0,0,906.4874,2
+632,Kilimanjaro,Mwanga,Kwakoa,0,7.0,0,0,0,906.4874,2
+633,Kilimanjaro,Mwanga,Lang'ata,0,4.0,1,1,0,849.9274,2
+634,Kilimanjaro,Mwanga,Lang'ata,0,3.277207,1,0,0,849.9274,2
+635,Kilimanjaro,Mwanga,Lang'ata,0,7.0,0,0,0,849.9274,2
+636,Kilimanjaro,Mwanga,Lang'ata,0,15.63039,1,0,1,849.9274,2
+637,Kilimanjaro,Mwanga,Lang'ata,0,4.0,1,0,0,849.9274,2
+638,Kilimanjaro,Mwanga,Lembeni,0,0.25,1,0,0,1029.608,2
+639,Kilimanjaro,Mwanga,Lembeni,0,1.620808,1,0,0,1029.608,2
+640,Kilimanjaro,Mwanga,Lembeni,0,6.0,1,1,1,1029.608,2
+641,Kilimanjaro,Mwanga,Lembeni,0,42.0,0,0,0,1029.608,2
+642,Kilimanjaro,Mwanga,Lembeni,1,6.658453,0,1,0,1029.608,2
+643,Kilimanjaro,Mwanga,Lembeni,0,2.954141,0,0,0,1029.608,2
+644,Kilimanjaro,Mwanga,Lembeni,1,7.0,0,0,1,1029.608,2
+645,Kilimanjaro,Mwanga,Lembeni,0,0.971937,0,0,0,1029.608,2
+646,Kilimanjaro,Mwanga,Lembeni,0,4.0,0,0,0,1029.608,2
+647,Kilimanjaro,Mwanga,Lembeni,0,5.0,0,0,0,1029.608,2
+648,Kilimanjaro,Mwanga,Lembeni,0,8.180698,0,0,0,1029.608,2
+649,Kilimanjaro,Mwanga,Lembeni,0,18.0,0,0,1,1029.608,2
+650,Kilimanjaro,Mwanga,Lembeni,0,3.115674,0,0,0,1029.608,2
+651,Kilimanjaro,Mwanga,Lembeni,0,1.418207,0,0,0,1029.608,2
+652,Kilimanjaro,Mwanga,Lembeni,0,3.518138,0,0,0,1029.608,2
+653,Kilimanjaro,Mwanga,Lembeni,0,4.0,0,0,0,1029.608,2
+654,Kilimanjaro,Mwanga,Lembeni,0,7.0,0,1,1,1029.608,2
+655,Kilimanjaro,Mwanga,Lembeni,0,1.0,1,0,0,1029.608,2
+656,Kilimanjaro,Mwanga,Lembeni,0,2.658453,1,0,0,1029.608,2
+657,Kilimanjaro,Mwanga,Lembeni,0,9.0,0,0,0,1029.608,2
+658,Kilimanjaro,Mwanga,Lembeni,0,3.570158,1,0,0,1029.608,2
+659,Kilimanjaro,Mwanga,Lembeni,0,16.0,0,0,0,1029.608,2
+660,Kilimanjaro,Mwanga,Lembeni,0,30.0,1,0,0,1029.608,2
+661,Kilimanjaro,Mwanga,Lembeni,0,2.976044,1,0,0,1029.608,2
+662,Kilimanjaro,Mwanga,Lembeni,0,3.972621,1,0,0,1029.608,2
+663,Kilimanjaro,Mwanga,Lembeni,0,2.9295,0,0,0,1029.608,2
+664,Kilimanjaro,Mwanga,Lembeni,0,16.0,0,0,1,1029.608,2
+665,Kilimanjaro,Mwanga,Lembeni,1,4.44627,0,0,0,1029.608,2
+666,Kilimanjaro,Mwanga,Lembeni,0,1.560575,0,0,0,1029.608,2
+667,Kilimanjaro,Mwanga,Lembeni,0,4.0,0,0,0,1029.608,2
+668,Kilimanjaro,Mwanga,Lembeni,0,21.0,0,0,0,1029.608,2
+669,Kilimanjaro,Mwanga,Lembeni,0,37.01574,0,0,0,1029.608,2
+670,Kilimanjaro,Mwanga,Lembeni,0,0.6981519,1,0,0,1029.608,2
+671,Kilimanjaro,Mwanga,Lembeni,0,4.0,0,0,0,1029.608,2
+672,Kilimanjaro,Mwanga,Lembeni,0,3.0,1,0,0,1029.608,2
+673,Kilimanjaro,Mwanga,Lembeni,0,8.0,1,0,0,1029.608,2
+674,Kilimanjaro,Mwanga,Mwanga,1,3.0,0,1,1,903.8468,2
+675,Kilimanjaro,Mwanga,Mwanga,1,3.066393,0,1,1,903.8468,2
+676,Kilimanjaro,Mwanga,Mwanga,0,0.8295688,1,0,0,903.8468,2
+677,Kilimanjaro,Mwanga,Mwanga,0,7.0,1,0,0,903.8468,2
+678,Kilimanjaro,Mwanga,Mwanga,0,7.0,0,0,0,903.8468,2
+679,Kilimanjaro,Mwanga,Mwanga,0,2.518823,0,0,0,903.8468,2
+680,Kilimanjaro,Mwanga,Ngujini,0,80.0,0,0,1,1524.333,3
+681,Kilimanjaro,Mwanga,Shigatini,1,1.0,1,1,1,1273.538,3
+682,Kilimanjaro,Rombo,Katangara Mrere,0,2.962355,0,0,0,1496.356,3
+683,Kilimanjaro,Rombo,Kelamfua Mokala,0,1.716632,0,0,0,1418.174,3
+684,Kilimanjaro,Rombo,Kelamfua Mokala,0,5.201917,0,0,0,1418.174,3
+685,Kilimanjaro,Rombo,Keni Aleni,0,12.0,0,0,0,1159.19,2
+686,Kilimanjaro,Rombo,Keni Mengeni,0,65.0,0,0,0,1177.6,2
+687,Kilimanjaro,Rombo,Kirongo Samanga,1,38.0,0,0,0,1322.552,3
+688,Kilimanjaro,Rombo,Kirwa Keni,0,30.0,0,0,1,1187.569,2
+689,Kilimanjaro,Rombo,Kirwa Keni,0,6.461328,0,0,0,1187.569,2
+690,Kilimanjaro,Rombo,Kisale Masangara,0,0.2902122,0,0,0,1156.68,2
+691,Kilimanjaro,Rombo,Kisale Masangara,1,35.0,0,0,0,1156.68,2
+692,Kilimanjaro,Rombo,Mahida Holili,0,0.2765229,0,0,0,1096.529,2
+693,Kilimanjaro,Rombo,Makiidi,0,18.0,0,0,0,1531.047,3
+694,Kilimanjaro,Rombo,Mrao Keryo,0,70.0,0,0,1,1477.25,3
+695,Kilimanjaro,Rombo,Mrao Keryo,0,1.462012,0,0,0,1477.25,3
+696,Kilimanjaro,Rombo,Shimbi,0,16.0,0,0,0,1179.105,2
+697,Kilimanjaro,Rombo,Tarakea Motamburu,1,64.0,0,0,0,1794.647,3
+698,Kilimanjaro,Rombo,Tarakea Motamburu,0,40.0,0,0,0,1794.647,3
+699,Kilimanjaro,Rombo,Ushiri Ikuini,0,4.884326,0,0,0,1224.399,3
+700,Kilimanjaro,Rombo,Ushiri Ikuini,1,8.61054,0,1,1,1224.399,3
+701,Kilimanjaro,Rombo,Ushiri Ikuini,0,0.3066393,0,0,0,1224.399,3
+702,Kilimanjaro,Rombo,Ushiri Ikuini,1,11.06365,0,1,0,1224.399,3
+703,Kilimanjaro,Rombo,Ushiri Ikuini,0,28.0,0,0,0,1224.399,3
+704,Kilimanjaro,Same,Hedaru,0,4.07666,0,1,0,737.757,2
+705,Kilimanjaro,Same,Hedaru,0,2.346338,1,0,0,737.757,2
+706,Kilimanjaro,Same,Hedaru,0,6.0,1,0,0,737.757,2
+707,Kilimanjaro,Same,Hedaru,0,3.0,0,0,0,737.757,2
+708,Kilimanjaro,Same,Hedaru,0,3.0,1,0,0,737.757,2
+709,Kilimanjaro,Same,Hedaru,0,22.0,0,0,0,737.757,2
+710,Kilimanjaro,Same,Hedaru,0,1.026694,0,0,0,737.757,2
+711,Kilimanjaro,Same,Hedaru,0,1.629021,1,0,0,737.757,2
+712,Kilimanjaro,Same,Hedaru,0,18.0,1,0,0,737.757,2
+713,Kilimanjaro,Same,Hedaru,1,1.831622,1,1,0,737.757,2
+714,Kilimanjaro,Same,Hedaru,0,1.752224,0,0,0,737.757,2
+715,Kilimanjaro,Same,Kihurio,0,1.0,0,0,0,607.8728,2
+716,Kilimanjaro,Same,Kihurio,0,6.0,0,0,0,607.8728,2
+717,Kilimanjaro,Same,Kihurio,0,4.0,1,0,0,607.8728,2
+718,Kilimanjaro,Same,Kisiwani,0,1.839836,0,0,0,730.2777,2
+719,Kilimanjaro,Same,Kisiwani,0,3.0,0,0,0,730.2777,2
+720,Kilimanjaro,Same,Kisiwani,0,1.0,0,0,0,730.2777,2
+721,Kilimanjaro,Same,Kisiwani,0,2.0,0,0,0,730.2777,2
+722,Kilimanjaro,Same,Kisiwani,0,1.886379,0,0,0,730.2777,2
+723,Kilimanjaro,Same,Kisiwani,0,7.589323,1,0,0,730.2777,2
+724,Kilimanjaro,Same,Kisiwani,1,4.785763,0,0,0,730.2777,2
+725,Kilimanjaro,Same,Kisiwani,0,3.619439,1,0,0,730.2777,2
+726,Kilimanjaro,Same,Kisiwani,0,3.594798,0,0,0,730.2777,2
+727,Kilimanjaro,Same,Kisiwani,0,6.0,1,0,0,730.2777,2
+728,Kilimanjaro,Same,Kisiwani,0,1.555099,0,0,0,730.2777,2
+729,Kilimanjaro,Same,Kisiwani,0,9.316906,0,0,0,730.2777,2
+730,Kilimanjaro,Same,Kisiwani,0,3.0,1,0,0,730.2777,2
+731,Kilimanjaro,Same,Kisiwani,0,5.0,0,0,0,730.2777,2
+732,Kilimanjaro,Same,Kisiwani,0,1.0,1,0,0,730.2777,2
+733,Kilimanjaro,Same,Kisiwani,0,11.0,0,0,0,730.2777,2
+734,Kilimanjaro,Same,Kisiwani,0,4.555784,0,0,0,730.2777,2
+735,Kilimanjaro,Same,Kisiwani,0,6.015058,0,0,1,730.2777,2
+736,Kilimanjaro,Same,Kisiwani,1,10.0,0,1,0,730.2777,2
+737,Kilimanjaro,Same,Kisiwani,0,2.90486,0,0,0,730.2777,2
+738,Kilimanjaro,Same,Kisiwani,0,4.676249,0,1,0,730.2777,2
+739,Kilimanjaro,Same,Kisiwani,0,1.174538,0,0,0,730.2777,2
+740,Kilimanjaro,Same,Kisiwani,0,2.0,0,0,0,730.2777,2
+741,Kilimanjaro,Same,Kisiwani,0,3.0,0,0,0,730.2777,2
+742,Kilimanjaro,Same,Kisiwani,0,19.0,0,0,0,730.2777,2
+743,Kilimanjaro,Same,Kisiwani,0,6.228611,0,0,0,730.2777,2
+744,Kilimanjaro,Same,Kisiwani,1,2.0,1,1,0,730.2777,2
+745,Kilimanjaro,Same,Kisiwani,0,5.0,0,0,0,730.2777,2
+746,Kilimanjaro,Same,Kisiwani,0,1.0,0,0,0,730.2777,2
+747,Kilimanjaro,Same,Kisiwani,0,1.0,0,0,0,730.2777,2
+748,Kilimanjaro,Same,Kisiwani,0,4.0,0,0,0,730.2777,2
+749,Kilimanjaro,Same,Makanya,0,0.5639973,1,0,0,839.0442,2
+750,Kilimanjaro,Same,Makanya,1,0.6160164,1,0,1,839.0442,2
+751,Kilimanjaro,Same,Makanya,0,3.258042,1,0,0,839.0442,2
+752,Kilimanjaro,Same,Makanya,0,27.0,0,0,1,839.0442,2
+753,Kilimanjaro,Same,Makanya,0,0.386037,1,0,0,839.0442,2
+754,Kilimanjaro,Same,Makanya,0,2.822724,1,0,0,839.0442,2
+755,Kilimanjaro,Same,Makanya,0,4.0,1,0,0,839.0442,2
+756,Kilimanjaro,Same,Makanya,0,0.991102,0,0,0,839.0442,2
+757,Kilimanjaro,Same,Makanya,0,4.15332,0,0,1,839.0442,2
+758,Kilimanjaro,Same,Makanya,0,3.0,0,0,0,839.0442,2
+759,Kilimanjaro,Same,Makanya,1,40.0,0,1,0,839.0442,2
+760,Kilimanjaro,Same,Makanya,0,4.0,0,0,0,839.0442,2
+761,Kilimanjaro,Same,Makanya,0,30.0,1,0,0,839.0442,2
+762,Kilimanjaro,Same,Makanya,0,0.9308693,1,0,0,839.0442,2
+763,Kilimanjaro,Same,Makanya,0,0.4243669,0,0,0,839.0442,2
+764,Kilimanjaro,Same,Makanya,0,3.055441,1,0,0,839.0442,2
+765,Kilimanjaro,Same,Makanya,0,0.8651608,1,0,0,839.0442,2
+766,Kilimanjaro,Same,Maore,0,1.46475,0,0,0,584.0475,1
+767,Kilimanjaro,Same,Maore,0,1.508556,0,0,0,584.0475,1
+768,Kilimanjaro,Same,Maore,0,17.0,0,0,0,584.0475,1
+769,Kilimanjaro,Same,Maore,0,18.74059,0,0,0,584.0475,1
+770,Kilimanjaro,Same,Mhezi,0,1.0,0,1,0,1468.294,3
+771,Kilimanjaro,Same,Mhezi,0,3.386721,0,0,0,1468.294,3
+772,Kilimanjaro,Same,Mwembe,0,0.5667351,1,0,0,914.3207,2
+773,Kilimanjaro,Same,Mwembe,0,4.0,0,0,0,914.3207,2
+774,Kilimanjaro,Same,Mwembe,0,13.0,0,0,0,914.3207,2
+775,Kilimanjaro,Same,Mwembe,0,22.47502,0,0,0,914.3207,2
+776,Kilimanjaro,Same,Mwembe,0,41.0,0,0,0,914.3207,2
+777,Kilimanjaro,Same,Mwembe,1,6.0,0,0,1,914.3207,2
+778,Kilimanjaro,Same,Mwembe,0,27.0,0,0,0,914.3207,2
+779,Kilimanjaro,Same,Mwembe,0,3.290897,0,0,0,914.3207,2
+780,Kilimanjaro,Same,Mwembe,0,37.0,0,0,0,914.3207,2
+781,Kilimanjaro,Same,Mwembe,0,2.308008,1,0,0,914.3207,2
+782,Kilimanjaro,Same,Mwembe,0,4.169747,0,0,0,914.3207,2
+783,Kilimanjaro,Same,Mwembe,0,4.528405,0,0,0,914.3207,2
+784,Kilimanjaro,Same,Mwembe,0,5.278576,0,0,0,914.3207,2
+785,Kilimanjaro,Same,Mwembe,0,6.0,1,0,0,914.3207,2
+786,Kilimanjaro,Same,Njoro,0,3.0,0,0,0,1023.342,2
+787,Kilimanjaro,Same,Njoro,0,0.659822,0,0,0,1023.342,2
+788,Kilimanjaro,Same,Njoro,0,6.663929,0,0,0,1023.342,2
+789,Kilimanjaro,Same,Njoro,1,2.8282,0,0,1,1023.342,2
+790,Kilimanjaro,Same,Njoro,1,6.0,0,0,0,1023.342,2
+791,Kilimanjaro,Same,Njoro,0,3.655031,0,0,0,1023.342,2
+792,Kilimanjaro,Same,Njoro,1,0.2655715,0,1,0,1023.342,2
+793,Kilimanjaro,Same,Njoro,0,6.31896,1,1,0,1023.342,2
+794,Kilimanjaro,Same,Njoro,0,6.086242,0,0,0,1023.342,2
+795,Kilimanjaro,Same,Njoro,0,4.39425,0,0,0,1023.342,2
+796,Kilimanjaro,Same,Njoro,0,19.0,0,0,0,1023.342,2
+797,Kilimanjaro,Same,Njoro,1,7.069131,0,0,1,1023.342,2
+798,Kilimanjaro,Same,Njoro,0,8.0,0,0,1,1023.342,2
+799,Kilimanjaro,Same,Njoro,0,1.273101,1,0,0,1023.342,2
+800,Kilimanjaro,Same,Njoro,0,2.162902,0,0,0,1023.342,2
+801,Kilimanjaro,Same,Njoro,0,3.679672,0,1,1,1023.342,2
+802,Kilimanjaro,Same,Njoro,0,2.091718,0,0,0,1023.342,2
+803,Kilimanjaro,Same,Ruvu,1,19.0,0,1,1,853.0828,2
+804,Kilimanjaro,Same,Ruvu,1,7.0,1,0,1,853.0828,2
+805,Kilimanjaro,Same,Ruvu,0,1.0,0,0,0,853.0828,2
+806,Kilimanjaro,Same,Ruvu,0,1.423682,1,0,0,853.0828,2
+807,Kilimanjaro,Same,Ruvu,0,3.0,0,1,0,853.0828,2
+808,Kilimanjaro,Same,Ruvu,0,2.0,0,0,0,853.0828,2
+809,Kilimanjaro,Same,Ruvu,0,4.0,1,0,0,853.0828,2
+810,Kilimanjaro,Same,Ruvu,0,3.0,1,0,0,853.0828,2
+811,Kilimanjaro,Same,Ruvu,0,3.367557,1,1,0,853.0828,2
+812,Kilimanjaro,Same,Ruvu,0,1.259411,0,0,0,853.0828,2
+813,Kilimanjaro,Same,Ruvu,0,0.0,0,1,0,853.0828,2
+814,Kilimanjaro,Same,Ruvu,0,4.0,0,0,0,853.0828,2
+815,Kilimanjaro,Same,Ruvu,0,2.045175,1,0,0,853.0828,2
+816,Kilimanjaro,Same,Ruvu,0,3.0,1,0,0,853.0828,2
+817,Kilimanjaro,Same,Ruvu,0,2.997947,1,0,0,853.0828,2
+818,Kilimanjaro,Same,Same Mjini,0,3.017112,0,0,0,893.4166,2
+819,Kilimanjaro,Same,Same Mjini,0,2.392882,0,0,0,893.4166,2
+820,Kilimanjaro,Same,Same Mjini,0,12.2601,0,0,1,893.4166,2
+821,Kilimanjaro,Same,Same Mjini,0,40.07666,0,0,0,893.4166,2
+822,Kilimanjaro,Same,Same Mjini,0,1.0,1,0,0,893.4166,2
+823,Kilimanjaro,Same,Same Mjini,0,5.733059,1,0,0,893.4166,2
+824,Kilimanjaro,Same,Same Mjini,0,28.0,0,0,0,893.4166,2
+825,Kilimanjaro,Same,Same Mjini,0,31.0,0,0,0,893.4166,2
+826,Kilimanjaro,Same,Same Mjini,0,4.0,0,0,0,893.4166,2
+827,Kilimanjaro,Same,Same Mjini,0,25.0,0,1,0,893.4166,2
+828,Kilimanjaro,Same,Same Mjini,0,11.0,0,0,0,893.4166,2
+829,Kilimanjaro,Same,Same Mjini,0,2.132786,1,0,0,893.4166,2
+830,Kilimanjaro,Same,Same Mjini,0,2.373717,0,0,0,893.4166,2
+831,Kilimanjaro,Same,Same Mjini,0,30.0,1,0,0,893.4166,2
+832,Kilimanjaro,Same,Same Mjini,0,38.0,0,0,0,893.4166,2
+833,Kilimanjaro,Same,Same Mjini,0,0.4599589,1,0,0,893.4166,2
+834,Kilimanjaro,Same,Same Mjini,0,6.0,0,0,0,893.4166,2
+835,Kilimanjaro,Same,Same Mjini,0,20.16975,0,1,0,893.4166,2
+836,Kilimanjaro,Same,Same Mjini,0,0.5201917,0,0,0,893.4166,2
+837,Kilimanjaro,Same,Same Mjini,0,13.02396,0,0,0,893.4166,2
+838,Kilimanjaro,Same,Same Mjini,0,1.199179,0,0,0,893.4166,2
+839,Kilimanjaro,Same,Same Mjini,0,4.0,0,0,0,893.4166,2
+840,Kilimanjaro,Same,Same Mjini,0,3.665982,0,1,0,893.4166,2
+841,Kilimanjaro,Same,Same Mjini,0,2.0,0,0,0,893.4166,2
+842,Kilimanjaro,Same,Same Mjini,0,17.0,0,0,0,893.4166,2
+843,Kilimanjaro,Same,Same Mjini,1,5.902806,0,0,0,893.4166,2
+844,Kilimanjaro,Same,Same Mjini,0,4.5859,0,0,0,893.4166,2
+845,Kilimanjaro,Same,Same Mjini,0,6.0,0,0,0,893.4166,2
+846,Kilimanjaro,Same,Same Mjini,0,1.57974,1,0,0,893.4166,2
+847,Kilimanjaro,Same,Same Mjini,0,3.854894,0,0,0,893.4166,2
+848,Kilimanjaro,Same,Same Mjini,0,1.229295,0,0,0,893.4166,2
+849,Kilimanjaro,Same,Same Mjini,0,4.0,0,0,0,893.4166,2
+850,Kilimanjaro,Same,Same Mjini,0,3.641341,1,0,0,893.4166,2
+851,Kilimanjaro,Same,Vudee,0,5.0,0,0,0,1495.832,3
+852,Kilimanjaro,Same,Vudee,0,0.4709103,0,0,0,1495.832,3
+853,Kilimanjaro,Same,Vudee,0,3.0,0,1,0,1495.832,3
+854,Tanga,Handeni,Kabuku,0,3.865845,1,0,0,307.6542,1
+855,Tanga,Handeni,Kabuku,0,0.8049281,1,1,1,307.6542,1
+856,Tanga,Handeni,Kabuku,0,0.7748117,1,0,0,307.6542,1
+857,Tanga,Handeni,Kabuku,0,0.7638603,1,1,0,307.6542,1
+858,Tanga,Handeni,Kabuku,0,0.8843258,1,0,0,307.6542,1
+859,Tanga,Handeni,Kabuku,0,0.9828885,1,0,0,307.6542,1
+860,Tanga,Handeni,Kabuku,0,1.837098,0,0,0,307.6542,1
+861,Tanga,Handeni,Kabuku,0,0.7638603,1,0,0,307.6542,1
+862,Tanga,Handeni,Kabuku,0,0.9226557,1,0,0,307.6542,1
+863,Tanga,Handeni,Kabuku,1,1.251198,1,1,0,307.6542,1
+864,Tanga,Handeni,Kabuku,0,0.936345,1,0,0,307.6542,1
+865,Tanga,Handeni,Kabuku,0,0.3449692,0,0,0,307.6542,1
+866,Tanga,Handeni,Kabuku,0,0.8131417,1,1,0,307.6542,1
+867,Tanga,Handeni,Kabuku,1,0.8487337,0,1,1,307.6542,1
+868,Tanga,Handeni,Kabuku,0,0.8651608,0,0,0,307.6542,1
+869,Tanga,Handeni,Kwamatuku,0,0.3723477,1,0,0,378.5051,1
+870,Tanga,Handeni,Kwamatuku,1,1.749487,0,0,1,378.5051,1
+871,Tanga,Handeni,Kwamatuku,0,0.3340178,1,0,0,378.5051,1
+872,Tanga,Handeni,Kwamatuku,0,2.31896,0,0,0,378.5051,1
+873,Tanga,Handeni,Kwamatuku,0,2.294319,0,0,0,378.5051,1
+874,Tanga,Handeni,Kwamatuku,0,1.270363,1,0,0,378.5051,1
+875,Tanga,Handeni,Kwamatuku,0,2.020534,1,0,0,378.5051,1
+876,Tanga,Handeni,Kwamatuku,0,3.290897,1,0,0,378.5051,1
+877,Tanga,Handeni,Kwamatuku,0,2.559891,0,0,0,378.5051,1
+878,Tanga,Handeni,Kwamatuku,0,0.4544832,1,0,0,378.5051,1
+879,Tanga,Handeni,Kwamatuku,0,0.4900753,0,0,0,378.5051,1
+880,Tanga,Handeni,Kwamatuku,0,0.9390828,1,0,0,378.5051,1
+881,Tanga,Handeni,Kwamatuku,0,0.4982888,1,0,0,378.5051,1
+882,Tanga,Handeni,Kwamatuku,0,1.305955,0,0,0,378.5051,1
+883,Tanga,Handeni,Kwamatuku,0,1.612594,0,0,0,378.5051,1
+884,Tanga,Handeni,Kwedizinga,0,0.5913758,1,1,0,251.2743,1
+885,Tanga,Handeni,Kwedizinga,0,0.5475702,1,0,0,251.2743,1
+886,Tanga,Handeni,Kwedizinga,0,0.3258042,1,1,0,251.2743,1
+887,Tanga,Handeni,Kwedizinga,1,0.8158795,1,0,0,251.2743,1
+888,Tanga,Handeni,Kwedizinga,0,0.6570842,1,0,0,251.2743,1
+889,Tanga,Handeni,Kwedizinga,0,0.4654346,0,0,0,251.2743,1
+890,Tanga,Handeni,Kwedizinga,0,1.300479,0,0,0,251.2743,1
+891,Tanga,Handeni,Kwedizinga,0,2.042437,0,0,0,251.2743,1
+892,Tanga,Handeni,Kwedizinga,0,0.8952772,1,0,0,251.2743,1
+893,Tanga,Handeni,Kwedizinga,0,0.6105407,0,0,0,251.2743,1
+894,Tanga,Handeni,Kwedizinga,0,1.201916,1,0,0,251.2743,1
+895,Tanga,Handeni,Kwedizinga,0,7.093771,1,0,0,251.2743,1
+896,Tanga,Handeni,Kwedizinga,0,0.2628337,1,0,0,251.2743,1
+897,Tanga,Handeni,Mgambo,0,37.0,0,0,0,230.3778,1
+898,Tanga,Handeni,Mgambo,0,1.182752,0,0,0,230.3778,1
+899,Tanga,Handeni,Mgambo,0,1.190965,1,0,0,230.3778,1
+900,Tanga,Handeni,Mgambo,0,2.214921,1,0,0,230.3778,1
+901,Tanga,Handeni,Mgambo,0,0.7830253,1,1,0,230.3778,1
+902,Tanga,Handeni,Mgambo,0,0.9390828,1,0,0,230.3778,1
+903,Tanga,Handeni,Mgambo,0,1.826146,0,0,0,230.3778,1
+904,Tanga,Handeni,Mgambo,0,0.9281314,1,1,0,230.3778,1
+905,Tanga,Handeni,Mgambo,0,1.311431,1,0,0,230.3778,1
+906,Tanga,Handeni,Segera,0,3.0,0,0,0,268.5949,1
+907,Tanga,Handeni,Segera,0,3.488022,1,0,0,268.5949,1
+908,Tanga,Handeni,Segera,0,3.457906,0,0,0,268.5949,1
+909,Tanga,Handeni,Segera,0,0.4079398,1,0,0,268.5949,1
+910,Tanga,Handeni,Segera,1,0.9336071,1,1,0,268.5949,1
+911,Tanga,Handeni,Segera,0,0.4024641,1,0,0,268.5949,1
+912,Tanga,Handeni,Segera,0,0.6269678,0,0,0,268.5949,1
+913,Tanga,Handeni,Segera,0,0.5065024,0,0,0,268.5949,1
+914,Tanga,Handeni,Segera,0,0.4079398,1,0,0,268.5949,1
+915,Tanga,Handeni,Segera,0,0.4928131,1,0,0,268.5949,1
+916,Tanga,Handeni,Segera,0,0.6625599,1,0,0,268.5949,1
+917,Tanga,Handeni,Segera,0,12.0,0,0,0,268.5949,1
+918,Tanga,Handeni,Segera,0,1.215606,0,0,0,268.5949,1
+919,Tanga,Handeni,Segera,0,0.366872,0,0,1,268.5949,1
+920,Tanga,Handeni,Segera,0,2.157426,1,0,0,268.5949,1
+921,Tanga,Handeni,Segera,0,21.69473,1,0,0,268.5949,1
+922,Tanga,Handeni,Segera,0,0.7255304,1,0,0,268.5949,1
+923,Tanga,Handeni,Segera,1,1.667351,1,0,0,268.5949,1
+924,Tanga,Handeni,Segera,1,2.0,0,1,0,268.5949,1
+925,Tanga,Handeni,Segera,0,2.239562,1,0,0,268.5949,1
+926,Tanga,Handeni,Segera,0,1.6564,0,0,0,268.5949,1
+927,Tanga,Handeni,Segera,0,0.7720739,1,0,0,268.5949,1
+928,Tanga,Handeni,Segera,0,0.2409309,1,0,0,268.5949,1
+929,Tanga,Handeni,Segera,1,4.0,1,0,0,268.5949,1
+930,Tanga,Handeni,Segera,0,20.0,1,0,0,268.5949,1
+931,Tanga,Handeni,Segera,0,0.4435318,0,0,0,268.5949,1
+932,Tanga,Handeni,Segera,0,1.002053,1,0,0,268.5949,1
+933,Tanga,Handeni,Segera,0,24.0,0,0,0,268.5949,1
+934,Tanga,Handeni,Segera,0,1.0,0,1,0,268.5949,1
+935,Tanga,Handeni,Segera,0,0.3832991,1,0,0,268.5949,1
+936,Tanga,Handeni,Segera,0,1.535934,1,1,0,268.5949,1
+937,Tanga,Handeni,Segera,0,0.4626968,1,0,0,268.5949,1
+938,Tanga,Handeni,Segera,0,1.0,1,0,0,268.5949,1
+939,Tanga,Handeni,Segera,0,1.754962,0,0,0,268.5949,1
+940,Tanga,Handeni,Segera,0,0.8870637,1,0,0,268.5949,1
+941,Tanga,Handeni,Segera,0,2.184805,1,0,0,268.5949,1
+942,Tanga,Handeni,Segera,0,3.00616,0,0,0,268.5949,1
+943,Tanga,Handeni,Segera,0,3.915127,0,0,0,268.5949,1
+944,Tanga,Handeni,Segera,0,0.6899384,0,0,0,268.5949,1
+945,Tanga,Handeni,Segera,0,0.3148528,0,0,0,268.5949,1
+946,Tanga,Handeni,Segera,0,36.0,1,0,0,268.5949,1
+947,Tanga,Handeni,Segera,0,1.514032,1,1,0,268.5949,1
+948,Tanga,Handeni,Segera,0,0.25,1,0,0,268.5949,1
+949,Tanga,Handeni,Segera,0,0.3093771,0,0,0,268.5949,1
+950,Tanga,Handeni,Segera,0,2.0,1,0,0,268.5949,1
+951,Tanga,Handeni,Segera,0,0.3422314,1,0,0,268.5949,1
+952,Tanga,Handeni,Segera,0,0.6160164,1,0,0,268.5949,1
+953,Tanga,Handeni,Segera,0,1.092402,0,0,0,268.5949,1
+954,Tanga,Handeni,Segera,0,0.073922,1,0,0,268.5949,1
+955,Tanga,Handeni,Segera,0,1.776865,0,0,0,268.5949,1
+956,Tanga,Handeni,Segera,0,25.0,0,0,0,268.5949,1
+957,Tanga,Handeni,Segera,0,0.7310061,1,0,0,268.5949,1
+958,Tanga,Handeni,Segera,0,2.286105,1,0,0,268.5949,1
+959,Tanga,Handeni,Segera,0,1.0,1,0,0,268.5949,1
+960,Tanga,Handeni,Segera,0,1.122519,0,0,0,268.5949,1
+961,Tanga,Korogwe,Bungu,0,4.090349,1,1,1,1063.123,2
+962,Tanga,Korogwe,Bungu,0,4.728268,1,0,0,1063.123,2
+963,Tanga,Korogwe,Bungu,0,5.0,1,0,0,1063.123,2
+964,Tanga,Korogwe,Bungu,1,1.500342,1,0,0,1063.123,2
+965,Tanga,Korogwe,Bungu,0,0.5722108,0,0,0,1063.123,2
+966,Tanga,Korogwe,Chekelei,0,0.2299795,0,0,0,436.7898,1
+967,Tanga,Korogwe,Chekelei,0,4.0,0,0,0,436.7898,1
+968,Tanga,Korogwe,Chekelei,0,2.412046,1,1,0,436.7898,1
+969,Tanga,Korogwe,Chekelei,0,1.004791,0,0,0,436.7898,1
+970,Tanga,Korogwe,Chekelei,0,30.0,0,0,0,436.7898,1
+971,Tanga,Korogwe,Chekelei,0,0.7419575,1,0,0,436.7898,1
+972,Tanga,Korogwe,Chekelei,0,4.0,1,0,0,436.7898,1
+973,Tanga,Korogwe,Dindira,0,1.952088,1,0,0,931.8973,2
+974,Tanga,Korogwe,Kerenge,0,0.4024641,0,0,0,428.3694,1
+975,Tanga,Korogwe,Kerenge,0,0.4079398,1,0,0,428.3694,1
+976,Tanga,Korogwe,Kerenge,0,1.514032,0,0,0,428.3694,1
+977,Tanga,Korogwe,Kerenge,0,1.448323,0,0,0,428.3694,1
+978,Tanga,Korogwe,Kerenge,0,0.5941136,0,0,0,428.3694,1
+979,Tanga,Korogwe,Kerenge,0,0.9034908,0,0,0,428.3694,1
+980,Tanga,Korogwe,Kerenge,0,2.669405,1,0,0,428.3694,1
+981,Tanga,Korogwe,Kerenge,0,3.682409,0,0,0,428.3694,1
+982,Tanga,Korogwe,Kerenge,0,0.4845996,1,0,0,428.3694,1
+983,Tanga,Korogwe,Kerenge,0,1.048597,1,0,0,428.3694,1
+984,Tanga,Korogwe,Kerenge,0,3.370294,1,0,0,428.3694,1
+985,Tanga,Korogwe,Kerenge,0,0.6187543,1,0,0,428.3694,1
+986,Tanga,Korogwe,Kerenge,0,0.8788501,0,0,0,428.3694,1
+987,Tanga,Korogwe,Kerenge,0,0.6817248,1,0,0,428.3694,1
+988,Tanga,Korogwe,Kerenge,0,1.374401,1,0,0,428.3694,1
+989,Tanga,Korogwe,Kerenge,0,1.089665,1,0,0,428.3694,1
+990,Tanga,Korogwe,Kerenge,0,0.4709103,1,0,0,428.3694,1
+991,Tanga,Korogwe,Kerenge,0,0.8021903,1,0,0,428.3694,1
+992,Tanga,Korogwe,Kerenge,0,1.278576,0,0,0,428.3694,1
+993,Tanga,Korogwe,Kerenge,0,0.6214921,1,0,0,428.3694,1
+994,Tanga,Korogwe,Kerenge,0,2.61191,0,0,0,428.3694,1
+995,Tanga,Korogwe,Kerenge,0,1.820671,0,0,0,428.3694,1
+996,Tanga,Korogwe,Kerenge,0,1.193703,0,0,0,428.3694,1
+997,Tanga,Korogwe,Kerenge,0,0.6762491,1,0,0,428.3694,1
+998,Tanga,Korogwe,Kerenge,0,0.6735113,1,0,0,428.3694,1
+999,Tanga,Korogwe,Kerenge,0,1.664613,0,0,0,428.3694,1
+1000,Tanga,Korogwe,Kerenge,0,1.0,1,0,0,428.3694,1
+1001,Tanga,Korogwe,Kerenge,0,0.6406571,1,1,0,428.3694,1
+1002,Tanga,Korogwe,Kerenge,0,0.5284052,0,0,0,428.3694,1
+1003,Tanga,Korogwe,Kerenge,0,2.417522,0,0,0,428.3694,1
+1004,Tanga,Korogwe,Kerenge,0,0.4243669,1,0,0,428.3694,1
+1005,Tanga,Korogwe,Kerenge,0,3.195072,0,0,0,428.3694,1
+1006,Tanga,Korogwe,Kerenge,0,0.3230664,1,0,0,428.3694,1
+1007,Tanga,Korogwe,Kerenge,0,1.352498,0,0,0,428.3694,1
+1008,Tanga,Korogwe,Kerenge,0,0.2737851,0,0,0,428.3694,1
+1009,Tanga,Korogwe,Kerenge,0,0.6707734,1,0,0,428.3694,1
+1010,Tanga,Korogwe,Kerenge,0,1.489391,0,0,0,428.3694,1
+1011,Tanga,Korogwe,Kerenge,0,0.5092403,0,0,0,428.3694,1
+1012,Tanga,Korogwe,Kerenge,0,2.135524,0,0,0,428.3694,1
+1013,Tanga,Korogwe,Kerenge,0,3.86037,0,0,0,428.3694,1
+1014,Tanga,Korogwe,Kerenge,0,1.152635,0,0,0,428.3694,1
+1015,Tanga,Korogwe,Kerenge,0,1.177276,0,0,0,428.3694,1
+1016,Tanga,Korogwe,Kerenge,0,0.164271,1,0,0,428.3694,1
+1017,Tanga,Korogwe,Kerenge,0,1.10883,0,0,0,428.3694,1
+1018,Tanga,Korogwe,Kerenge,1,1.040383,0,0,0,428.3694,1
+1019,Tanga,Korogwe,Kerenge,0,0.4681725,1,0,0,428.3694,1
+1020,Tanga,Korogwe,Kerenge,0,4.0,0,0,0,428.3694,1
+1021,Tanga,Korogwe,Kerenge,0,1.462012,0,0,0,428.3694,1
+1022,Tanga,Korogwe,Kerenge,0,2.395619,0,0,0,428.3694,1
+1023,Tanga,Korogwe,Kerenge,0,0.3477071,0,0,0,428.3694,1
+1024,Tanga,Korogwe,Kerenge,0,2.0,0,0,0,428.3694,1
+1025,Tanga,Korogwe,Kizara,0,1.859001,1,0,0,522.6934,1
+1026,Tanga,Korogwe,Kizara,0,0.2984257,1,0,0,522.6934,1
+1027,Tanga,Korogwe,Kizara,0,2.236824,1,0,0,522.6934,1
+1028,Tanga,Korogwe,Kizara,0,0.2600958,1,0,0,522.6934,1
+1029,Tanga,Korogwe,Korogwe,0,2.253251,0,0,0,299.8937,1
+1030,Tanga,Korogwe,Korogwe,0,1.902806,0,0,0,299.8937,1
+1031,Tanga,Korogwe,Korogwe,0,0.440794,1,0,0,299.8937,1
+1032,Tanga,Korogwe,Korogwe,0,4.70089,0,0,0,299.8937,1
+1033,Tanga,Korogwe,Korogwe,0,1.489391,1,0,0,299.8937,1
+1034,Tanga,Korogwe,Korogwe,0,2.978782,1,0,0,299.8937,1
+1035,Tanga,Korogwe,Korogwe,0,0.5284052,0,0,0,299.8937,1
+1036,Tanga,Korogwe,Korogwe,0,1.188227,0,0,0,299.8937,1
+1037,Tanga,Korogwe,Korogwe,0,27.0,0,0,0,299.8937,1
+1038,Tanga,Korogwe,Korogwe,0,1.092402,0,0,0,299.8937,1
+1039,Tanga,Korogwe,Korogwe,0,28.37509,0,0,0,299.8937,1
+1040,Tanga,Korogwe,Korogwe,0,2.277892,0,0,0,299.8937,1
+1041,Tanga,Korogwe,Korogwe,0,3.192334,1,0,0,299.8937,1
+1042,Tanga,Korogwe,Korogwe,0,1.141684,0,0,0,299.8937,1
+1043,Tanga,Korogwe,Korogwe,0,0.5201917,1,0,0,299.8937,1
+1044,Tanga,Korogwe,Korogwe,0,0.6433949,1,0,0,299.8937,1
+1045,Tanga,Korogwe,Korogwe,0,2.113621,0,0,0,299.8937,1
+1046,Tanga,Korogwe,Korogwe,0,1.609856,0,1,0,299.8937,1
+1047,Tanga,Korogwe,Korogwe,0,2.195756,0,0,0,299.8937,1
+1048,Tanga,Korogwe,Korogwe,0,3.572895,1,0,0,299.8937,1
+1049,Tanga,Korogwe,Korogwe,0,0.9664613,1,1,0,299.8937,1
+1050,Tanga,Korogwe,Korogwe,0,0.6954141,0,0,0,299.8937,1
+1051,Tanga,Korogwe,Korogwe,0,1.853525,0,0,0,299.8937,1
+1052,Tanga,Korogwe,Korogwe,0,0.7556468,0,0,0,299.8937,1
+1053,Tanga,Korogwe,Korogwe,0,4.098563,0,0,1,299.8937,1
+1054,Tanga,Korogwe,Korogwe,0,2.0,0,0,0,299.8937,1
+1055,Tanga,Korogwe,Korogwe,0,4.049281,0,0,0,299.8937,1
+1056,Tanga,Korogwe,Korogwe,0,3.129364,0,0,0,299.8937,1
+1057,Tanga,Korogwe,Korogwe,0,2.817248,0,0,0,299.8937,1
+1058,Tanga,Korogwe,Korogwe,0,0.91718,0,0,0,299.8937,1
+1059,Tanga,Korogwe,Korogwe,0,2.193018,1,0,0,299.8937,1
+1060,Tanga,Korogwe,Korogwe,0,25.0,0,0,1,299.8937,1
+1061,Tanga,Korogwe,Korogwe,0,0.9472964,0,0,0,299.8937,1
+1062,Tanga,Korogwe,Korogwe,0,1.182752,1,0,0,299.8937,1
+1063,Tanga,Korogwe,Korogwe,0,3.049966,0,0,1,299.8937,1
+1064,Tanga,Korogwe,Korogwe,0,2.532512,0,0,0,299.8937,1
+1065,Tanga,Korogwe,Korogwe,0,4.676249,0,0,0,299.8937,1
+1066,Tanga,Korogwe,Korogwe,0,5.190965,0,0,0,299.8937,1
+1067,Tanga,Korogwe,Korogwe,0,0.5886379,1,0,0,299.8937,1
+1068,Tanga,Korogwe,Korogwe,0,0.5995893,0,0,0,299.8937,1
+1069,Tanga,Korogwe,Korogwe,0,3.679672,1,0,0,299.8937,1
+1070,Tanga,Korogwe,Korogwe,0,4.0,1,1,0,299.8937,1
+1071,Tanga,Korogwe,Korogwe,0,0.5667351,0,0,0,299.8937,1
+1072,Tanga,Korogwe,Korogwe,0,3.145791,0,0,0,299.8937,1
+1073,Tanga,Korogwe,Korogwe,0,0.6680356,1,0,0,299.8937,1
+1074,Tanga,Korogwe,Korogwe,0,1.801506,1,0,0,299.8937,1
+1075,Tanga,Korogwe,Korogwe,0,1.0,1,0,0,299.8937,1
+1076,Tanga,Korogwe,Korogwe,0,7.739904,1,0,0,299.8937,1
+1077,Tanga,Korogwe,Korogwe,0,2.365503,0,0,0,299.8937,1
+1078,Tanga,Korogwe,Korogwe,0,27.0,0,0,0,299.8937,1
+1079,Tanga,Korogwe,Korogwe,0,30.0,1,0,0,299.8937,1
+1080,Tanga,Korogwe,Korogwe,0,0.202601,0,0,0,299.8937,1
+1081,Tanga,Korogwe,Korogwe,0,0.7227926,0,0,0,299.8937,1
+1082,Tanga,Korogwe,Korogwe,0,2.453114,0,0,0,299.8937,1
+1083,Tanga,Korogwe,Kwagunda,0,1.675565,0,0,0,304.2168,1
+1084,Tanga,Korogwe,Kwagunda,0,0.9500342,0,0,0,304.2168,1
+1085,Tanga,Korogwe,Kwagunda,0,2.291581,1,0,0,304.2168,1
+1086,Tanga,Korogwe,Kwagunda,0,1.212868,0,0,0,304.2168,1
+1087,Tanga,Korogwe,Kwagunda,0,0.3969884,0,1,0,304.2168,1
+1088,Tanga,Korogwe,Kwagunda,0,0.9117043,1,0,0,304.2168,1
+1089,Tanga,Korogwe,Kwagunda,0,0.5420945,1,0,0,304.2168,1
+1090,Tanga,Korogwe,Kwagunda,0,0.569473,0,0,0,304.2168,1
+1091,Tanga,Korogwe,Kwagunda,0,1.585216,0,0,0,304.2168,1
+1092,Tanga,Korogwe,Kwagunda,0,2.625599,0,0,0,304.2168,1
+1093,Tanga,Korogwe,Kwagunda,0,0.2847365,1,0,0,304.2168,1
+1094,Tanga,Korogwe,Kwamndolwa,0,1.683778,0,0,0,328.7612,1
+1095,Tanga,Korogwe,Kwamndolwa,0,1.256673,0,1,0,328.7612,1
+1096,Tanga,Korogwe,Kwamndolwa,0,0.8651608,0,0,0,328.7612,1
+1097,Tanga,Korogwe,Kwamndolwa,0,1.38809,1,0,0,328.7612,1
+1098,Tanga,Korogwe,Kwamndolwa,0,0.7857632,0,0,0,328.7612,1
+1099,Tanga,Korogwe,Kwamndolwa,0,0.8788501,0,0,0,328.7612,1
+1100,Tanga,Korogwe,Kwamndolwa,0,1.174538,0,0,0,328.7612,1
+1101,Tanga,Korogwe,Kwamndolwa,0,0.8377823,1,0,0,328.7612,1
+1102,Tanga,Korogwe,Kwamndolwa,0,2.622861,0,0,0,328.7612,1
+1103,Tanga,Korogwe,Kwamndolwa,0,0.6926762,1,0,0,328.7612,1
+1104,Tanga,Korogwe,Kwamndolwa,0,0.7227926,0,0,0,328.7612,1
+1105,Tanga,Korogwe,Kwamndolwa,0,0.2819986,0,0,0,328.7612,1
+1106,Tanga,Korogwe,Kwamndolwa,0,1.136208,0,1,0,328.7612,1
+1107,Tanga,Korogwe,Kwamndolwa,0,0.514716,0,0,0,328.7612,1
+1108,Tanga,Korogwe,Kwamndolwa,0,1.749487,0,0,0,328.7612,1
+1109,Tanga,Korogwe,Kwamndolwa,0,0.4517454,1,0,0,328.7612,1
+1110,Tanga,Korogwe,Lutindi,0,1.147159,1,0,0,850.8762,2
+1111,Tanga,Korogwe,Lutindi,0,1.295003,0,0,0,850.8762,2
+1112,Tanga,Korogwe,Lutindi,0,2.05065,1,0,0,850.8762,2
+1113,Tanga,Korogwe,Lutindi,0,2.945927,0,0,0,850.8762,2
+1114,Tanga,Korogwe,Lutindi,0,3.734428,0,0,0,850.8762,2
+1115,Tanga,Korogwe,Lutindi,0,0.5941136,1,0,0,850.8762,2
+1116,Tanga,Korogwe,Lutindi,0,0.7310061,1,0,0,850.8762,2
+1117,Tanga,Korogwe,Lutindi,0,2.091718,0,0,0,850.8762,2
+1118,Tanga,Korogwe,Lutindi,0,41.0,1,0,0,850.8762,2
+1119,Tanga,Korogwe,Lutindi,0,2.548939,0,0,0,850.8762,2
+1120,Tanga,Korogwe,Lutindi,0,1.040383,0,0,0,850.8762,2
+1121,Tanga,Korogwe,Lutindi,0,1.990417,0,0,0,850.8762,2
+1122,Tanga,Korogwe,Magoma,0,0.4134155,0,0,0,508.9276,1
+1123,Tanga,Korogwe,Magoma,0,0.1478439,1,1,0,508.9276,1
+1124,Tanga,Korogwe,Magoma,0,1.445585,1,0,0,508.9276,1
+1125,Tanga,Korogwe,Magoma,0,0.9472964,1,0,0,508.9276,1
+1126,Tanga,Korogwe,Magoma,1,0.2464066,0,1,1,508.9276,1
+1127,Tanga,Korogwe,Magoma,0,0.5995893,1,0,0,508.9276,1
+1128,Tanga,Korogwe,Magoma,0,0.7255304,1,0,0,508.9276,1
+1129,Tanga,Korogwe,Magoma,0,0.476386,1,0,0,508.9276,1
+1130,Tanga,Korogwe,Magoma,0,2.373717,0,0,0,508.9276,1
+1131,Tanga,Korogwe,Magoma,0,0.6707734,0,0,0,508.9276,1
+1132,Tanga,Korogwe,Magoma,1,2.365503,1,1,0,508.9276,1
+1133,Tanga,Korogwe,Magoma,1,1.073238,0,0,1,508.9276,1
+1134,Tanga,Korogwe,Magoma,0,0.3696099,1,0,0,508.9276,1
+1135,Tanga,Korogwe,Magoma,0,0.971937,0,0,0,508.9276,1
+1136,Tanga,Korogwe,Magoma,0,1.645448,0,0,0,508.9276,1
+1137,Tanga,Korogwe,Magoma,0,1.941136,1,0,0,508.9276,1
+1138,Tanga,Korogwe,Magoma,0,2.0,1,0,0,508.9276,1
+1139,Tanga,Korogwe,Magoma,0,0.421629,0,0,0,508.9276,1
+1140,Tanga,Korogwe,Magoma,0,0.7775496,1,0,0,508.9276,1
+1141,Tanga,Korogwe,Magoma,0,1.645448,0,0,0,508.9276,1
+1142,Tanga,Korogwe,Makuyuni,0,0.5612594,0,1,0,346.9997,1
+1143,Tanga,Korogwe,Makuyuni,0,2.614647,0,0,0,346.9997,1
+1144,Tanga,Korogwe,Makuyuni,0,0.5448323,0,0,0,346.9997,1
+1145,Tanga,Korogwe,Makuyuni,0,1.117043,1,0,0,346.9997,1
+1146,Tanga,Korogwe,Makuyuni,0,2.49692,1,0,0,346.9997,1
+1147,Tanga,Korogwe,Makuyuni,0,2.113621,0,0,0,346.9997,1
+1148,Tanga,Korogwe,Makuyuni,0,0.238193,0,0,0,346.9997,1
+1149,Tanga,Korogwe,Makuyuni,0,0.971937,0,0,0,346.9997,1
+1150,Tanga,Korogwe,Makuyuni,0,1.196441,0,1,0,346.9997,1
+1151,Tanga,Korogwe,Makuyuni,0,0.3093771,0,0,0,346.9997,1
+1152,Tanga,Korogwe,Makuyuni,0,0.2710472,1,1,0,346.9997,1
+1153,Tanga,Korogwe,Makuyuni,0,0.6160164,0,0,0,346.9997,1
+1154,Tanga,Korogwe,Makuyuni,0,0.514716,0,0,0,346.9997,1
+1155,Tanga,Korogwe,Makuyuni,0,0.5941136,0,0,0,346.9997,1
+1156,Tanga,Korogwe,Makuyuni,0,0.9637235,1,1,1,346.9997,1
+1157,Tanga,Korogwe,Makuyuni,0,0.788501,1,0,0,346.9997,1
+1158,Tanga,Korogwe,Makuyuni,0,0.1560575,1,0,0,346.9997,1
+1159,Tanga,Korogwe,Makuyuni,0,2.442163,1,0,0,346.9997,1
+1160,Tanga,Korogwe,Makuyuni,1,1.467488,0,0,0,346.9997,1
+1161,Tanga,Korogwe,Makuyuni,0,1.174538,1,0,0,346.9997,1
+1162,Tanga,Korogwe,Makuyuni,0,2.806297,1,0,0,346.9997,1
+1163,Tanga,Korogwe,Makuyuni,0,0.7720739,1,0,0,346.9997,1
+1164,Tanga,Korogwe,Makuyuni,0,1.0,0,0,0,346.9997,1
+1165,Tanga,Korogwe,Makuyuni,0,0.8733744,0,0,0,346.9997,1
+1166,Tanga,Korogwe,Makuyuni,0,1.169062,1,0,0,346.9997,1
+1167,Tanga,Korogwe,Makuyuni,0,2.428474,1,0,0,346.9997,1
+1168,Tanga,Korogwe,Makuyuni,0,0.9007529,0,0,0,346.9997,1
+1169,Tanga,Korogwe,Makuyuni,0,0.6954141,0,0,0,346.9997,1
+1170,Tanga,Korogwe,Makuyuni,0,1.054072,1,0,0,346.9997,1
+1171,Tanga,Korogwe,Makuyuni,0,1.084189,0,0,0,346.9997,1
+1172,Tanga,Korogwe,Makuyuni,0,2.924025,1,0,0,346.9997,1
+1173,Tanga,Korogwe,Makuyuni,0,5.201917,1,0,0,346.9997,1
+1174,Tanga,Korogwe,Makuyuni,0,0.6844627,0,0,0,346.9997,1
+1175,Tanga,Korogwe,Makuyuni,0,0.9034908,0,0,0,346.9997,1
+1176,Tanga,Korogwe,Makuyuni,0,0.3203285,0,1,0,346.9997,1
+1177,Tanga,Korogwe,Makuyuni,0,0.3586585,0,0,0,346.9997,1
+1178,Tanga,Korogwe,Makuyuni,0,2.171116,1,0,0,346.9997,1
+1179,Tanga,Korogwe,Makuyuni,0,0.7118412,1,0,0,346.9997,1
+1180,Tanga,Korogwe,Makuyuni,0,0.605065,0,0,0,346.9997,1
+1181,Tanga,Korogwe,Makuyuni,0,0.5804244,0,1,1,346.9997,1
+1182,Tanga,Korogwe,Makuyuni,0,0.5065024,0,0,0,346.9997,1
+1183,Tanga,Korogwe,Makuyuni,0,0.4462697,0,0,0,346.9997,1
+1184,Tanga,Korogwe,Makuyuni,0,0.6160164,1,0,0,346.9997,1
+1185,Tanga,Korogwe,Makuyuni,0,3.619439,0,0,0,346.9997,1
+1186,Tanga,Korogwe,Makuyuni,0,0.3422314,1,0,0,346.9997,1
+1187,Tanga,Korogwe,Makuyuni,0,0.807666,0,0,0,346.9997,1
+1188,Tanga,Korogwe,Makuyuni,0,2.680356,1,0,0,346.9997,1
+1189,Tanga,Korogwe,Makuyuni,0,0.7501711,0,0,0,346.9997,1
+1190,Tanga,Korogwe,Makuyuni,0,1.21013,1,0,0,346.9997,1
+1191,Tanga,Korogwe,Makuyuni,0,0.9500342,0,0,0,346.9997,1
+1192,Tanga,Korogwe,Makuyuni,0,0.7118412,1,0,0,346.9997,1
+1193,Tanga,Korogwe,Makuyuni,0,0.605065,0,0,0,346.9997,1
+1194,Tanga,Korogwe,Makuyuni,0,0.788501,0,0,0,346.9997,1
+1195,Tanga,Korogwe,Makuyuni,0,0.8898015,0,0,0,346.9997,1
+1196,Tanga,Korogwe,Makuyuni,0,0.8843258,0,0,0,346.9997,1
+1197,Tanga,Korogwe,Makuyuni,0,2.600958,0,0,0,346.9997,1
+1198,Tanga,Korogwe,Makuyuni,1,0.769336,0,0,0,346.9997,1
+1199,Tanga,Korogwe,Makuyuni,0,0.6461328,1,1,0,346.9997,1
+1200,Tanga,Korogwe,Makuyuni,0,1.264887,0,0,0,346.9997,1
+1201,Tanga,Korogwe,Makuyuni,0,6.039699,0,1,0,346.9997,1
+1202,Tanga,Korogwe,Makuyuni,0,1.193703,0,0,0,346.9997,1
+1203,Tanga,Korogwe,Makuyuni,0,0.4325804,0,0,0,346.9997,1
+1204,Tanga,Korogwe,Makuyuni,0,0.3723477,0,0,0,346.9997,1
+1205,Tanga,Korogwe,Makuyuni,0,0.5612594,1,0,0,346.9997,1
+1206,Tanga,Korogwe,Makuyuni,0,0.991102,0,0,0,346.9997,1
+1207,Tanga,Korogwe,Makuyuni,0,1.453799,0,0,0,346.9997,1
+1208,Tanga,Korogwe,Makuyuni,0,0.5667351,1,1,1,346.9997,1
+1209,Tanga,Korogwe,Makuyuni,0,1.010267,0,0,0,346.9997,1
+1210,Tanga,Korogwe,Makuyuni,0,2.078029,0,0,0,346.9997,1
+1211,Tanga,Korogwe,Makuyuni,1,0.5804244,1,0,0,346.9997,1
+1212,Tanga,Korogwe,Makuyuni,0,1.91102,1,0,0,346.9997,1
+1213,Tanga,Korogwe,Makuyuni,0,1.193703,0,0,0,346.9997,1
+1214,Tanga,Korogwe,Makuyuni,0,1.861739,0,0,0,346.9997,1
+1215,Tanga,Korogwe,Makuyuni,0,0.6461328,0,0,0,346.9997,1
+1216,Tanga,Korogwe,Makuyuni,0,0.7830253,0,0,0,346.9997,1
+1217,Tanga,Korogwe,Makuyuni,0,1.648186,1,0,0,346.9997,1
+1218,Tanga,Korogwe,Makuyuni,0,0.9390828,0,0,0,346.9997,1
+1219,Tanga,Korogwe,Makuyuni,0,0.5338809,1,0,0,346.9997,1
+1220,Tanga,Korogwe,Makuyuni,0,0.2272416,1,0,0,346.9997,1
+1221,Tanga,Korogwe,Makuyuni,0,0.5393566,0,0,0,346.9997,1
+1222,Tanga,Korogwe,Makuyuni,0,1.221081,0,0,0,346.9997,1
+1223,Tanga,Korogwe,Makuyuni,0,1.87269,0,0,0,346.9997,1
+1224,Tanga,Korogwe,Makuyuni,0,1.752224,1,0,0,346.9997,1
+1225,Tanga,Korogwe,Makuyuni,0,1.002053,0,0,0,346.9997,1
+1226,Tanga,Korogwe,Makuyuni,0,0.9062286,0,0,0,346.9997,1
+1227,Tanga,Korogwe,Makuyuni,0,0.6132786,1,0,0,346.9997,1
+1228,Tanga,Korogwe,Makuyuni,0,0.5941136,0,0,0,346.9997,1
+1229,Tanga,Korogwe,Makuyuni,0,0.4188912,1,0,0,346.9997,1
+1230,Tanga,Korogwe,Makuyuni,0,0.3340178,0,0,0,346.9997,1
+1231,Tanga,Korogwe,Makuyuni,0,1.667351,0,0,0,346.9997,1
+1232,Tanga,Korogwe,Makuyuni,0,0.8186174,1,0,0,346.9997,1
+1233,Tanga,Korogwe,Makuyuni,0,1.103354,0,0,0,346.9997,1
+1234,Tanga,Korogwe,Makuyuni,0,0.8651608,0,0,0,346.9997,1
+1235,Tanga,Korogwe,Makuyuni,0,28.0,0,0,0,346.9997,1
+1236,Tanga,Korogwe,Makuyuni,0,1.73306,0,0,0,346.9997,1
+1237,Tanga,Korogwe,Mashewa,0,1.086927,1,0,0,488.7071,1
+1238,Tanga,Korogwe,Mashewa,0,2.442163,0,0,0,488.7071,1
+1239,Tanga,Korogwe,Mashewa,0,0.1916496,0,0,0,488.7071,1
+1240,Tanga,Korogwe,Mashewa,0,0.2710472,1,0,0,488.7071,1
+1241,Tanga,Korogwe,Mashewa,0,2.0,0,0,0,488.7071,1
+1242,Tanga,Korogwe,Mashewa,0,0.4982888,1,1,0,488.7071,1
+1243,Tanga,Korogwe,Mashewa,0,2.288843,1,0,0,488.7071,1
+1244,Tanga,Korogwe,Mashewa,1,0.4243669,1,0,0,488.7071,1
+1245,Tanga,Korogwe,Mashewa,0,2.269678,1,0,0,488.7071,1
+1246,Tanga,Korogwe,Mashewa,0,0.5749487,1,0,0,488.7071,1
+1247,Tanga,Korogwe,Mashewa,0,0.3641342,0,0,0,488.7071,1
+1248,Tanga,Korogwe,Mashewa,0,2.130048,1,0,0,488.7071,1
+1249,Tanga,Korogwe,Mashewa,0,0.366872,1,0,0,488.7071,1
+1250,Tanga,Korogwe,Mashewa,0,3.123888,1,0,0,488.7071,1
+1251,Tanga,Korogwe,Mashewa,0,0.421629,0,0,0,488.7071,1
+1252,Tanga,Korogwe,Mashewa,0,1.0,0,0,0,488.7071,1
+1253,Tanga,Korogwe,Mashewa,0,1.596167,0,0,0,488.7071,1
+1254,Tanga,Korogwe,Mashewa,0,1.160849,1,0,0,488.7071,1
+1255,Tanga,Korogwe,Mashewa,1,2.0,1,0,0,488.7071,1
+1256,Tanga,Korogwe,Mashewa,1,0.8514716,1,0,0,488.7071,1
+1257,Tanga,Korogwe,Mashewa,0,2.047912,1,0,0,488.7071,1
+1258,Tanga,Korogwe,Mashewa,0,0.5913758,0,0,0,488.7071,1
+1259,Tanga,Korogwe,Mashewa,0,0.9390828,1,0,0,488.7071,1
+1260,Tanga,Korogwe,Mashewa,1,0.8733744,0,0,0,488.7071,1
+1261,Tanga,Korogwe,Mashewa,0,0.0833333,0,1,0,488.7071,1
+1262,Tanga,Korogwe,Mazinde,0,2.0,1,0,0,524.8336,1
+1263,Tanga,Korogwe,Mazinde,0,0.386037,1,0,0,524.8336,1
+1264,Tanga,Korogwe,Mkalamo,0,35.0,1,0,0,503.5901,1
+1265,Tanga,Korogwe,Mkalamo,1,5.314168,0,1,0,503.5901,1
+1266,Tanga,Korogwe,Mkalamo,0,3.192334,0,0,0,503.5901,1
+1267,Tanga,Korogwe,Mkalamo,0,2.0,0,1,1,503.5901,1
+1268,Tanga,Korogwe,Mnyuzi,0,1.415469,1,1,0,244.342,1
+1269,Tanga,Korogwe,Mnyuzi,0,2.691307,1,0,0,244.342,1
+1270,Tanga,Korogwe,Mnyuzi,1,0.5119781,0,1,0,244.342,1
+1271,Tanga,Korogwe,Mnyuzi,0,0.3586585,1,0,0,244.342,1
+1272,Tanga,Korogwe,Mnyuzi,0,0.7967146,0,0,0,244.342,1
+1273,Tanga,Korogwe,Mnyuzi,1,15.0,0,0,1,244.342,1
+1274,Tanga,Korogwe,Mnyuzi,0,0.5201917,1,1,0,244.342,1
+1275,Tanga,Korogwe,Mnyuzi,0,0.9993156,1,0,0,244.342,1
+1276,Tanga,Korogwe,Mnyuzi,0,0.6570842,1,1,0,244.342,1
+1277,Tanga,Korogwe,Mnyuzi,0,0.9609856,1,0,0,244.342,1
+1278,Tanga,Korogwe,Mnyuzi,1,1.0,1,1,0,244.342,1
+1279,Tanga,Korogwe,Mnyuzi,0,0.3969884,1,0,0,244.342,1
+1280,Tanga,Korogwe,Mnyuzi,0,8.0,0,0,0,244.342,1
+1281,Tanga,Korogwe,Mnyuzi,0,1.0,1,0,0,244.342,1
+1282,Tanga,Korogwe,Mnyuzi,0,0.1560575,1,0,0,244.342,1
+1283,Tanga,Korogwe,Mnyuzi,0,82.0,0,0,0,244.342,1
+1284,Tanga,Korogwe,Mnyuzi,1,1.7577,1,0,0,244.342,1
+1285,Tanga,Korogwe,Mnyuzi,0,1.054072,0,0,0,244.342,1
+1286,Tanga,Korogwe,Mnyuzi,0,0.8870637,1,0,0,244.342,1
+1287,Tanga,Korogwe,Mnyuzi,1,34.51335,0,1,0,244.342,1
+1288,Tanga,Korogwe,Mnyuzi,0,2.0,1,0,0,244.342,1
+1289,Tanga,Korogwe,Mnyuzi,0,1.0,0,0,0,244.342,1
+1290,Tanga,Korogwe,Mnyuzi,0,6.135524,1,0,0,244.342,1
+1291,Tanga,Korogwe,Mnyuzi,0,2.277892,0,1,0,244.342,1
+1292,Tanga,Korogwe,Mombo,0,12.0,0,0,0,470.357,1
+1293,Tanga,Korogwe,Mombo,0,0.5092403,1,0,0,470.357,1
+1294,Tanga,Korogwe,Mombo,0,3.449692,1,0,0,470.357,1
+1295,Tanga,Korogwe,Mombo,0,0.2819986,1,0,0,470.357,1
+1296,Tanga,Korogwe,Mombo,0,0.7392197,0,0,0,470.357,1
+1297,Tanga,Korogwe,Msambiazi,0,1.678303,0,0,0,434.5725,1
+1298,Tanga,Korogwe,Msambiazi,0,1.264887,0,0,0,434.5725,1
+1299,Tanga,Korogwe,Msambiazi,0,3.0,1,0,0,434.5725,1
+1300,Tanga,Korogwe,Msambiazi,0,4.0,0,0,0,434.5725,1
+1301,Tanga,Korogwe,Msambiazi,0,1.801506,0,0,0,434.5725,1
+1302,Tanga,Korogwe,Msambiazi,0,0.9555099,0,0,0,434.5725,1
+1303,Tanga,Korogwe,Msambiazi,0,2.433949,0,0,0,434.5725,1
+1304,Tanga,Korogwe,Msambiazi,0,0.5886379,1,0,0,434.5725,1
+1305,Tanga,Korogwe,Msambiazi,0,1.713895,0,0,0,434.5725,1
+1306,Tanga,Korogwe,Msambiazi,0,1.273101,1,0,1,434.5725,1
+1307,Tanga,Korogwe,Msambiazi,0,1.404517,0,0,0,434.5725,1
+1308,Tanga,Korogwe,Msambiazi,0,1.883641,0,0,0,434.5725,1
+1309,Tanga,Korogwe,Msambiazi,0,38.0,0,0,0,434.5725,1
+1310,Tanga,Korogwe,Msambiazi,0,1.749487,0,0,0,434.5725,1
+1311,Tanga,Korogwe,Msambiazi,0,2.351814,0,0,0,434.5725,1
+1312,Tanga,Korogwe,Msambiazi,0,3.600274,0,0,0,434.5725,1
+1313,Tanga,Korogwe,Msambiazi,0,0.6461328,0,0,0,434.5725,1
+1314,Tanga,Korogwe,Msambiazi,0,3.0,0,0,0,434.5725,1
+1315,Tanga,Korogwe,Msambiazi,0,2.743326,1,0,0,434.5725,1
+1316,Tanga,Korogwe,Msambiazi,0,2.154689,0,0,0,434.5725,1
+1317,Tanga,Korogwe,Msambiazi,0,1.232033,0,0,0,434.5725,1
+1318,Tanga,Korogwe,Msambiazi,0,0.6872005,1,0,0,434.5725,1
+1319,Tanga,Korogwe,Msambiazi,0,0.7364818,0,0,0,434.5725,1
+1320,Tanga,Korogwe,Msambiazi,0,2.253251,0,0,0,434.5725,1
+1321,Tanga,Korogwe,Msambiazi,0,0.7967146,0,0,0,434.5725,1
+1322,Tanga,Korogwe,Msambiazi,0,1.333333,1,0,0,434.5725,1
+1323,Tanga,Korogwe,Msambiazi,0,1.368925,1,0,0,434.5725,1
+1324,Tanga,Korogwe,Msambiazi,0,1.785079,1,0,0,434.5725,1
+1325,Tanga,Korogwe,Msambiazi,0,1.440109,0,0,0,434.5725,1
+1326,Tanga,Korogwe,Msambiazi,0,2.49692,0,0,0,434.5725,1
+1327,Tanga,Korogwe,Msambiazi,0,1.32512,0,0,0,434.5725,1
+1328,Tanga,Korogwe,Msambiazi,0,0.1670089,0,0,0,434.5725,1
+1329,Tanga,Korogwe,Msambiazi,0,1.259411,0,0,0,434.5725,1
+1330,Tanga,Korogwe,Msambiazi,0,1.672827,0,0,0,434.5725,1
+1331,Tanga,Korogwe,Msambiazi,0,2.173854,1,0,0,434.5725,1
+1332,Tanga,Korogwe,Msambiazi,0,1.459274,1,0,0,434.5725,1
+1333,Tanga,Korogwe,Msambiazi,0,1.24846,0,0,0,434.5725,1
+1334,Tanga,Korogwe,Msambiazi,0,1.267625,0,0,0,434.5725,1
+1335,Tanga,Korogwe,Msambiazi,0,2.398357,0,0,0,434.5725,1
+1336,Tanga,Korogwe,Msambiazi,0,0.3039014,1,0,0,434.5725,1
+1337,Tanga,Korogwe,Msambiazi,0,0.5804244,0,0,0,434.5725,1
+1338,Tanga,Korogwe,Msambiazi,0,0.8213552,0,0,0,434.5725,1
+1339,Tanga,Korogwe,Msambiazi,0,0.8213552,0,0,0,434.5725,1
+1340,Tanga,Korogwe,Msambiazi,0,0.8706365,0,0,0,434.5725,1
+1341,Tanga,Korogwe,Msambiazi,0,2.861054,1,0,0,434.5725,1
+1342,Tanga,Korogwe,Msambiazi,0,2.406571,1,1,0,434.5725,1
+1343,Tanga,Korogwe,Msambiazi,0,2.932238,0,0,0,434.5725,1
+1344,Tanga,Korogwe,Ngombezi,0,1.234771,0,0,0,301.2206,1
+1345,Tanga,Korogwe,Ngombezi,0,1.045859,0,0,0,301.2206,1
+1346,Tanga,Korogwe,Ngombezi,0,2.250513,0,0,0,301.2206,1
+1347,Tanga,Korogwe,Ngombezi,0,1.609856,1,0,0,301.2206,1
+1348,Tanga,Korogwe,Ngombezi,0,1.300479,0,0,0,301.2206,1
+1349,Tanga,Korogwe,Ngombezi,0,0.8788501,0,0,0,301.2206,1
+1350,Tanga,Korogwe,Ngombezi,0,1.908282,1,0,0,301.2206,1
+1351,Tanga,Korogwe,Ngombezi,1,0.7638603,0,0,0,301.2206,1
+1352,Tanga,Korogwe,Ngombezi,0,0.6954141,1,0,0,301.2206,1
+1353,Tanga,Korogwe,Ngombezi,0,1.943874,1,0,0,301.2206,1
+1354,Tanga,Korogwe,Ngombezi,0,1.705681,0,0,0,301.2206,1
+1355,Tanga,Korogwe,Ngombezi,0,1.144422,0,0,0,301.2206,1
+1356,Tanga,Korogwe,Ngombezi,0,1.144422,1,0,0,301.2206,1
+1357,Tanga,Korogwe,Ngombezi,0,1.043121,0,0,0,301.2206,1
+1358,Tanga,Korogwe,Ngombezi,0,2.004107,0,0,0,301.2206,1
+1359,Tanga,Korogwe,Ngombezi,0,1.771389,1,0,0,301.2206,1
+1360,Tanga,Korogwe,Ngombezi,0,2.472279,0,0,0,301.2206,1
+1361,Tanga,Korogwe,Ngombezi,1,0.7939767,0,0,0,301.2206,1
+1362,Tanga,Korogwe,Ngombezi,0,2.455852,1,0,0,301.2206,1
+1363,Tanga,Korogwe,Ngombezi,0,1.760438,0,0,0,301.2206,1
+1364,Tanga,Korogwe,Ngombezi,0,3.304586,1,0,0,301.2206,1
+1365,Tanga,Korogwe,Vugiri,0,2.26694,1,1,0,747.6956,2
+1366,Tanga,Korogwe,Vugiri,0,0.3148528,1,0,0,747.6956,2
+1367,Tanga,Korogwe,Vugiri,0,0.3942505,1,0,0,747.6956,2
+1368,Tanga,Korogwe,Vugiri,0,4.030117,0,0,0,747.6956,2
+1369,Tanga,Korogwe,Vugiri,0,0.8158795,0,0,0,747.6956,2
+1370,Tanga,Korogwe,Vugiri,0,2.220397,0,1,0,747.6956,2
+1371,Tanga,Korogwe,Vugiri,0,1.798768,0,0,0,747.6956,2
+1372,Tanga,Korogwe,Vugiri,0,1.445585,0,0,0,747.6956,2
+1373,Tanga,Korogwe,Vugiri,0,0.8980151,0,0,0,747.6956,2
+1374,Tanga,Korogwe,Vugiri,0,0.3230664,1,0,0,747.6956,2
+1375,Tanga,Korogwe,Vugiri,0,0.7118412,0,0,0,747.6956,2
+1376,Tanga,Korogwe,Vugiri,0,1.377139,0,0,0,747.6956,2
+1377,Tanga,Korogwe,Vugiri,0,1.634497,0,0,0,747.6956,2
+1378,Tanga,Korogwe,Vugiri,0,1.875428,1,0,0,747.6956,2
+1379,Tanga,Korogwe,Vugiri,0,1.954826,0,0,0,747.6956,2
+1380,Tanga,Korogwe,Vugiri,0,1.314168,0,0,0,747.6956,2
+1381,Tanga,Korogwe,Vugiri,0,4.068446,0,0,0,747.6956,2
+1382,Tanga,Korogwe,Vugiri,1,0.2436687,1,0,0,747.6956,2
+1383,Tanga,Korogwe,Vugiri,0,0.9253936,0,0,0,747.6956,2
+1384,Tanga,Korogwe,Vugiri,0,0.4353183,0,0,0,747.6956,2
+1385,Tanga,Korogwe,Vugiri,0,0.569473,0,0,0,747.6956,2
+1386,Tanga,Korogwe,Vugiri,0,2.198494,0,0,0,747.6956,2
+1387,Tanga,Korogwe,Vugiri,0,0.6735113,1,0,0,747.6956,2
+1388,Tanga,Korogwe,Vugiri,0,1.0,1,0,0,747.6956,2
+1389,Tanga,Korogwe,Vugiri,0,1.322382,0,0,0,747.6956,2
+1390,Tanga,Korogwe,Vugiri,0,0.2491444,1,0,0,747.6956,2
+1391,Tanga,Korogwe,Vugiri,0,1.218344,1,0,0,747.6956,2
+1392,Tanga,Korogwe,Vugiri,0,2.937714,0,0,0,747.6956,2
+1393,Tanga,Korogwe,Vugiri,0,0.8213552,1,0,0,747.6956,2
+1394,Tanga,Korogwe,Vugiri,0,1.0,1,0,0,747.6956,2
+1395,Tanga,Korogwe,Vugiri,0,0.3367556,0,0,0,747.6956,2
+1396,Tanga,Korogwe,Vugiri,0,0.5420945,1,0,0,747.6956,2
+1397,Tanga,Korogwe,Vugiri,0,1.489391,0,0,0,747.6956,2
+1398,Tanga,Korogwe,Vugiri,0,0.5749487,1,1,0,747.6956,2
+1399,Tanga,Korogwe,Vugiri,0,0.0,1,0,0,747.6956,2
+1400,Tanga,Korogwe,Vugiri,0,0.8333333,1,0,0,747.6956,2
+1401,Tanga,Korogwe,Vugiri,0,1.379877,0,0,0,747.6956,2
+1402,Tanga,Korogwe,Vugiri,0,1.908282,1,0,0,747.6956,2
+1403,Tanga,Korogwe,Vugiri,0,1.6564,1,0,0,747.6956,2
+1404,Tanga,Korogwe,Vugiri,0,1.730322,1,0,0,747.6956,2
+1405,Tanga,Korogwe,Vugiri,0,1.0,0,0,0,747.6956,2
+1406,Tanga,Korogwe,Vugiri,0,0.9527721,0,0,0,747.6956,2
+1407,Tanga,Korogwe,Vugiri,0,2.543463,1,0,0,747.6956,2
+1408,Tanga,Korogwe,Vugiri,0,2.0,0,0,0,747.6956,2
+1409,Tanga,Korogwe,Vugiri,0,0.8651608,1,0,0,747.6956,2
+1410,Tanga,Korogwe,Vugiri,0,2.368241,0,0,0,747.6956,2
+1411,Tanga,Korogwe,Vugiri,0,0.6817248,0,0,0,747.6956,2
+1412,Tanga,Korogwe,Vugiri,0,2.157426,0,0,0,747.6956,2
+1413,Tanga,Lushoto,Baga,0,9.0,1,1,0,1403.178,3
+1414,Tanga,Lushoto,Bumbuli,0,2.023272,1,0,0,1213.563,3
+1415,Tanga,Lushoto,Gare,0,0.3559206,1,0,0,1360.664,3
+1416,Tanga,Lushoto,Gare,0,13.23477,1,0,0,1360.664,3
+1417,Tanga,Lushoto,Gare,0,0.5311431,1,1,0,1360.664,3
+1418,Tanga,Lushoto,Gare,0,40.0,1,1,0,1360.664,3
+1419,Tanga,Lushoto,Kwai,0,20.0,0,0,0,1571.08,3
+1420,Tanga,Lushoto,Lushoto,0,30.0,0,0,0,1614.826,3
+1421,Tanga,Lushoto,Lushoto,0,24.21082,0,0,0,1614.826,3
+1422,Tanga,Lushoto,Lushoto,0,25.0,0,0,0,1614.826,3
+1423,Tanga,Lushoto,Lushoto,0,60.0,0,0,0,1614.826,3
+1424,Tanga,Lushoto,Lushoto,0,36.0,0,0,1,1614.826,3
+1425,Tanga,Lushoto,Lushoto,0,5.0,0,0,0,1614.826,3
+1426,Tanga,Lushoto,Lushoto,0,70.0,0,1,1,1614.826,3
+1427,Tanga,Lushoto,Lushoto,0,20.0,0,1,0,1614.826,3
+1428,Tanga,Lushoto,Lushoto,0,4.583162,0,0,0,1614.826,3
+1429,Tanga,Lushoto,Malibwi,1,30.0,1,0,0,1506.716,3
+1430,Tanga,Lushoto,Mbuzii,0,1.634497,0,0,0,1120.795,2
+1431,Tanga,Lushoto,Mbuzii,1,1.574264,1,1,0,1120.795,2
+1432,Tanga,Lushoto,Mgwashi,0,1.497604,0,0,0,1272.679,3
+1433,Tanga,Lushoto,Mlalo,0,19.0,0,0,0,1236.557,3
+1434,Tanga,Lushoto,Mlalo,0,0.5612594,1,0,0,1236.557,3
+1435,Tanga,Lushoto,Mlalo,1,0.2710472,1,1,0,1236.557,3
+1436,Tanga,Lushoto,Mlola,0,0.9746749,1,0,0,1245.568,3
+1437,Tanga,Lushoto,Mlola,1,25.0,0,0,0,1245.568,3
+1438,Tanga,Lushoto,Mng'aro,0,0.5092403,1,0,0,414.7775,1
+1439,Tanga,Lushoto,Mtae,0,25.0,1,0,0,1498.706,3
+1440,Tanga,Lushoto,Mwangoi,0,5.0,0,1,0,1526.177,3
+1441,Tanga,Lushoto,Rangwi,0,28.0,1,0,0,1862.509,3
+1442,Tanga,Lushoto,Shume,0,14.0,0,0,0,1780.266,3
+1443,Tanga,Lushoto,Soni,0,5.0,0,0,0,1416.287,3
+1444,Tanga,Lushoto,Soni,0,20.0,0,0,0,1416.287,3
+1445,Tanga,Lushoto,Tamota,0,0.4709103,1,0,0,1006.033,2
+1446,Tanga,Lushoto,Tamota,0,3.0,1,0,0,1006.033,2
+1447,Tanga,Lushoto,Tamota,0,1.264887,1,0,0,1006.033,2
+1448,Tanga,Lushoto,Tamota,0,3.972621,0,0,0,1006.033,2
+1449,Tanga,Lushoto,Tamota,0,1.295003,0,0,0,1006.033,2
+1450,Tanga,Lushoto,Tamota,0,2.721424,1,0,0,1006.033,2
+1451,Tanga,Lushoto,Tamota,1,0.4435318,1,0,0,1006.033,2
+1452,Tanga,Lushoto,Tamota,0,2.121834,0,0,1,1006.033,2
+1453,Tanga,Lushoto,Tamota,0,0.8678987,1,0,0,1006.033,2
+1454,Tanga,Lushoto,Tamota,0,0.8788501,0,0,0,1006.033,2
+1455,Tanga,Lushoto,Ubiri,0,39.0,0,0,0,1227.75,3
+1456,Tanga,Lushoto,Ubiri,0,3.27447,0,0,0,1227.75,3
+1457,Tanga,Lushoto,Ubiri,0,2.209445,0,0,0,1227.75,3
+1458,Tanga,Lushoto,Ubiri,0,9.0,0,0,0,1227.75,3
+1459,Tanga,Lushoto,Ubiri,0,3.148528,0,0,0,1227.75,3
+1460,Tanga,Lushoto,Ubiri,0,12.0,1,0,1,1227.75,3
+1461,Tanga,Lushoto,Ubiri,0,3.433265,1,0,0,1227.75,3
+1462,Tanga,Lushoto,Ubiri,0,7.0,0,0,0,1227.75,3
+1463,Tanga,Lushoto,Ubiri,0,0.8268309,0,0,0,1227.75,3
+1464,Tanga,Lushoto,Ubiri,0,1.327858,0,0,0,1227.75,3
+1465,Tanga,Lushoto,Ubiri,0,2.212183,1,0,0,1227.75,3
+1466,Tanga,Lushoto,Ubiri,0,6.600958,1,0,0,1227.75,3
+1467,Tanga,Lushoto,Ubiri,0,4.0,0,0,0,1227.75,3
+1468,Tanga,Lushoto,Ubiri,0,3.0,0,0,0,1227.75,3
+1469,Tanga,Lushoto,Ubiri,0,5.711157,0,0,0,1227.75,3
+1470,Tanga,Lushoto,Ubiri,0,2.707734,1,0,0,1227.75,3
+1471,Tanga,Lushoto,Ubiri,0,5.117043,1,0,0,1227.75,3
+1472,Tanga,Lushoto,Ubiri,0,0.4188912,0,0,0,1227.75,3
+1473,Tanga,Lushoto,Ubiri,0,3.0,0,0,0,1227.75,3
+1474,Tanga,Lushoto,Ubiri,0,5.916495,0,0,0,1227.75,3
+1475,Tanga,Lushoto,Ubiri,0,5.0,1,0,0,1227.75,3
+1476,Tanga,Lushoto,Ubiri,1,0.4166667,1,1,0,1227.75,3
+1477,Tanga,Lushoto,Vuga,0,2.264203,1,0,0,1169.912,2
+1478,Tanga,Lushoto,Vuga,0,1.653662,1,0,0,1169.912,2
+1479,Tanga,Lushoto,Vuga,0,22.0,1,0,0,1169.912,2
+1480,Tanga,Muheza,Bwembwera,0,25.0,0,0,0,246.7843,1
+1481,Tanga,Muheza,Bwembwera,1,0.4166667,1,1,1,246.7843,1
+1482,Tanga,Muheza,Bwembwera,0,0.6406571,0,0,0,246.7843,1
+1483,Tanga,Muheza,Bwembwera,0,0.9856263,1,0,0,246.7843,1
+1484,Tanga,Muheza,Bwembwera,0,1.136208,1,0,0,246.7843,1
+1485,Tanga,Muheza,Bwembwera,0,0.4490075,1,0,0,246.7843,1
+1486,Tanga,Muheza,Bwembwera,1,0.495551,1,0,0,246.7843,1
+1487,Tanga,Muheza,Bwembwera,0,0.659822,1,0,0,246.7843,1
+1488,Tanga,Muheza,Bwembwera,0,0.5229295,1,0,0,246.7843,1
+1489,Tanga,Muheza,Bwembwera,0,0.8514716,0,0,0,246.7843,1
+1490,Tanga,Muheza,Daluni,0,0.9774128,1,1,0,468.0523,1
+1491,Tanga,Muheza,Daluni,0,2.442163,0,0,0,468.0523,1
+1492,Tanga,Muheza,Kicheba,0,1.0,1,0,0,187.6118,1
+1493,Tanga,Muheza,Kicheba,0,20.0,0,0,0,187.6118,1
+1494,Tanga,Muheza,Kicheba,0,1.442847,1,0,0,187.6118,1
+1495,Tanga,Muheza,Kicheba,0,0.9390828,0,0,0,187.6118,1
+1496,Tanga,Muheza,Kicheba,0,0.8925394,1,0,0,187.6118,1
+1497,Tanga,Muheza,Kicheba,0,0.5804244,1,0,0,187.6118,1
+1498,Tanga,Muheza,Kicheba,0,3.0,0,0,0,187.6118,1
+1499,Tanga,Muheza,Kicheba,0,0.3285421,1,0,0,187.6118,1
+1500,Tanga,Muheza,Kicheba,0,1.738535,0,0,0,187.6118,1
+1501,Tanga,Muheza,Kicheba,0,0.62423,0,1,0,187.6118,1
+1502,Tanga,Muheza,Kicheba,0,0.8240931,0,0,0,187.6118,1
+1503,Tanga,Muheza,Kilulu,0,2.874743,0,0,0,252.5899,1
+1504,Tanga,Muheza,Kilulu,1,1.130732,1,0,0,252.5899,1
+1505,Tanga,Muheza,Kilulu,0,1.0,1,0,0,252.5899,1
+1506,Tanga,Muheza,Kilulu,0,25.0,0,0,0,252.5899,1
+1507,Tanga,Muheza,Kilulu,0,1.051335,0,0,0,252.5899,1
+1508,Tanga,Muheza,Kilulu,0,3.110198,0,0,0,252.5899,1
+1509,Tanga,Muheza,Kilulu,0,2.94319,1,0,0,252.5899,1
+1510,Tanga,Muheza,Kilulu,0,0.5667351,0,1,0,252.5899,1
+1511,Tanga,Muheza,Kilulu,0,1.779603,0,0,0,252.5899,1
+1512,Tanga,Muheza,Kilulu,0,0.3997262,0,0,0,252.5899,1
+1513,Tanga,Muheza,Kilulu,0,3.049966,1,0,0,252.5899,1
+1514,Tanga,Muheza,Kilulu,0,3.011636,0,1,0,252.5899,1
+1515,Tanga,Muheza,Kilulu,0,1.0,1,0,0,252.5899,1
+1516,Tanga,Muheza,Kilulu,0,27.0,0,0,0,252.5899,1
+1517,Tanga,Muheza,Kilulu,0,31.47433,1,0,0,252.5899,1
+1518,Tanga,Muheza,Kilulu,0,32.0,0,0,0,252.5899,1
+1519,Tanga,Muheza,Kilulu,0,1.28679,0,1,0,252.5899,1
+1520,Tanga,Muheza,Kilulu,0,55.0,0,0,0,252.5899,1
+1521,Tanga,Muheza,Kilulu,0,0.6269678,1,0,0,252.5899,1
+1522,Tanga,Muheza,Kilulu,0,0.4462697,0,0,0,252.5899,1
+1523,Tanga,Muheza,Kilulu,0,22.0,0,0,0,252.5899,1
+1524,Tanga,Muheza,Kilulu,0,25.0,1,0,0,252.5899,1
+1525,Tanga,Muheza,Kilulu,0,0.8104038,0,0,0,252.5899,1
+1526,Tanga,Muheza,Kilulu,0,0.4517454,1,0,0,252.5899,1
+1527,Tanga,Muheza,Kilulu,0,0.6379192,0,0,0,252.5899,1
+1528,Tanga,Muheza,Kilulu,0,84.0,0,0,0,252.5899,1
+1529,Tanga,Muheza,Kilulu,0,1.089665,1,0,0,252.5899,1
+1530,Tanga,Muheza,Kilulu,0,1.546886,0,0,0,252.5899,1
+1531,Tanga,Muheza,Kilulu,0,0.3778234,1,0,0,252.5899,1
+1532,Tanga,Muheza,Kilulu,0,2.0,1,1,1,252.5899,1
+1533,Tanga,Muheza,Kilulu,0,0.5229295,1,0,0,252.5899,1
+1534,Tanga,Muheza,Kilulu,0,1.804244,1,0,0,252.5899,1
+1535,Tanga,Muheza,Kilulu,0,4.0,1,0,0,252.5899,1
+1536,Tanga,Muheza,Kilulu,0,0.2600958,0,0,0,252.5899,1
+1537,Tanga,Muheza,Kilulu,0,1.952088,0,0,0,252.5899,1
+1538,Tanga,Muheza,Kilulu,0,0.7446954,0,0,0,252.5899,1
+1539,Tanga,Muheza,Kilulu,0,0.862423,1,0,0,252.5899,1
+1540,Tanga,Muheza,Kilulu,0,1.037645,1,0,0,252.5899,1
+1541,Tanga,Muheza,Kilulu,0,0.7583846,1,0,0,252.5899,1
+1542,Tanga,Muheza,Kilulu,0,2.754278,0,0,0,252.5899,1
+1543,Tanga,Muheza,Kilulu,0,0.9801506,1,0,0,252.5899,1
+1544,Tanga,Muheza,Kilulu,0,1.787817,1,0,0,252.5899,1
+1545,Tanga,Muheza,Kilulu,0,0.8405202,1,0,0,252.5899,1
+1546,Tanga,Muheza,Kilulu,0,0.862423,0,0,0,252.5899,1
+1547,Tanga,Muheza,Kilulu,1,1.869952,0,1,0,252.5899,1
+1548,Tanga,Muheza,Kisiwani,0,0.5833333,0,0,0,722.1402,2
+1549,Tanga,Muheza,Kisiwani,0,3.241615,1,0,1,722.1402,2
+1550,Tanga,Muheza,Kisiwani,0,1.68104,0,1,0,722.1402,2
+1551,Tanga,Muheza,Kisiwani,0,0.7063655,1,1,0,722.1402,2
+1552,Tanga,Muheza,Kisiwani,0,1.059548,1,0,0,722.1402,2
+1553,Tanga,Muheza,Kisiwani,0,2.412046,1,0,0,722.1402,2
+1554,Tanga,Muheza,Kisiwani,0,6.223135,0,0,0,722.1402,2
+1555,Tanga,Muheza,Kisiwani,0,4.11499,0,0,0,722.1402,2
+1556,Tanga,Muheza,Kisiwani,0,1.842574,0,0,0,722.1402,2
+1557,Tanga,Muheza,Kisiwani,0,0.9226557,0,0,0,722.1402,2
+1558,Tanga,Muheza,Kisiwani,0,0.678987,0,0,0,722.1402,2
+1559,Tanga,Muheza,Kisiwani,0,1.09514,1,0,0,722.1402,2
+1560,Tanga,Muheza,Kisiwani,0,0.2135524,1,0,0,722.1402,2
+1561,Tanga,Muheza,Kisiwani,0,1.045859,0,0,0,722.1402,2
+1562,Tanga,Muheza,Kisiwani,1,7.0,0,0,1,722.1402,2
+1563,Tanga,Muheza,Kisiwani,0,1.577002,0,0,0,722.1402,2
+1564,Tanga,Muheza,Kisiwani,0,3.498973,1,0,0,722.1402,2
+1565,Tanga,Muheza,Kisiwani,0,3.0,1,0,0,722.1402,2
+1566,Tanga,Muheza,Kisiwani,0,1.7577,1,0,0,722.1402,2
+1567,Tanga,Muheza,Kisiwani,0,35.0,1,0,0,722.1402,2
+1568,Tanga,Muheza,Kisiwani,0,3.0,1,0,0,722.1402,2
+1569,Tanga,Muheza,Kisiwani,0,2.0,1,0,0,722.1402,2
+1570,Tanga,Muheza,Kwafungo,0,0.5722108,1,0,0,208.6122,1
+1571,Tanga,Muheza,Kwafungo,0,8.0,0,0,0,208.6122,1
+1572,Tanga,Muheza,Kwafungo,0,0.9828885,1,0,0,208.6122,1
+1573,Tanga,Muheza,Kwafungo,0,0.1724846,0,1,0,208.6122,1
+1574,Tanga,Muheza,Kwafungo,0,1.431896,1,0,0,208.6122,1
+1575,Tanga,Muheza,Kwafungo,0,1.0,0,0,0,208.6122,1
+1576,Tanga,Muheza,Kwafungo,0,0.2683094,0,0,0,208.6122,1
+1577,Tanga,Muheza,Kwafungo,0,0.4161533,1,0,0,208.6122,1
+1578,Tanga,Muheza,Kwafungo,0,1.404517,1,0,0,208.6122,1
+1579,Tanga,Muheza,Kwafungo,1,1.023956,0,0,0,208.6122,1
+1580,Tanga,Muheza,Kwafungo,0,1.10883,0,0,0,208.6122,1
+1581,Tanga,Muheza,Kwafungo,0,1.136208,0,0,0,208.6122,1
+1582,Tanga,Muheza,Kwafungo,0,1.259411,0,0,0,208.6122,1
+1583,Tanga,Muheza,Kwafungo,0,1.004791,0,0,0,208.6122,1
+1584,Tanga,Muheza,Kwafungo,0,0.4462697,1,0,0,208.6122,1
+1585,Tanga,Muheza,Kwafungo,0,1.185489,0,0,0,208.6122,1
+1586,Tanga,Muheza,Kwafungo,0,0.4681725,1,0,0,208.6122,1
+1587,Tanga,Muheza,Kwafungo,0,0.7446954,0,0,0,208.6122,1
+1588,Tanga,Muheza,Kwafungo,0,1.127995,1,0,0,208.6122,1
+1589,Tanga,Muheza,Kwafungo,0,1.79603,1,0,0,208.6122,1
+1590,Tanga,Muheza,Kwafungo,0,2.0,0,0,0,208.6122,1
+1591,Tanga,Muheza,Kwafungo,0,0.5010267,1,0,0,208.6122,1
+1592,Tanga,Muheza,Kwafungo,1,1.979466,1,0,1,208.6122,1
+1593,Tanga,Muheza,Kwafungo,0,0.6981519,1,1,0,208.6122,1
+1594,Tanga,Muheza,Kwafungo,0,1.71937,0,0,0,208.6122,1
+1595,Tanga,Muheza,Kwafungo,0,2.0,1,0,0,208.6122,1
+1596,Tanga,Muheza,Kwafungo,1,2.0,0,0,0,208.6122,1
+1597,Tanga,Muheza,Kwafungo,0,0.9828885,0,0,0,208.6122,1
+1598,Tanga,Muheza,Kwafungo,1,1.530459,0,0,0,208.6122,1
+1599,Tanga,Muheza,Kwafungo,0,0.8131417,0,0,0,208.6122,1
+1600,Tanga,Muheza,Kwafungo,0,1.396304,1,0,0,208.6122,1
+1601,Tanga,Muheza,Kwafungo,0,1.24846,1,0,0,208.6122,1
+1602,Tanga,Muheza,Kwafungo,0,2.803559,1,0,0,208.6122,1
+1603,Tanga,Muheza,Kwafungo,0,0.7036276,0,0,0,208.6122,1
+1604,Tanga,Muheza,Kwafungo,0,1.930185,0,0,0,208.6122,1
+1605,Tanga,Muheza,Kwafungo,0,0.9007529,0,1,0,208.6122,1
+1606,Tanga,Muheza,Kwafungo,0,1.122519,0,0,0,208.6122,1
+1607,Tanga,Muheza,Kwafungo,0,0.62423,1,1,0,208.6122,1
+1608,Tanga,Muheza,Kwafungo,0,0.2874743,0,0,0,208.6122,1
+1609,Tanga,Muheza,Kwafungo,0,1.237509,1,0,0,208.6122,1
+1610,Tanga,Muheza,Kwafungo,0,1.229295,1,1,0,208.6122,1
+1611,Tanga,Muheza,Kwafungo,0,1.267625,0,0,0,208.6122,1
+1612,Tanga,Muheza,Kwafungo,0,1.850787,1,1,0,208.6122,1
+1613,Tanga,Muheza,Kwafungo,0,0.7501711,1,0,0,208.6122,1
+1614,Tanga,Muheza,Kwafungo,1,2.340863,0,1,0,208.6122,1
+1615,Tanga,Muheza,Kwafungo,0,2.313484,1,0,0,208.6122,1
+1616,Tanga,Muheza,Kwafungo,0,1.229295,0,0,0,208.6122,1
+1617,Tanga,Muheza,Lusanga,0,2.644764,1,1,0,177.5423,1
+1618,Tanga,Muheza,Lusanga,0,1.097878,0,0,0,177.5423,1
+1619,Tanga,Muheza,Lusanga,0,1.93566,0,0,0,177.5423,1
+1620,Tanga,Muheza,Lusanga,0,3.378508,0,0,0,177.5423,1
+1621,Tanga,Muheza,Lusanga,0,0.2683094,1,0,1,177.5423,1
+1622,Tanga,Muheza,Lusanga,0,2.466804,0,0,0,177.5423,1
+1623,Tanga,Muheza,Lusanga,0,2.694045,1,0,0,177.5423,1
+1624,Tanga,Muheza,Lusanga,1,2.0,0,1,0,177.5423,1
+1625,Tanga,Muheza,Lusanga,0,0.9390828,1,0,0,177.5423,1
+1626,Tanga,Muheza,Lusanga,0,10.0,1,1,0,177.5423,1
+1627,Tanga,Muheza,Lusanga,0,6.0,0,0,0,177.5423,1
+1628,Tanga,Muheza,Lusanga,0,2.822724,0,0,0,177.5423,1
+1629,Tanga,Muheza,Lusanga,0,1.544148,0,0,0,177.5423,1
+1630,Tanga,Muheza,Lusanga,0,0.6762491,1,0,0,177.5423,1
+1631,Tanga,Muheza,Lusanga,0,0.7611225,0,0,0,177.5423,1
+1632,Tanga,Muheza,Lusanga,0,0.9062286,0,0,0,177.5423,1
+1633,Tanga,Muheza,Lusanga,0,0.6379192,0,0,0,177.5423,1
+1634,Tanga,Muheza,Lusanga,0,2.847365,0,0,0,177.5423,1
+1635,Tanga,Muheza,Lusanga,0,0.6735113,0,0,0,177.5423,1
+1636,Tanga,Muheza,Lusanga,0,1.366188,1,0,0,177.5423,1
+1637,Tanga,Muheza,Lusanga,0,0.4736482,1,0,0,177.5423,1
+1638,Tanga,Muheza,Lusanga,0,0.4791239,0,0,0,177.5423,1
+1639,Tanga,Muheza,Lusanga,0,2.650239,0,0,0,177.5423,1
+1640,Tanga,Muheza,Lusanga,0,27.0,0,0,0,177.5423,1
+1641,Tanga,Muheza,Lusanga,0,2.0,1,0,0,177.5423,1
+1642,Tanga,Muheza,Lusanga,0,2.321697,0,0,0,177.5423,1
+1643,Tanga,Muheza,Lusanga,0,4.0,1,0,0,177.5423,1
+1644,Tanga,Muheza,Lusanga,0,0.991102,0,0,0,177.5423,1
+1645,Tanga,Muheza,Lusanga,0,0.8186174,1,1,0,177.5423,1
+1646,Tanga,Muheza,Lusanga,0,0.9993156,1,0,0,177.5423,1
+1647,Tanga,Muheza,Lusanga,0,0.862423,0,0,0,177.5423,1
+1648,Tanga,Muheza,Lusanga,0,0.8870637,0,0,0,177.5423,1
+1649,Tanga,Muheza,Lusanga,0,6.0,0,0,0,177.5423,1
+1650,Tanga,Muheza,Lusanga,0,1.952088,0,0,0,177.5423,1
+1651,Tanga,Muheza,Lusanga,0,2.984257,1,0,0,177.5423,1
+1652,Tanga,Muheza,Lusanga,0,2.023272,0,0,0,177.5423,1
+1653,Tanga,Muheza,Lusanga,1,1.0,1,1,0,177.5423,1
+1654,Tanga,Muheza,Magila,0,1.697467,0,0,0,267.334,1
+1655,Tanga,Muheza,Magila,0,1.136208,1,0,0,267.334,1
+1656,Tanga,Muheza,Magila,0,0.8459959,0,0,0,267.334,1
+1657,Tanga,Muheza,Magila,0,1.086927,1,0,0,267.334,1
+1658,Tanga,Muheza,Magila,0,1.511294,1,0,0,267.334,1
+1659,Tanga,Muheza,Magila,0,50.0,1,0,0,267.334,1
+1660,Tanga,Muheza,Magila,0,0.6324435,0,0,0,267.334,1
+1661,Tanga,Muheza,Magila,0,0.3942505,1,0,0,267.334,1
+1662,Tanga,Muheza,Magoroto,0,0.6461328,0,0,0,446.9772,1
+1663,Tanga,Muheza,Magoroto,0,0.3613963,1,0,0,446.9772,1
+1664,Tanga,Muheza,Magoroto,0,1.075975,0,0,0,446.9772,1
+1665,Tanga,Muheza,Magoroto,0,1.275838,0,0,0,446.9772,1
+1666,Tanga,Muheza,Magoroto,0,2.0,0,0,0,446.9772,1
+1667,Tanga,Muheza,Magoroto,0,0.4325804,1,0,0,446.9772,1
+1668,Tanga,Muheza,Magoroto,0,1.267625,1,1,0,446.9772,1
+1669,Tanga,Muheza,Magoroto,0,1.902806,1,1,1,446.9772,1
+1670,Tanga,Muheza,Magoroto,0,15.26352,1,0,0,446.9772,1
+1671,Tanga,Muheza,Magoroto,0,1.774127,0,0,0,446.9772,1
+1672,Tanga,Muheza,Majengo,0,20.04107,0,0,0,261.9518,1
+1673,Tanga,Muheza,Majengo,0,16.0,0,0,0,261.9518,1
+1674,Tanga,Muheza,Majengo,1,0.7720739,0,0,0,261.9518,1
+1675,Tanga,Muheza,Majengo,0,3.0,0,0,0,261.9518,1
+1676,Tanga,Muheza,Majengo,0,2.338125,0,0,0,261.9518,1
+1677,Tanga,Muheza,Majengo,0,0.9062286,0,0,0,261.9518,1
+1678,Tanga,Muheza,Majengo,0,0.91718,0,0,0,261.9518,1
+1679,Tanga,Muheza,Majengo,1,0.1533196,1,0,0,261.9518,1
+1680,Tanga,Muheza,Majengo,0,1.100616,1,1,0,261.9518,1
+1681,Tanga,Muheza,Majengo,0,0.550308,1,0,0,261.9518,1
+1682,Tanga,Muheza,Majengo,0,1.530459,1,1,0,261.9518,1
+1683,Tanga,Muheza,Majengo,0,20.0,0,0,0,261.9518,1
+1684,Tanga,Muheza,Majengo,1,54.0,0,1,1,261.9518,1
+1685,Tanga,Muheza,Majengo,0,25.0,0,0,0,261.9518,1
+1686,Tanga,Muheza,Majengo,0,1.0,1,0,0,261.9518,1
+1687,Tanga,Muheza,Majengo,0,2.0,1,0,0,261.9518,1
+1688,Tanga,Muheza,Majengo,1,35.0,0,0,0,261.9518,1
+1689,Tanga,Muheza,Majengo,0,1.308693,0,0,0,261.9518,1
+1690,Tanga,Muheza,Majengo,0,7.0,1,0,0,261.9518,1
+1691,Tanga,Muheza,Majengo,0,0.3066393,1,0,0,261.9518,1
+1692,Tanga,Muheza,Majengo,0,0.5338809,1,0,0,261.9518,1
+1693,Tanga,Muheza,Maramba,1,2.220397,1,0,0,169.2794,1
+1694,Tanga,Muheza,Maramba,0,3.017112,1,0,0,169.2794,1
+1695,Tanga,Muheza,Maramba,0,0.3203285,0,0,0,169.2794,1
+1696,Tanga,Muheza,Maramba,0,17.0,1,0,0,169.2794,1
+1697,Tanga,Muheza,Maramba,1,0.7556468,1,1,0,169.2794,1
+1698,Tanga,Muheza,Maramba,0,0.7036276,0,0,0,169.2794,1
+1699,Tanga,Muheza,Maramba,1,1.754962,1,1,1,169.2794,1
+1700,Tanga,Muheza,Maramba,1,0.9166667,1,0,0,169.2794,1
+1701,Tanga,Muheza,Maramba,0,37.53593,0,0,0,169.2794,1
+1702,Tanga,Muheza,Maramba,0,2.302532,1,0,0,169.2794,1
+1703,Tanga,Muheza,Maramba,0,2.182067,1,0,0,169.2794,1
+1704,Tanga,Muheza,Masuguru,0,3.0,1,0,0,278.5543,1
+1705,Tanga,Muheza,Masuguru,0,1.0,0,0,0,278.5543,1
+1706,Tanga,Muheza,Masuguru,0,2.49692,0,0,0,278.5543,1
+1707,Tanga,Muheza,Masuguru,0,1.251198,1,0,0,278.5543,1
+1708,Tanga,Muheza,Masuguru,0,0.4271047,1,1,0,278.5543,1
+1709,Tanga,Muheza,Masuguru,0,0.678987,0,0,0,278.5543,1
+1710,Tanga,Muheza,Masuguru,0,42.0,0,0,0,278.5543,1
+1711,Tanga,Muheza,Masuguru,0,1.648186,0,0,0,278.5543,1
+1712,Tanga,Muheza,Masuguru,0,0.5092403,1,0,0,278.5543,1
+1713,Tanga,Muheza,Masuguru,1,0.5859001,0,0,0,278.5543,1
+1714,Tanga,Muheza,Masuguru,0,1.94935,0,0,1,278.5543,1
+1715,Tanga,Muheza,Masuguru,0,2.940452,0,0,0,278.5543,1
+1716,Tanga,Muheza,Masuguru,0,1.385352,0,1,0,278.5543,1
+1717,Tanga,Muheza,Masuguru,0,30.0,0,0,0,278.5543,1
+1718,Tanga,Muheza,Masuguru,0,1.1718,0,0,0,278.5543,1
+1719,Tanga,Muheza,Masuguru,0,0.8323066,1,0,0,278.5543,1
+1720,Tanga,Muheza,Mbaramo,0,0.3613963,1,1,0,248.4574,1
+1721,Tanga,Muheza,Mbaramo,0,0.5420945,1,0,0,248.4574,1
+1722,Tanga,Muheza,Mbaramo,0,2.0,0,0,0,248.4574,1
+1723,Tanga,Muheza,Mbaramo,0,1.234771,0,0,0,248.4574,1
+1724,Tanga,Muheza,Mbaramo,0,2.0,1,1,0,248.4574,1
+1725,Tanga,Muheza,Mbaramo,0,1.245722,1,0,0,248.4574,1
+1726,Tanga,Muheza,Mbaramo,0,12.0,0,0,0,248.4574,1
+1727,Tanga,Muheza,Mbaramo,0,2.672142,0,1,0,248.4574,1
+1728,Tanga,Muheza,Mhinduro,0,0.8542094,1,0,0,212.4679,1
+1729,Tanga,Muheza,Mhinduro,0,8.0,1,0,0,212.4679,1
+1730,Tanga,Muheza,Mhinduro,0,47.0,0,0,0,212.4679,1
+1731,Tanga,Muheza,Mhinduro,0,0.7474332,1,1,0,212.4679,1
+1732,Tanga,Muheza,Mhinduro,0,0.183436,0,0,0,212.4679,1
+1733,Tanga,Muheza,Mhinduro,0,3.353867,0,0,0,212.4679,1
+1734,Tanga,Muheza,Mhinduro,1,20.0,0,1,1,212.4679,1
+1735,Tanga,Muheza,Mhinduro,0,1.883641,0,0,0,212.4679,1
+1736,Tanga,Muheza,Mhinduro,0,0.5065024,1,0,0,212.4679,1
+1737,Tanga,Muheza,Misalai,0,0.4873374,1,0,0,946.9804,2
+1738,Tanga,Muheza,Misalai,1,2.989733,1,0,0,946.9804,2
+1739,Tanga,Muheza,Misalai,0,3.0,1,0,0,946.9804,2
+1740,Tanga,Muheza,Misalai,0,1.28679,1,0,0,946.9804,2
+1741,Tanga,Muheza,Misalai,0,6.0,1,1,1,946.9804,2
+1742,Tanga,Muheza,Misalai,1,0.5,1,0,0,946.9804,2
+1743,Tanga,Muheza,Misalai,0,0.5284052,0,0,0,946.9804,2
+1744,Tanga,Muheza,Misalai,0,2.442163,1,0,0,946.9804,2
+1745,Tanga,Muheza,Misalai,0,2.57358,0,0,0,946.9804,2
+1746,Tanga,Muheza,Misalai,0,2.910335,1,0,0,946.9804,2
+1747,Tanga,Muheza,Misalai,0,27.0,0,0,0,946.9804,2
+1748,Tanga,Muheza,Misozwe,0,0.5557837,1,0,0,185.6856,1
+1749,Tanga,Muheza,Misozwe,0,2.001369,1,0,0,185.6856,1
+1750,Tanga,Muheza,Misozwe,0,2.206708,0,0,0,185.6856,1
+1751,Tanga,Muheza,Misozwe,0,2.160164,1,0,0,185.6856,1
+1752,Tanga,Muheza,Misozwe,0,0.5557837,1,0,0,185.6856,1
+1753,Tanga,Muheza,Misozwe,0,0.9472964,0,0,0,185.6856,1
+1754,Tanga,Muheza,Misozwe,0,1.790554,1,1,0,185.6856,1
+1755,Tanga,Muheza,Misozwe,0,0.6433949,1,0,0,185.6856,1
+1756,Tanga,Muheza,Misozwe,0,1.097878,1,0,0,185.6856,1
+1757,Tanga,Muheza,Misozwe,0,0.6872005,1,0,0,185.6856,1
+1758,Tanga,Muheza,Mkuzi,0,2.940452,1,0,0,152.4758,1
+1759,Tanga,Muheza,Mkuzi,0,3.865845,0,0,0,152.4758,1
+1760,Tanga,Muheza,Mkuzi,0,2.299795,0,0,0,152.4758,1
+1761,Tanga,Muheza,Mkuzi,0,1.691992,1,0,0,152.4758,1
+1762,Tanga,Muheza,Mkuzi,0,1.24846,1,0,0,152.4758,1
+1763,Tanga,Muheza,Mkuzi,0,70.0,0,0,0,152.4758,1
+1764,Tanga,Muheza,Mkuzi,0,0.9746749,1,0,0,152.4758,1
+1765,Tanga,Muheza,Mkuzi,1,0.3586585,1,0,0,152.4758,1
+1766,Tanga,Muheza,Mkuzi,0,1.078713,0,0,0,152.4758,1
+1767,Tanga,Muheza,Mkuzi,0,0.257358,1,0,0,152.4758,1
+1768,Tanga,Muheza,Mkuzi,0,2.680356,1,0,0,152.4758,1
+1769,Tanga,Muheza,Mkuzi,0,4.807666,1,0,0,152.4758,1
+1770,Tanga,Muheza,Mkuzi,0,0.9828885,1,0,0,152.4758,1
+1771,Tanga,Muheza,Mkuzi,0,1.875428,1,0,0,152.4758,1
+1772,Tanga,Muheza,Mkuzi,1,0.8514716,0,0,0,152.4758,1
+1773,Tanga,Muheza,Mkuzi,0,1.661875,0,0,0,152.4758,1
+1774,Tanga,Muheza,Mkuzi,0,0.8487337,1,1,0,152.4758,1
+1775,Tanga,Muheza,Mkuzi,0,2.669405,0,0,0,152.4758,1
+1776,Tanga,Muheza,Mkuzi,0,1.144422,1,0,0,152.4758,1
+1777,Tanga,Muheza,Mkuzi,0,1.045859,0,0,0,152.4758,1
+1778,Tanga,Muheza,Mkuzi,0,1.190965,0,1,0,152.4758,1
+1779,Tanga,Muheza,Mkuzi,0,0.9117043,1,0,0,152.4758,1
+1780,Tanga,Muheza,Mkuzi,0,3.0,1,0,0,152.4758,1
+1781,Tanga,Muheza,Mkuzi,0,0.6817248,0,0,0,152.4758,1
+1782,Tanga,Muheza,Mkuzi,0,0.9637235,1,0,0,152.4758,1
+1783,Tanga,Muheza,Mkuzi,0,0.4325804,0,0,0,152.4758,1
+1784,Tanga,Muheza,Mkuzi,0,0.5886379,1,0,0,152.4758,1
+1785,Tanga,Muheza,Mkuzi,0,0.7583846,0,0,0,152.4758,1
+1786,Tanga,Muheza,Mkuzi,0,1.347023,1,0,0,152.4758,1
+1787,Tanga,Muheza,Mtindiro,0,1.023956,0,0,0,185.1048,1
+1788,Tanga,Muheza,Mtindiro,0,0.6406571,0,0,0,185.1048,1
+1789,Tanga,Muheza,Mtindiro,0,1.486653,0,0,0,185.1048,1
+1790,Tanga,Muheza,Mtindiro,0,0.7967146,0,0,0,185.1048,1
+1791,Tanga,Muheza,Mtindiro,0,1.790554,1,0,0,185.1048,1
+1792,Tanga,Muheza,Mtindiro,0,2.924025,0,1,0,185.1048,1
+1793,Tanga,Muheza,Mtindiro,0,0.7611225,1,0,0,185.1048,1
+1794,Tanga,Muheza,Mtindiro,0,0.5284052,0,0,0,185.1048,1
+1795,Tanga,Muheza,Mtindiro,1,4.087611,0,0,0,185.1048,1
+1796,Tanga,Muheza,Mtindiro,0,0.9500342,0,0,0,185.1048,1
+1797,Tanga,Muheza,Mtindiro,0,1.700205,1,0,0,185.1048,1
+1798,Tanga,Muheza,Mtindiro,0,0.8405202,0,0,0,185.1048,1
+1799,Tanga,Muheza,Mtindiro,0,3.0,1,0,0,185.1048,1
+1800,Tanga,Muheza,Mtindiro,0,6.0,0,0,0,185.1048,1
+1801,Tanga,Muheza,Mtindiro,0,0.5475702,1,0,0,185.1048,1
+1802,Tanga,Muheza,Mtindiro,0,1.0,0,0,0,185.1048,1
+1803,Tanga,Muheza,Mtindiro,0,2.885695,0,0,0,185.1048,1
+1804,Tanga,Muheza,Mtindiro,0,0.6324435,0,0,0,185.1048,1
+1805,Tanga,Muheza,Mtindiro,1,1.201916,1,1,0,185.1048,1
+1806,Tanga,Muheza,Mtindiro,0,1.552361,1,0,0,185.1048,1
+1807,Tanga,Muheza,Mtindiro,0,0.3203285,0,0,0,185.1048,1
+1808,Tanga,Muheza,Mtindiro,0,0.5119781,1,0,0,185.1048,1
+1809,Tanga,Muheza,Mtindiro,0,2.0,1,0,0,185.1048,1
+1810,Tanga,Muheza,Mtindiro,0,1.357974,0,0,0,185.1048,1
+1811,Tanga,Muheza,Mtindiro,0,2.20397,0,0,0,185.1048,1
+1812,Tanga,Muheza,Mtindiro,0,0.678987,0,1,0,185.1048,1
+1813,Tanga,Muheza,Mtindiro,0,0.6817248,1,0,0,185.1048,1
+1814,Tanga,Muheza,Mtindiro,0,1.106092,0,0,0,185.1048,1
+1815,Tanga,Muheza,Mtindiro,0,1.848049,1,0,0,185.1048,1
+1816,Tanga,Muheza,Mtindiro,0,1.470226,0,0,0,185.1048,1
+1817,Tanga,Muheza,Mtindiro,0,0.421629,1,0,0,185.1048,1
+1818,Tanga,Muheza,Mtindiro,0,1.64271,1,1,0,185.1048,1
+1819,Tanga,Muheza,Mtindiro,0,0.9555099,0,0,0,185.1048,1
+1820,Tanga,Muheza,Mtindiro,0,0.881588,0,0,0,185.1048,1
+1821,Tanga,Muheza,Mtindiro,0,1.111567,1,1,0,185.1048,1
+1822,Tanga,Muheza,Mtindiro,0,1.284052,0,0,0,185.1048,1
+1823,Tanga,Muheza,Mtindiro,0,1.103354,0,0,0,185.1048,1
+1824,Tanga,Muheza,Mtindiro,0,0.9801506,1,0,0,185.1048,1
+1825,Tanga,Muheza,Mtindiro,0,0.6817248,1,0,0,185.1048,1
+1826,Tanga,Muheza,Mtindiro,0,0.2354552,1,0,0,185.1048,1
+1827,Tanga,Muheza,Mtindiro,0,0.9336071,1,0,0,185.1048,1
+1828,Tanga,Muheza,Mtindiro,0,1.004791,0,0,0,185.1048,1
+1829,Tanga,Muheza,Mtindiro,0,3.690623,1,0,0,185.1048,1
+1830,Tanga,Muheza,Mtindiro,0,0.3258042,0,0,0,185.1048,1
+1831,Tanga,Muheza,Mtindiro,0,0.8295688,1,0,0,185.1048,1
+1832,Tanga,Muheza,Mtindiro,0,0.7556468,0,0,0,185.1048,1
+1833,Tanga,Muheza,Mtindiro,0,1.664613,0,0,0,185.1048,1
+1834,Tanga,Muheza,Mtindiro,1,1.467488,1,0,0,185.1048,1
+1835,Tanga,Muheza,Mtindiro,0,0.5722108,0,0,0,185.1048,1
+1836,Tanga,Muheza,Mtindiro,1,0.5393566,1,1,1,185.1048,1
+1837,Tanga,Muheza,Mtindiro,0,1.0,1,0,0,185.1048,1
+1838,Tanga,Muheza,Mtindiro,0,0.8350445,1,0,0,185.1048,1
+1839,Tanga,Muheza,Mtindiro,0,0.0,0,0,0,185.1048,1
+1840,Tanga,Muheza,Ngomeni,0,1.0,0,0,0,90.10577,1
+1841,Tanga,Muheza,Ngomeni,0,30.0,0,0,0,90.10577,1
+1842,Tanga,Muheza,Ngomeni,0,0.514716,1,0,0,90.10577,1
+1843,Tanga,Muheza,Ngomeni,0,2.368241,1,0,0,90.10577,1
+1844,Tanga,Muheza,Ngomeni,0,40.0,0,0,0,90.10577,1
+1845,Tanga,Muheza,Ngomeni,0,0.9856263,0,0,0,90.10577,1
+1846,Tanga,Muheza,Ngomeni,0,1.927447,1,0,0,90.10577,1
+1847,Tanga,Muheza,Ngomeni,1,0.7638603,1,0,0,90.10577,1
+1848,Tanga,Muheza,Ngomeni,0,3.0,1,1,0,90.10577,1
+1849,Tanga,Muheza,Ngomeni,1,1.382615,0,1,0,90.10577,1
+1850,Tanga,Muheza,Ngomeni,0,1.451061,0,0,0,90.10577,1
+1851,Tanga,Muheza,Ngomeni,0,1.533196,0,0,0,90.10577,1
+1852,Tanga,Muheza,Ngomeni,0,1.0,0,0,0,90.10577,1
+1853,Tanga,Muheza,Ngomeni,0,30.0,0,0,0,90.10577,1
+1854,Tanga,Muheza,Ngomeni,0,0.1423682,0,0,0,90.10577,1
+1855,Tanga,Muheza,Ngomeni,1,1.004791,1,0,0,90.10577,1
+1856,Tanga,Muheza,Ngomeni,0,0.9856263,0,0,0,90.10577,1
+1857,Tanga,Muheza,Ngomeni,0,1.848049,1,0,0,90.10577,1
+1858,Tanga,Muheza,Ngomeni,0,0.7282683,0,0,0,90.10577,1
+1859,Tanga,Muheza,Ngomeni,0,2.841889,1,0,0,90.10577,1
+1860,Tanga,Muheza,Ngomeni,1,0.5448323,1,1,0,90.10577,1
+1861,Tanga,Muheza,Ngomeni,0,2.951403,1,0,0,90.10577,1
+1862,Tanga,Muheza,Ngomeni,0,5.275838,0,0,0,90.10577,1
+1863,Tanga,Muheza,Ngomeni,0,0.5119781,0,0,0,90.10577,1
+1864,Tanga,Muheza,Ngomeni,0,2.261465,0,0,0,90.10577,1
+1865,Tanga,Muheza,Ngomeni,0,0.6132786,1,1,0,90.10577,1
+1866,Tanga,Muheza,Ngomeni,1,1.412731,0,1,1,90.10577,1
+1867,Tanga,Muheza,Ngomeni,0,0.4353183,0,0,0,90.10577,1
+1868,Tanga,Muheza,Ngomeni,0,0.5475702,0,0,0,90.10577,1
+1869,Tanga,Muheza,Nkumba,0,0.9117043,1,0,0,258.0047,1
+1870,Tanga,Muheza,Nkumba,0,0.6543463,0,0,0,258.0047,1
+1871,Tanga,Muheza,Nkumba,0,1.0,1,0,0,258.0047,1
+1872,Tanga,Muheza,Nkumba,0,0.8377823,0,1,0,258.0047,1
+1873,Tanga,Muheza,Nkumba,1,0.5995893,0,1,0,258.0047,1
+1874,Tanga,Muheza,Nkumba,0,1.404517,0,0,0,258.0047,1
+1875,Tanga,Muheza,Nkumba,0,0.8459959,1,0,0,258.0047,1
+1876,Tanga,Muheza,Nkumba,0,36.0,1,0,0,258.0047,1
+1877,Tanga,Muheza,Nkumba,0,0.8925394,1,0,0,258.0047,1
+1878,Tanga,Muheza,Nkumba,0,0.312115,1,0,0,258.0047,1
+1879,Tanga,Muheza,Nkumba,0,1.270363,1,0,0,258.0047,1
+1880,Tanga,Muheza,Nkumba,0,1.508556,0,0,0,258.0047,1
+1881,Tanga,Muheza,Nkumba,0,0.3696099,0,0,0,258.0047,1
+1882,Tanga,Muheza,Nkumba,0,1.995893,0,1,1,258.0047,1
+1883,Tanga,Muheza,Nkumba,0,0.1943874,0,0,0,258.0047,1
+1884,Tanga,Muheza,Nkumba,0,1.601643,0,0,0,258.0047,1
+1885,Tanga,Muheza,Nkumba,0,0.7419575,1,0,0,258.0047,1
+1886,Tanga,Muheza,Nkumba,0,19.0,1,0,0,258.0047,1
+1887,Tanga,Muheza,Nkumba,0,3.367557,0,0,0,258.0047,1
+1888,Tanga,Muheza,Nkumba,0,0.2464066,0,0,0,258.0047,1
+1889,Tanga,Muheza,Nkumba,0,0.4052019,1,0,0,258.0047,1
+1890,Tanga,Muheza,Nkumba,0,2.0,1,0,0,258.0047,1
+1891,Tanga,Muheza,Nkumba,0,0.5776865,0,0,0,258.0047,1
+1892,Tanga,Muheza,Nkumba,0,3.824778,0,0,0,258.0047,1
+1893,Tanga,Muheza,Nkumba,0,2.841889,1,0,0,258.0047,1
+1894,Tanga,Muheza,Nkumba,0,0.788501,0,0,0,258.0047,1
+1895,Tanga,Muheza,Nkumba,0,3.474333,0,0,0,258.0047,1
+1896,Tanga,Muheza,Nkumba,0,2.047912,0,1,0,258.0047,1
+1897,Tanga,Muheza,Nkumba,0,0.4380561,1,1,0,258.0047,1
+1898,Tanga,Muheza,Nkumba,0,0.5201917,1,0,0,258.0047,1
+1899,Tanga,Muheza,Pande,0,0.7255304,1,0,0,145.4577,1
+1900,Tanga,Muheza,Pande,0,0.5475702,1,0,0,145.4577,1
+1901,Tanga,Muheza,Pande,0,2.0,1,0,0,145.4577,1
+1902,Tanga,Muheza,Pande,0,2.004107,1,0,0,145.4577,1
+1903,Tanga,Muheza,Pande,0,1.190965,0,0,1,145.4577,1
+1904,Tanga,Muheza,Pande,0,0.9117043,1,0,0,145.4577,1
+1905,Tanga,Muheza,Pande,1,1.0,0,0,0,145.4577,1
+1906,Tanga,Muheza,Pande,0,2.02601,1,1,0,145.4577,1
+1907,Tanga,Muheza,Potwe,1,0.2874743,1,1,0,288.6579,1
+1908,Tanga,Muheza,Potwe,1,0.5831622,1,0,1,288.6579,1
+1909,Tanga,Muheza,Potwe,0,0.4709103,1,1,0,288.6579,1
+1910,Tanga,Muheza,Potwe,1,13.0,1,1,1,288.6579,1
+1911,Tanga,Muheza,Potwe,0,0.5366188,0,0,0,288.6579,1
+1912,Tanga,Muheza,Potwe,0,1.048597,1,0,0,288.6579,1
+1913,Tanga,Muheza,Potwe,0,2.102669,1,0,0,288.6579,1
+1914,Tanga,Muheza,Potwe,0,0.4900753,1,0,0,288.6579,1
+1915,Tanga,Muheza,Potwe,0,1.355236,0,0,0,288.6579,1
+1916,Tanga,Muheza,Potwe,0,1.442847,0,0,0,288.6579,1
+1917,Tanga,Muheza,Potwe,0,0.0054757,1,0,0,288.6579,1
+1918,Tanga,Muheza,Potwe,0,1.015743,0,0,0,288.6579,1
+1919,Tanga,Muheza,Potwe,0,1.054072,0,0,0,288.6579,1
+1920,Tanga,Muheza,Potwe,0,1.073238,0,0,0,288.6579,1
+1921,Tanga,Muheza,Potwe,0,0.8980151,1,1,0,288.6579,1
+1922,Tanga,Muheza,Potwe,0,0.971937,1,0,0,288.6579,1
+1923,Tanga,Muheza,Potwe,0,0.6926762,1,0,0,288.6579,1
+1924,Tanga,Muheza,Potwe,0,0.7446954,0,0,0,288.6579,1
+1925,Tanga,Muheza,Potwe,0,0.7364818,1,0,0,288.6579,1
+1926,Tanga,Muheza,Songa,0,1.013005,0,0,0,203.5585,1
+1927,Tanga,Muheza,Songa,0,2.694045,0,1,0,203.5585,1
+1928,Tanga,Muheza,Songa,0,3.0,1,0,0,203.5585,1
+1929,Tanga,Muheza,Songa,0,1.1718,1,0,0,203.5585,1
+1930,Tanga,Muheza,Songa,0,0.6269678,0,0,0,203.5585,1
+1931,Tanga,Muheza,Songa,0,6.324435,0,0,0,203.5585,1
+1932,Tanga,Muheza,Songa,0,1.330595,1,0,0,203.5585,1
+1933,Tanga,Muheza,Songa,0,3.0,0,0,0,203.5585,1
+1934,Tanga,Muheza,Songa,0,1.979466,0,0,0,203.5585,1
+1935,Tanga,Muheza,Songa,0,3.126626,1,0,0,203.5585,1
+1936,Tanga,Muheza,Songa,0,0.9166667,0,0,0,203.5585,1
+1937,Tanga,Muheza,Songa,0,1.0,0,0,0,203.5585,1
+1938,Tanga,Muheza,Songa,0,1.212868,0,0,0,203.5585,1
+1939,Tanga,Muheza,Songa,0,4.0,0,0,0,203.5585,1
+1940,Tanga,Muheza,Songa,1,0.75,1,1,0,203.5585,1
+1941,Tanga,Muheza,Songa,0,0.2108145,0,0,0,203.5585,1
+1942,Tanga,Muheza,Songa,0,1.0,0,0,0,203.5585,1
+1943,Tanga,Muheza,Songa,0,0.6872005,0,0,0,203.5585,1
+1944,Tanga,Muheza,Songa,0,1.160849,0,0,0,203.5585,1
+1945,Tanga,Muheza,Songa,1,55.0,0,0,0,203.5585,1
+1946,Tanga,Muheza,Songa,0,7.0,0,0,0,203.5585,1
+1947,Tanga,Muheza,Songa,0,1.0,1,0,0,203.5585,1
+1948,Tanga,Muheza,Songa,0,1.382615,0,1,0,203.5585,1
+1949,Tanga,Muheza,Songa,0,26.0,0,0,0,203.5585,1
+1950,Tanga,Muheza,Songa,1,2.0,0,0,0,203.5585,1
+1951,Tanga,Muheza,Songa,0,46.0,0,0,0,203.5585,1
+1952,Tanga,Muheza,Songa,0,2.0,1,0,0,203.5585,1
+1953,Tanga,Muheza,Songa,0,2.49692,0,0,0,203.5585,1
+1954,Tanga,Muheza,Songa,0,0.788501,0,0,0,203.5585,1
+1955,Tanga,Muheza,Songa,0,0.7063655,1,0,0,203.5585,1
+1956,Tanga,Muheza,Songa,0,1.311431,1,0,0,203.5585,1
+1957,Tanga,Muheza,Songa,0,2.0,1,0,0,203.5585,1
+1958,Tanga,Muheza,Songa,0,3.104723,0,0,0,203.5585,1
+1959,Tanga,Muheza,Songa,0,3.0,1,1,0,203.5585,1
+1960,Tanga,Muheza,Songa,0,1.0,0,0,0,203.5585,1
+1961,Tanga,Muheza,Songa,1,3.0,1,1,0,203.5585,1
+1962,Tanga,Muheza,Songa,0,6.0,0,0,0,203.5585,1
+1963,Tanga,Muheza,Tingeni,0,0.4490075,1,0,0,303.4799,1
+1964,Tanga,Muheza,Tingeni,0,1.0,1,0,0,303.4799,1
+1965,Tanga,Muheza,Tingeni,0,0.3887748,1,0,0,303.4799,1
+1966,Tanga,Muheza,Tingeni,0,2.0,1,0,0,303.4799,1
+1967,Tanga,Muheza,Tingeni,0,0.9253936,1,0,0,303.4799,1
+1968,Tanga,Muheza,Tingeni,0,1.018481,1,0,0,303.4799,1
+1969,Tanga,Muheza,Tingeni,0,0.8898015,1,0,0,303.4799,1
+1970,Tanga,Muheza,Tingeni,0,2.0,0,0,0,303.4799,1
+1971,Tanga,Muheza,Tingeni,0,0.9527721,0,0,0,303.4799,1
+1972,Tanga,Muheza,Tingeni,0,0.5831622,1,0,0,303.4799,1
+1973,Tanga,Muheza,Tingeni,0,0.7665982,0,0,0,303.4799,1
+1974,Tanga,Muheza,Tingeni,0,0.75,1,1,0,303.4799,1
+1975,Tanga,Muheza,Tingeni,0,1.864476,0,0,0,303.4799,1
+1976,Tanga,Muheza,Tingeni,0,0.5092403,0,0,0,303.4799,1
+1977,Tanga,Muheza,Tingeni,0,0.4873374,0,0,0,303.4799,1
+1978,Tanga,Muheza,Tingeni,0,1.314168,1,0,0,303.4799,1
+1979,Tanga,Muheza,Tingeni,0,2.0,0,0,0,303.4799,1
+1980,Tanga,Muheza,Tingeni,0,0.6461328,0,0,0,303.4799,1
+1981,Tanga,Muheza,Tingeni,0,0.8596851,1,0,0,303.4799,1
+1982,Tanga,Muheza,Tingeni,0,0.2272416,0,1,0,303.4799,1
+1983,Tanga,Muheza,Zirai,0,0.3258042,1,0,0,578.2323,1
+1984,Tanga,Muheza,Zirai,1,0.6105407,1,1,0,578.2323,1
+1985,Tanga,Muheza,Zirai,0,2.0,1,0,0,578.2323,1
+1986,Tanga,Muheza,Zirai,0,0.7173169,1,0,0,578.2323,1
+1987,Tanga,Muheza,Zirai,0,2.882957,0,0,0,578.2323,1
+1988,Tanga,Muheza,Zirai,0,0.8733744,1,0,0,578.2323,1

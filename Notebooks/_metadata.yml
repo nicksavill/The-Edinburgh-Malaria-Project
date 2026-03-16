@@ -1,0 +1,22 @@
+title: Predicting the efficacy of malaria vaccines across the life-course
+author:
+  - name: Nicholas J. Savill
+  - name: Philip J. Spence
+affiliation: Institute of Immunology and Infection Research, University of Edinburgh, Edinburgh, UK
+
+format:
+    typst:
+        documentclass: article
+        papersize: a4
+        margin:
+            x: 2cm
+            y: 2cm
+bibliography: papers.bib
+bibliographystyle: "chicago-author-date"
+execute:
+    echo: false
+editor:
+    render-on-save: false
+jupyter: python3
+tbl-cap-location: bottom
+section-numbering: 1.1.1

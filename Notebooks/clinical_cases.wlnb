@@ -1,0 +1,199 @@
+{
+ "cells": [
+  {
+   "kind": 1,
+   "value": "# Derivation of the number of clinical episodes between two ages for the exponential and sigmoidal clinical risk models",
+   "languageId": "markdown",
+   "mime": "text/markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "## Expected infection rate and number of infections with age\n\n$$b=\\frac{\\ln 2}{\\tau_\\text{elp}}$$",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "l[a_] := λ*(1 - ρe*Exp[-b*a])\nl[a]",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "n[a_] := Integrate[l[a], {a, 0, a}, Assumptions -> {a > 0, λ > 0, ρe > 0, b > 0}]\nn[a]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a</w><w>+</w><wfrac><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρe</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "λ*(a + ((-1 + E^(-(a*b)))*ρe)/b)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "908d7e6d-a3d9-451f-8030-7aea787e4856",
+     "metadata": {
+      "cellLabel": "Out[3]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "## Sigmoidal decay clinical model",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "c_sig[a_] := ρc * l[a] * (Exp[δc*γc]-1)/ (Exp[δc*γc] - 2 + Exp[δc*n[a]])\nc_sig[a]",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "C_sig = Integrate[c_sig[a], {a, a1, a2}, Assumptions -> {b>0, λ>0, ρe>0, ρc>0, δc>0, γc>0, a1>0, a2>a1}]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow><wb>)</wb></wrow></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρc</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>-</w><w>δc</w></wrow><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a1</w><w></w><w>b</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow></w></wsup></wrow><w>-</w><wrow><w></w><w>a2</w><w></w><w>b</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow></w></wsup></wrow><w>-</w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a1</w><w></w><w>b</w></wrow></w></wsup><w></w><w>ρe</w></wrow><w>+</w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a2</w><w></w><w>b</w></wrow></w></wsup><w></w><w>ρe</w></wrow></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><w>b</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow></w></wsup><w></w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wrow><w></w><w>2</w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>δc</w><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><wfrac class=\"script\"><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a1</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρe</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></wsup></wrow><wb>]</wb></wrow></wrow></wrow><w>-</w><wrow><w></w><w>b</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow></w></wsup><w></w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wrow><w></w><w>2</w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>δc</w><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a2</w><w>+</w><wfrac class=\"script\"><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a2</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρe</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></wsup></wrow><wb>]</wb></wrow></wrow></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>b</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>δc</w></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "((-1 + E^(γ*δc))*ρc*(-(δc*λ*(a1*b*E^((a1 + a2)*b) - a2*b*E^((a1 + a2)*b) - E^(a1*b)*ρe + E^(a2*b)*ρe)) + b*E^((a1 + a2)*b)*Log[2 - E^(γ*δc) - E^(δc*λ*(a1 + ((-1 + E^(-(a1*b)))*ρe)/b))] - b*E^((a1 + a2)*b)*Log[2 - E^(γ*δc) - E^(δc*λ*(a2 + ((-1 + E^(-(a2*b)))*ρe)/b))]))/(b*E^((a1 + a2)*b)*(-2 + E^(γ*δc))*δc)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "c0f26eb7-636b-4476-912e-98e67d806487",
+     "metadata": {
+      "cellLabel": "Out[5]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "FullSimplify[C_sig]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow><wb>)</wb></wrow></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρc</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a1</w><w></w><w>b</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a2</w><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>δc</w><w></w><w>λ</w><w></w><w>ρe</w></wrow><w>-</w><wrow><w></w><w>b</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>b</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>-</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>δc</w><w></w><w>λ</w></wrow><w>-</w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wrow><w></w><w>2</w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>δc</w><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><wfrac class=\"script\"><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a1</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρe</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></wsup></wrow><wb>]</wb></wrow></wrow><w>+</w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wrow><w></w><w>2</w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>δc</w><w></w><w>λ</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a2</w><w>+</w><wfrac class=\"script\"><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a2</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>ρe</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></wsup></wrow><wb>]</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>b</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>γ</w><w></w><w>δc</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>δc</w></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "((-1 + E^(γ*δc))*ρc*((E^(a1*b) - E^(a2*b))*δc*λ*ρe - b*E^((a1 + a2)*b)*((a1 - a2)*δc*λ - Log[2 - E^(γ*δc) - E^(δc*λ*(a1 + ((-1 + E^(-(a1*b)))*ρe)/b))] + Log[2 - E^(γ*δc) - E^(δc*λ*(a2 + ((-1 + E^(-(a2*b)))*ρe)/b))])))/(b*E^((a1 + a2)*b)*(-2 + E^(γ*δc))*δc)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "afee98a2-41ce-4d06-ae7c-8f08dd8a66f8",
+     "metadata": {
+      "cellLabel": "Out[6]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "---",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "## Exponential decay clinical model",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "c_exp[a_] := ρc*l[a]*Exp[-δc*n[a]]\nc_exp[a]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>d</w></wrow><w></w><w>L</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a</w><w>+</w><wfrac><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>1</w></wrow><w>+</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a</w></wrow><w></w><w>b</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>u</w></wrow></w><w><w></w><w><w>b</w></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></wsup><w></w><w>L</w><w></w><w>r</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>1</w><w>-</w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>a</w></wrow><w></w><w>b</w></wrow></w></wsup><w></w><w>u</w></wrow></wrow><wb>)</wb></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "(L*r*(1 - u/E^(a*b)))/E^(d*L*(a + ((-1 + E^(-(a*b)))*u)/b))",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "6ae2d814-9c54-4154-b888-fb175f84702f",
+     "metadata": {
+      "cellLabel": "Out[144]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 2,
+   "value": "Na = Integrate[c1[a], {a, a1, a2}, Assumptions -> {b>0, λ>0, ρe>0, ρc>0, δc>0, a1>0, a2>a1}]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>d</w></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>b</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>L1</w><w>-</w><w>L2</w></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><w>L2</w></wrow></wrow><wb>)</wb></wrow></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a1</w><w></w><w>d</w><w></w><w>L2</w></wrow></w></wsup><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>a2</w><w></w><w>d</w><w></w><w>L2</w></wrow></w></wsup></wrow><wb>)</wb></wrow><w></w><w>r</w></wrow></w><w><w></w><w><w>d</w></w></w></wfrac></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "-(((E^(a1*d*L2) - E^(a2*d*L2))*r)/(d*E^(d*(b*(L1 - L2) + (a1 + a2)*L2))))",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "e30ecc47-6339-4796-9755-d202915d68e0",
+     "metadata": {
+      "cellLabel": "Out[23]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {}
+  },
+  {
+   "kind": 1,
+   "value": "---",
+   "languageId": "markdown",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}

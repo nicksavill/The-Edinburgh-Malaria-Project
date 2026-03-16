@@ -1,0 +1,17 @@
+variable,measure,case_def,group,seasonality,month,value,lower,upper
+All clinical,efficacy,primary,"no booster",perennial,12,0.457,0.417,0.495
+All clinical,efficacy,primary,"no booster",perennial,24,0.339,0.289,0.386
+All clinical,efficacy,primary,"no booster",perennial,41,0.262,0.208,0.312
+All clinical,efficacy,primary,"no booster",perennial,84,0.19,0.11,0.27
+All clinical,efficacy,primary,"one booster",perennial,12,0.457,0.417,0.495
+All clinical,efficacy,primary,"one booster",perennial,24,0.461,0.418,0.501
+All clinical,efficacy,primary,"one booster",perennial,41,0.390,0.343,0.433
+All clinical,efficacy,primary,"one booster",perennial,84,0.24,0.16,0.31
+Severe malaria,efficacy,primary,"no booster",perennial,12,0.355,0.146,0.511
+Severe malaria,efficacy,primary,"no booster",perennial,24,0.021,-0.275,0.248
+Severe malaria,efficacy,primary,"no booster",perennial,41,-0.058,-0.35,0.17
+Severe malaria,efficacy,primary,"no booster",perennial,84,0.10,-0.18,0.31
+Severe malaria,efficacy,primary,"one booster",perennial,12,0.355,0.146,0.511
+Severe malaria,efficacy,primary,"one booster",perennial,24,0.324,0.095,0.498
+Severe malaria,efficacy,primary,"one booster",perennial,41,0.285,0.063,0.457
+Severe malaria,efficacy,primary,"one booster",perennial,84,0.37,0.15,0.53
