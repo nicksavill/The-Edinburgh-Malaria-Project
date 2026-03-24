@@ -1,6 +1,9 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
+from Edinburgh_Model.visualisation_utils import *
+from Edinburgh_Model.simulate_single_vaccine import *
+
 from . import infection_rate
 
 import pickle
@@ -107,92 +110,6 @@ def early_life_protection_plot(fontsize=12):
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     return fig, ax
-
-
-######################################## SIMULATION CODE #################################################
-
-def simulation_single_vaccine(model):
-    """
-        simulate one control and one vaccine arm of the model and aggregate into yearly time steps for plotting
-    """
-    pars = model.pars
-    display_vars = model.variables.display_vars
-    display_measures = model.measures.display_measures
-    # duration of simulation from birth of oldest vaccinated cohort to end of study
-    duration = ceil(weeks_per_month*pars.study_months) + pars.max_vac_age
-
-    # if first infections or first clinical cases are displayed then record these otherwise save time by not recording them
-    if 'First infection' in display_vars or 'First clinical' in display_vars:
-        t_record_first = pars.t_start_counting
-    else:
-        t_record_first = None
-
-    # run a single vaccinated cohort until the end of the last primary vaccine dose
-    # note there is no vaccine induced immunity until the last primary dose is given
-    cohorts = {}
-    cohorts[pars.control] = Cohort(duration, pars, time_warning=model.time_warning)
-    if pars.smc_control:
-        cohorts[pars.control].SMC(pars.smc_offset)
-
-    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile)
-
-    # copy the unvaccinated cohort into the vaccinated cohort on last primary dose
-    if pars.lsv or pars.bsv:
-        cohorts[pars.treatment] = deepcopy(cohorts[pars.control])
-
-    # run the unvaccinated cohort to the end
-    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, duration, t_record_first, pars)
-
-    # set the vaccination times relative to the season peak
-    if pars.lsv:
-        cohorts[pars.treatment].liver_stage_vaccinate(pars.offset_liver)
-    if pars.bsv:
-        cohorts[pars.treatment].blood_stage_vaccinate(pars.offset_blood)
-    if pars.smc:
-        cohorts[pars.treatment].SMC(pars.smc_offset)
-
-    # run the vaccinated cohort to the end
-    if pars.lsv or pars.bsv or pars.smc:
-        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, duration, t_record_first, pars)
-
-    ############################ construct data for plots
-    # results are stored in a dictionary then converted to a dataframe for plotting
-    y = get_results(cohorts, t_record_first, pars, display_vars, display_measures)
-
-    if model.time_scale == 'Years':
-        dt = 52
-    elif model.time_scale == 'Months':
-        dt = 4
-        # weeks = np.array_split(np.arange(0, 52), 12)
-    else:
-        dt = 1
-
-    result = {}
-
-    for c in cohorts.keys():
-        for variable in display_vars:
-            z = y[c][f'{variable} cdf']
-
-            # construct cases
-            result[f'{c} {variable} cases'] = z[dt::dt] - z[:-dt:dt]
-
-            # construct cumulative cases
-            result[f'{c} {variable} cdf'] = z[dt::dt]
-
-    for c in list(cohorts.keys())[1:]:
-        for variable in display_vars:
-            f = f'{variable} cdf'
-
-            # construct efficacies
-            if 'efficacy' in display_measures:
-                result[f'{c} {variable} efficacy'] = 100*(1 - divide(y[c][f], y[pars.control][f])[dt::dt])
-
-            # construct cases averted
-            if 'averted' in display_measures:
-                result[f'{c} {variable} averted'] = (y[pars.control][f] - y[c][f])[dt::dt]
-
-    result['ages'] = np.arange(len(result[f'{c} {variable} cases']))
-    return pd.DataFrame(result).set_index("ages")
 
 
 ######################################## TIME SERIES PLOTS #################################################
@@ -398,7 +315,7 @@ def unvaccinated(λs=(10, 5, 1, 0.5), popsize=100000, β=0, season_width=1, ε_s
         model.pars.λ = λ
         model.pars.control = λ
         model.pars.update_pars(('control', 'λ'))
-        rs.append(simulation_single_vaccine(model))
+        rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     df_joined = pd.concat(rs, axis=1).reset_index(drop=False)
     if plot_figure:
@@ -435,13 +352,13 @@ def RTSS_validate_ts(λ=1, β=0, years=20, fig_xscale=1, fig_yscale=1, legend_po
     model.pars.nboosters_liver = 0
     model.pars.update_pars(('treatment', 'nboosters_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'one booster'
     model.pars.nboosters_liver = 1
     model.pars.update_pars(('treatment', 'nboosters_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -487,7 +404,7 @@ def R21_validate_ts(fig_xscale=1, fig_yscale=1) -> 'tuple':
 
     rs = []
     model.pars.treatment = 'R21'
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     df_joined = pd.concat(rs, axis=1).reset_index(drop=False)
     return plot(model, ('control', 'R21'), sim_source=df_joined)
@@ -518,7 +435,7 @@ def R21_or_R21_and_SMC_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fi
     model.pars.nboosters_liver = 1
     model.pars.update_pars(('treatment', 'nboosters_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'R21+SMC (2 yr)'
     model.pars.smc = True
@@ -526,7 +443,7 @@ def R21_or_R21_and_SMC_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fi
     model.pars.smc_repeats = 1
     model.pars.update_pars(('treatment', 'smc', 'smc_repeats', 'nboosters_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'R21+SMC (5 yr)'
     model.pars.smc = True
@@ -534,7 +451,7 @@ def R21_or_R21_and_SMC_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fi
     model.pars.smc_repeats = 4
     model.pars.update_pars(('treatment', 'smc', 'smc_repeats', 'nboosters_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -570,13 +487,13 @@ def RTSS_or_R21_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fig_yscal
     model.pars.vac_profile_liver = 'Imperial R21'
     model.pars.update_pars(('treatment', 'vac_profile_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'RTS,S (2 yr)'
     model.pars.vac_profile_liver = 'Imperial RTS,S'
     model.pars.update_pars(('treatment', 'vac_profile_liver'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -610,21 +527,21 @@ def RH5_ts(λ=1, β=0, years=20, season_width=1, protection_blood=False, fig_xsc
     model.pars.nboosters_blood = 1
     model.pars.update_pars(('treatment', 'nboosters_blood'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'RH5 (2 yr), x2 half-life'
     model.pars.τ_blood = 2
     model.pars.nboosters_blood = 1
     model.pars.update_pars(('treatment', 'τ_blood', 'nboosters_blood'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'RH5 (5 yr), x2 half-life'
     model.pars.τ_blood = 2
     model.pars.nboosters_blood = 4
     model.pars.update_pars(('treatment', 'τ_blood', 'nboosters_blood'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -659,7 +576,7 @@ def RH5_arm_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fig_yscale=1,
     model.pars.min_vac_age = int(round(10*weeks_per_month, 0))
     model.pars.update_pars(('treatment', 'protection_blood', 'vac_profile_blood', 'min_vac_age'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'RH5 delayed, infection'
     model.pars.protection_blood = True
@@ -667,7 +584,7 @@ def RH5_arm_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fig_yscale=1,
     model.pars.min_vac_age = int(round(10*weeks_per_month, 0))
     model.pars.update_pars(('treatment', 'protection_blood', 'vac_profile_blood', 'min_vac_age'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = 'RH5 monthly, no infection'
     model.pars.protection_blood = None
@@ -679,7 +596,7 @@ def RH5_arm_ts(λ=1, β=0, years=20, season_width=1, fig_xscale=1, fig_yscale=1,
     model.pars.update_pars(('treatment', 'protection_blood', 'vac_profile_blood', 'min_vac_age'))
     model.pars.update_pars(('ω_infection', 'ω_clinical', 'ω_severe'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -716,7 +633,7 @@ def RH5_R21_ts(λ=1, β=0, years=20, season_width=1, boosters=4, fig_xscale=1, f
     model.pars.min_vac_age = min_vac_age_liver
     model.pars.update_pars(('treatment', 'lsv', 'bsv', 'season_peak', 'min_vac_age'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = f'RH5 ({boosters+1} yr)'
     model.pars.lsv = False
@@ -725,7 +642,7 @@ def RH5_R21_ts(λ=1, β=0, years=20, season_width=1, boosters=4, fig_xscale=1, f
     model.pars.min_vac_age = min_vac_age_blood
     model.pars.update_pars(('treatment', 'lsv', 'bsv', 'season_peak', 'min_vac_age'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     model.pars.treatment = f'RH5+R21 ({boosters+1} yr)'
     model.pars.lsv = True
@@ -735,7 +652,7 @@ def RH5_R21_ts(λ=1, β=0, years=20, season_width=1, boosters=4, fig_xscale=1, f
     model.pars.offset_blood = min_vac_age_blood - min_vac_age_liver # difference of 3 months between last R21 dose and last RH5 dose
     model.pars.update_pars(('treatment', 'lsv', 'bsv', 'season_peak', 'min_vac_age', 'offset_blood'))
     treatments.append(model.pars.treatment)
-    rs.append(simulation_single_vaccine(model))
+    rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     # Remove columns with "control" in the column name from rs[0]
     for i in range(len(rs)-1):
@@ -769,7 +686,7 @@ def sim(model, λ, lsv, bsv, blood_boosters=None, study_months=90*12):
         model.pars.nboosters_blood = blood_boosters
 
     model.pars.update_pars(('λ', 'lsv', 'bsv', 'study_months', 'season_peak', 'min_vac_age', 'offset_blood', 'nboosters_blood'))
-    return simulation_single_vaccine(model)
+    return simulate_single_vaccine(model).set_index('ages')
 
 def lifetime_efficacies_plot(all_sims, fig_xscale, fig_yscale, surveyed=True):
     """ Plot predictions """
@@ -896,7 +813,7 @@ def rescue_sim(model, λ, lsv, bsv, blood_boosters=None):
 
     model.pars.update_pars(('λ', 'lsv', 'bsv', 'nboosters_blood'))
 
-    return simulation_single_vaccine(model)
+    return simulate_single_vaccine(model).set_index('ages')
 
 def R21_rescue_plot(sims, fig_xscale, fig_yscale, surveyed=False):
     """ Plot predictions """

@@ -1,6 +1,7 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
+from Edinburgh_Model.visualisation_utils import *
 
 import pandas as pd
 import matplotlib.pyplot as plt

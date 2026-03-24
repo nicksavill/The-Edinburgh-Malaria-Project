@@ -1,14 +1,9 @@
-import sys
-sys.path.append('..')
 from Edinburgh_Model.model import *
 from Edinburgh_Model.vaccination_types import *
 from Edinburgh_Model.visualisation_utils import *
 
-from bokeh.plotting import output_notebook
 from bokeh.models import Slider, RadioButtonGroup, CustomJSTickFormatter, Tooltip, HelpButton
 from bokeh.models.dom import HTML
-
-output_notebook(hide_banner=True)
 
 class Interaction:
     def __init__(self):

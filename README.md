@@ -39,7 +39,7 @@ git clone https://github.com/nicksavill/The-Edinburgh-Malaria-Project
 Install the required Python packages:
 
 - arviz: 0.23.4
-- bokeh: 3.4.0
+- bokeh: 3.6.2
 - scipy: 1.15.3
 - pandas: 2.1.1
 - graphviz: 0.21
