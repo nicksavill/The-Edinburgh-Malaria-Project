@@ -1,6 +1,6 @@
 Stan code for fitting to data in Goncalves et al. (2014).
 
-See Notebooks/S3_goncalves.ipynb for the mathematical model development, prior definitions, fits and parameter estimates
+See [Notebook S4])Notebooks/S4_goncalves.ipynb) for the mathematical model development, prior definitions, fits and parameter estimates
 
 File | Description
 :-- | :--

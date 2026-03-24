@@ -63,6 +63,7 @@ Install Quarto 1.8.27 to render the Jupyter notebooks to pdf.
 ## Project Structure
 
 - `Edinburgh_Model/`: Core model Python code
+- `Bokeh_server/`: Code for interactive simulations on a [bokeh server](https://temp.bio.ed.ac.uk/Vaccines)
 - `Data_Fitting/`: Stan models and data for parameter estimation
     - `Goncalves/`: Fit to data from Goncalves et al. (2014)
     - `Trape/`: Fit to data from Trape and Rogier (1996) and Trape et al. (2024).
@@ -98,14 +99,14 @@ The notebook `example.ipynb` provides some example code for plotting static matp
 The notebook `interactive.ipynb` provides example code to create an interactive app which can be run in a Jupyter notebook. It uses Bokeh to render the plots and provides sliders and buttons to examine the sensitivity of the model outputs to parameter changes.
 
 
-# License
+## License
 
 This project is licensed under the terms specified in `LICENSE`.
 
-# Contributing
+## Contributing
 
 Contributions are welcome. Please open issues or pull requests on GitHub.
 
-# Citation
+## Citation
 
 If you use this code, please cite the associated paper (details to be added).

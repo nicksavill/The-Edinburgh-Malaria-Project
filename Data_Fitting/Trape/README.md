@@ -17,15 +17,15 @@ Model No. | Shape | Hierarchical parameters | Notes
 :-- | :-- | :-- | :--
 1 | Exponential | None |
 2 | Sigmoidal | None |
-3 | Sigmoidal | None | ρ~elp~ = 1
-4 | Sigmoidal | τ~elp~, δ~clinical~ | ρ~elp~ = 1
-5 | Exponential | τ~elp~, δ~clinical~ | ρ~elp~ = 1
+3 | Sigmoidal | None | ρ<sub>elp</sub> = 1
+4 | Sigmoidal | τ<sub>elp</sub>, δ<sub>clinical</sub> | ρ<sub>elp</sub> = 1
+5 | Exponential | τ<sub>elp</sub>, δ<sub>clinical</sub> | ρ<sub>elp</sub> = 1
 
 #### Population-level models
 
 Model No. | Shape | Parameters | Notes
 :-- | :-- | :-- | :--
 6 | Sigmoidal | Heterogeneous |
-7 | Sigmoidal | Heterogeneous | Informative prior on ρ~clinical~
-8 | Sigmoidal | Homogeneous | Informative prior on ρ~clinical~
+7 | Sigmoidal | Heterogeneous | Informative prior on ρ<sub>clinical</sub>
+8 | Sigmoidal | Homogeneous | Informative prior on ρ<sub>clinical</sub>
 
