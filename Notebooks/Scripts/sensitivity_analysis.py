@@ -1,6 +1,9 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
+from Edinburgh_Model.vaccination_types import *
+from Edinburgh_Model.C.simulate_single_vaccine import *
+
 from . import paper
 from . import reyburn
 
@@ -131,8 +134,11 @@ def sim(model, λ, lsv, bsv, parameter, value):
     elif parameter == 'ω_severe':
         model.pars.ω_severe = value
         model.pars.update_pars('ω_severe')
+    elif parameter == 'death_rate_modifier':
+        model.pars.death_rate_modifier = value
+        model.pars.update_pars('death_rate_modifier')
 
-    return paper.simulation_single_vaccine(model)
+    return paper.simulate_single_vaccine(model)
 
 def plot(sim, default_value=None):
     from scipy.optimize import elementwise
@@ -247,3 +253,26 @@ def sensitivity(parameter, values, β=0, season_width=1, boosters=1, protection_
     r = pd.DataFrame(results)
     return r
 
+def death_rate_modifier():
+    from Scripts import reyburn
+
+    gam = reyburn.fit_GAM()
+    XX, fit, death_rates, cis = reyburn.death_rate_mean_CI(gam)
+    fig, ax = reyburn.plot_GAM_mean_CI_data(XX, fit, death_rates, cis)
+    ax.annotate('death rate modifier = 1', xy=(11, 0.15), color='C0')
+
+    pp = Parameters(study_months=20*12, death_rate_modifier=0.55)
+    duration = int(weeks_per_month*pp.study_months) + pp.min_vac_age + pp.vac_age_range
+    ages = np.arange(duration, dtype=float) # ages in weeks
+
+    ax.plot(ages/52, pp.direct_deaths[:duration])
+    ax.annotate('death rate modifier = 0.55', xy=(10, 0.115), color='C1')
+
+    pp = Parameters(study_months=20*12, death_rate_modifier=0)
+    duration = int(weeks_per_month*pp.study_months) + pp.min_vac_age + pp.vac_age_range
+    ages = np.arange(duration, dtype=float) # ages in weeks
+
+    ax.plot(ages/52, pp.direct_deaths[:duration])
+    ax.annotate('death rate modifier = 0', xy=(11, 0.07), color='C2')
+
+    return fig, ax

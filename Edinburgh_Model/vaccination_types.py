@@ -276,7 +276,7 @@ def RH5_Monthly_vaccination(a, args):
 
 
 def smc_protection(a, args):
-    ramp, rounds, repeats = args
+    ramp, rounds, repeats, coverage = args
 
     n = int(rounds*weeks_per_month)
     smc_protection_year = np.zeros(52)
@@ -287,4 +287,4 @@ def smc_protection(a, args):
     for age in range(repeats+1):
         l = smc_protection[age*52:(age+1)*52].shape[0]
         smc_protection[age*52:(age+1)*52] = smc_protection_year[:l]
-    return smc_protection
+    return coverage * smc_protection

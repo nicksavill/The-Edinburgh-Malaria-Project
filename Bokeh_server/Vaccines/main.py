@@ -110,7 +110,7 @@ def simulation(model):
             result[f'{c} severe mean age x'] = y[c]['severe_mean_age'] * np.ones(l) / dt
             if model.time_scale == 'Months':
                 result[f'{c} severe mean age x'] *= 4. / weeks_per_month
-            result[f'{c} severe mean age y'] = np.linspace(0, pars.death_rate_multiplier*0.15, l)
+            result[f'{c} severe mean age y'] = np.linspace(0, 0.15, l)
 
     return result
 
@@ -213,7 +213,7 @@ def plot(doc):
             vaccine_prot.line('x', 'y', color=c10[4][3], width=3, source=model.panel_source['blood_vac_prot'])
 
         if model.show_smc:
-            vaccine_prot.line('x', 'y', color=c10[4][0], width=3, legend_label='SMC', source=model.panel_source['smc'])
+            vaccine_prot.line('x', 'y', color=c10[4][0], width=3, source=model.panel_source['smc'])
 
         if model.show_season:
             vaccine_prot.line('x', 'y', color='DarkBlue', width=1, legend_label='Season', source=model.panel_source['season'])
@@ -227,7 +227,7 @@ def plot(doc):
         death_rates.line('x', 'y', color='Red', width=3, source=model.panel_source['death rates'])
 
         if pars.lsv or pars.bsv:
-            l = death_rates.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', legend_label=f'{pars.treatment} ages', alpha=0.5, source=model.panel_source['min_vac_age'])
+            l = death_rates.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', alpha=0.5, source=model.panel_source['min_vac_age'])
             death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 ('Minimum vaccination age', '@left'),
@@ -235,7 +235,7 @@ def plot(doc):
                                             ]))
 
         for c in cohorts:
-            l = death_rates.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, legend_label=f'{c}', source=model.sim_source)
+            l = death_rates.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, source=model.sim_source)
             death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 (f'Mean age of severe episodes\nin {c} cohort', '@{'+f"{c} severe mean age x"+'}{0.1f}')
@@ -304,20 +304,20 @@ def plot(doc):
             'ρ_clinical',
             'δ_clinical',
             'γ_clinical',
+            # 'case_def_clinical',
         ],
         [
             'Severe risk',
             'ρ_severe',
             'δ_severe',
             'ε_severe',
-            # 'SPACE',
-            # 'case_def_clinical',
-            # 'death_rate_multiplier',
+            'death_rate_modifier',
         ]
     ]
 
     buttons_group1 = [
         'time_scale',
+        'season',
         'children',
         'recording',
         'death rate',
@@ -335,7 +335,6 @@ def plot(doc):
             children[r][c] = fig[f'{v} {m}']
 
     def make_slider_column(slider_group):
-        colours = "#E4DFCE" "#DEE4CE" "#CEDEE4"
         S = model.sliders
         b = []
         for group in slider_group:
@@ -349,7 +348,9 @@ def plot(doc):
     children[0][6] = make_slider_column(sliders_group3)
 
     M = model.buttons
-    children[2][6] = column([row(M[k][1], M[k][0]) for k in buttons_group1 if k in M])
+    b = [row(M[k][1], M[k][0]) for k in buttons_group1 if k in M]
+    b += [Div(text="<b>Use the browser's reload button to reset</b>")]
+    children[2][6] = column(b)
 
     if model.show_vac or model.show_season:
         children[3][4] = vaccine_prot
@@ -359,6 +360,7 @@ def plot(doc):
         children=children,
         width=int(250*model.fig_xscale),
         height=int(250*model.fig_yscale),
+        toolbar_location=None
     )
     curdoc().add_root(gp)
 

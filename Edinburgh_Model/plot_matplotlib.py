@@ -30,7 +30,9 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
     display_measures = model.measures.display_measures
 
     colours = [pink, purple, blue, turquoise, turquoise ]
+    linestyles = ['-', '-', '-', '-', '-']
     color  = {i:j for i, j in zip(cohorts, colours)}
+    linestyle  = {i:j for i, j in zip(cohorts, linestyles)}
     title_dict = {k:v for k, v in zip(vars, titles)}
 
     nrows = max(len(display_measures), int(model.show_vac | model.show_season) + int(model.show_death_rates))
@@ -56,7 +58,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
                 if not ((measure == 'efficacy' or measure == 'averted') and c == pars.control):
                     try:
                         # plot control and treatment for cases and cdf but only treatment for efficacy and averted
-                        ax.plot(sim_source['ages'], sim_source[f'{c} {f}'], color=color[c], label=c)
+                        ax.plot(sim_source['ages'], sim_source[f'{c} {f}'], color=color[c], ls=linestyle[c], label=c)
 
                         # put legend only in one axis
                         if i == 0:

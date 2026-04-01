@@ -49,16 +49,7 @@ def plot_risk_pooled_data():
     ax.grid(visible=True, which='both', axis='both', color='lightgrey', linestyle='--', linewidth=0.5)
     return fig, ax
 
-def fit_GAM1():
-    # Use only up to 20 years old as cases become scarce after that
-    d = data[data['age (years)'] <= 20]
-    X = d[['age (years)']].values
-    y = d['died'].values
-
-    gam = LogisticGAM(s(0), fit_intercept=False).gridsearch(X, y, progress=False)
-    return gam
-
-def fit_GAM2():
+def fit_GAM():
     # Use only up to 20 years old as cases become scarce after that
     d = data[data['age (years)'] <= 20]
     X = d[['age (years)', 'altitude band']].values
@@ -270,7 +261,7 @@ def plot_infection(death_rates, sm_age, λs, filename, arrow=None):
     fig.savefig(f'Figures/{filename}', bbox_inches='tight')
 
 def death_rates_with_arrows():
-    gam = fit_GAM1()
+    gam = fit_GAM()
     XX, fit, death_rates, cis = death_rate_mean_CI(gam)
     offset = 0.015
     a = (

@@ -110,6 +110,9 @@ def fig2C():
     ax.set_xlabel('Number of infections');
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
+    for i, r in sm_risks.iterrows():
+        ax.annotate(f"{r['n']:.0f}/{r['m']:.0f}", xy=(i+1, r['p']+0.2), ha='center', va='bottom', fontsize=7)
+
     return fig, ax
 
 def risk_fever_with_parasitaemia():

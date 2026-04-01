@@ -5,10 +5,131 @@ from pandas import read_csv
 from numpy import exp, log, ma
 from scipy.stats import vonmises, triang
 from datetime import datetime
+from pathlib import Path
+from ctypes import CDLL, c_void_p, c_int, c_double, POINTER, Structure, cast, byref
+
+timestep_C = CDLL(Path().absolute() / '../Edinburgh_Model/timestep.so').timestep
+timestep_C.restype = c_void_p
 
 variables = ['All infection', 'First infection', 'All clinical', 'First clinical', 'Severe malaria', 'Direct deaths', 'Indirect deaths', 'All deaths']
 measures = ['cases', 'cdf', 'efficacy', 'averted']
 weeks_per_month = 52./12.
+
+
+class Parameters_c(Structure):
+    _fields_ = [
+        ("max_weeks", c_int),
+        ("max_vac_age", c_int),
+        ("season_width", c_double),
+        ("Lambda", c_double),
+        ("case_def_clinical", c_double),
+        ("alpha_infection", c_double),
+        ("alpha_clinical", c_double),
+        ("alpha_severe", c_double),
+        ("omega_infection", c_double),
+        ("omega_clinical", c_double),
+        ("omega_severe", c_double),
+        ("survival", POINTER(c_double)),
+        ("malaria_season", POINTER(c_double)),
+        ("clinical", POINTER(c_double)),
+        ("severe_risk", POINTER(c_double)),
+        ("direct_deaths", POINTER(c_double)),
+        ("liver_vac", POINTER(c_double)),
+        ("blood_vac", POINTER(c_double)),
+        ("smc_protection", POINTER(c_double)),
+    ]
+
+
+class Cohort_c(Structure):
+    _fields_ = [
+        ("max_weeks", c_int),
+        ("minage", c_int),
+        ("max_vac_age", c_int),
+        ("age_classes", c_int),
+        ("nbr", c_int),
+        ("age_liver_vac", c_int),
+        ("age_blood_vac", c_int),
+        ("age_smc", c_int),
+        ("sum_L_min", c_double),
+        ("sum_L_max", c_double),
+        ("Lmod", POINTER(c_double)),
+        ("num_children", POINTER(c_double)),
+        ("new_infections", POINTER(c_double)),
+        ("clinical", POINTER(c_double)),
+        ("severe", POINTER(c_double)),
+        ("direct_deaths", POINTER(c_double)),
+        ("all_infections", POINTER(c_double)),
+        ("all_clinical", POINTER(c_double)),
+        ("all_severe", POINTER(c_double)),
+        ("all_direct_deaths", POINTER(c_double)),
+        # ("first_infections", POINTER(c_double)),
+        # ("first_clinical", POINTER(c_double)),
+        # ("non_infected", POINTER(c_double)),
+        # ("non_clinical", POINTER(c_double)),
+    ]
+
+
+def convert_Pars_to_C_struct(pars):
+    """ convert Cohort class to C struct for passing to C functions """
+    return Parameters_c(
+        max_weeks = pars.max_weeks,
+        max_vac_age = pars.max_vac_age,
+        season_width = pars.season_width,
+        Lambda = pars.Λ,
+        case_def_clinical = pars.case_def_clinical,
+        alpha_infection = pars.α_infection,
+        alpha_clinical = pars.α_clinical,
+        alpha_severe = pars.α_severe,
+        omega_infection = pars.ω_infection,
+        omega_clinical = pars.ω_clinical,
+        omega_severe = pars.ω_severe,
+
+        survival = cast(pars.survival.ctypes.data, POINTER(c_double)),
+        malaria_season = cast(pars.malaria_season.ctypes.data, POINTER(c_double)),
+        clinical = cast(pars.clinical.ctypes.data, POINTER(c_double)),
+        severe_risk = cast(pars.severe_risk.ctypes.data, POINTER(c_double)),
+        direct_deaths = cast(pars.direct_deaths.ctypes.data, POINTER(c_double)),
+        liver_vac = cast(pars.liver_vac.ctypes.data, POINTER(c_double)) if pars.liver_vac is not None else None,
+        blood_vac = cast(pars.blood_vac.ctypes.data, POINTER(c_double)) if pars.blood_vac is not None else None,
+        smc_protection = cast(pars.smc_protection.ctypes.data, POINTER(c_double)) if pars.smc_protection is not None else None,
+    )
+
+
+def convert_Cohort_to_C_struct(cohort):
+    """ convert Cohort class to C struct for passing to C functions """
+    return Cohort_c(
+        max_weeks = cohort.max_weeks,
+        minage = cohort.minage,
+        max_vac_age = cohort.max_vac_age,
+        age_classes = cohort.age_classes,
+        nbr = cohort.nbr,
+        age_liver_vac = cohort.age_liver_vac if cohort.age_liver_vac is not None else -1,
+        age_blood_vac = cohort.age_blood_vac if cohort.age_blood_vac is not None else -1,
+        age_smc = cohort.age_smc if cohort.age_smc is not None else -1,
+        sum_L_min = cohort.sum_L_min,
+        sum_L_max = cohort.sum_L_max,
+        Lmod = cast(cohort.Lmod.ctypes.data, POINTER(c_double)),
+        num_children = cast(cohort.num_children.ctypes.data, POINTER(c_double)),
+        new_infections = cast(cohort.new_infections.ctypes.data, POINTER(c_double)),
+        clinical = cast(cohort.clinical.ctypes.data, POINTER(c_double)),
+        severe = cast(cohort.severe.ctypes.data, POINTER(c_double)),
+        direct_deaths = cast(cohort.direct_deaths.ctypes.data, POINTER(c_double)),
+        all_infections = cast(cohort.all_infections.ctypes.data, POINTER(c_double)),
+        all_clinical = cast(cohort.all_clinical.ctypes.data, POINTER(c_double)),
+        all_severe = cast(cohort.all_severe.ctypes.data, POINTER(c_double)),
+        all_direct_deaths = cast(cohort.all_direct_deaths.ctypes.data, POINTER(c_double)),
+        # if hasattr(cohort, 'first_infections'):,
+        #     first_infections = cast(cohort.first_infections.ctypes.data, POINTER(c_double)),
+        #     first_clinical = cast(cohort.first_clinical.ctypes.data, POINTER(c_double)),
+        #     non_infected = cast(cohort.non_infected.ctypes.data, POINTER(c_double)),
+        #     non_clinical = cast(cohort.non_clinical.ctypes.data, POINTER(c_double)),
+        # else:,
+        #     first_infections = None,
+        #     first_clinical = None,
+        #     non_infected = None,
+        #     non_clinical = None,
+    )
+
 
 class Model:
     def __init__(self):
@@ -91,7 +212,7 @@ class Parameters:
 
             # deaths
             deaths = 'Reyburn',                   # age-specfic death rate function: 'Reyburn' or 'Flat'
-            death_rate_multiplier = 1.,           # multiplier for death rate
+            death_rate_modifier = 1.,             # multiplier for death rate
 
             # general vaccination
             min_vac_age = 0,                      # minimum age at last primary dose (weeks)
@@ -160,7 +281,7 @@ class Parameters:
         self.ε_severe = ε_severe
 
         self.deaths = deaths
-        self.death_rate_multiplier = death_rate_multiplier
+        self.death_rate_modifier = death_rate_modifier
 
         self.min_vac_age = min_vac_age
         self.vac_age_range = vac_age_range
@@ -207,8 +328,7 @@ class Parameters:
         ages = [0, 52, 260, 520, 780, 1040, 1300, 1560, 1820, 2080, 2340, 2600, 2860, 3120, 3380, 3640, 3900, 4160, 4420, 5200]
         # corresponding death rates per week
         μ = [7.15e-04, 7.26e-05, 3.07e-05, 1.33e-05, 2.14e-05, 2.96e-05, 3.86e-05, 5.19e-05, 7.04e-05, 9.77e-05, 1.31e-04, 1.85e-04, 2.53e-04, 3.83e-04, 5.60e-04, 8.80e-04, 1.34e-03, 2.08e-03, 3.48e-03, 1e-2]
-        self.μ = np.interp(np.arange(ages[-1]+1), ages, μ)
-        self.survival = 1 - self.μ
+        self.survival = 1 - np.interp(np.arange(ages[-1]+1), ages, μ)
 
         # parameter validation and setup all ancillary parameters and arrays
         self.update_pars('all')
@@ -225,9 +345,10 @@ class Parameters:
         assert isinstance(self.vac_age_range, int) and self.vac_age_range > 0, f'vac_age_range must be positive integer, got {self.vac_age_range}'
 
         self.max_vac_age = self.min_vac_age + self.vac_age_range
+        self.max_weeks = int(round(weeks_per_month*self.study_months + self.max_vac_age, 0))
+
         # setup arrays of age and exposure
-        maxweeks = self.study_months*weeks_per_month + 2*self.min_vac_age + self.vac_age_range+20
-        _a = np.arange(maxweeks, dtype=float) # age
+        _a = np.arange(self.max_weeks, dtype=float) # age
         _n = _a[1:] # exposure
 
 
@@ -313,19 +434,27 @@ class Parameters:
 
             self.severe_risk = self.ρ_severe * exp(-(self.δ_severe + self.ε_severe / 52. * _a[np.newaxis, :]) * (_n[:, np.newaxis]-1))
 
-        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'deaths', 'death_rate_multiplier')).intersection(update_set):
+        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'deaths', 'death_rate_modifier')).intersection(update_set):
+            # severe malaria associated, age-specfic death rate
             assert self.deaths in ['Reyburn', 'Flat'], f'deaths must be Reyburn or Flat, got {self.deaths}'
-            assert self.death_rate_multiplier > 0, f'death_rate_multiplier must be positive, got {self.death_rate_multiplier}'
+            assert 0 <= self.death_rate_modifier <=1, f'death_rate_modifier must be 0 to 1, got {self.death_rate_modifier}'
 
-            if self.deaths == 'Reyburn':
-                # this doesn't quite work when the study months is less than 8 years
-                direct_death_rate_by_age = [0.082, 0.063, 0.051, 0.044, 0.046, 0.06, 0.086, 0.114, 0.137, 0.148, 0.148]
+            mean_death_rate = 0.067 # (see Notebook S7)
+
+            if self.deaths == 'Reyburn' and self.death_rate_modifier > 0:
+                # death rates at each year of age as estiated from Reyburn et al. 2005 (copied from Notebook S7)
+                direct_death_rate_by_age = [0.072, 0.06, 0.052,  0.049, 0.053, 0.065, 0.085, 0.108, 0.127, 0.139, 0.143, 0.143]
+
                 if _a[-1] < len(direct_death_rate_by_age)*52:
-                    self.direct_deaths = self.death_rate_multiplier*np.interp(_a, 52*_a[:len(direct_death_rate_by_age)], direct_death_rate_by_age)
+                    self.direct_deaths = np.interp(_a, 52*_a[:len(direct_death_rate_by_age)], direct_death_rate_by_age)
                 else:
-                    self.direct_deaths = self.death_rate_multiplier*np.interp(_a, np.concatenate((52*_a[:len(direct_death_rate_by_age)-1], _a[-2:-1])), direct_death_rate_by_age)
-            elif self.deaths == 'Flat':
-                self.direct_deaths = 0.1*np.ones_like(_a)
+                    self.direct_deaths = np.interp(_a, np.concatenate((52*_a[:len(direct_death_rate_by_age)-1], _a[-2:-1])), direct_death_rate_by_age)
+
+                self.direct_deaths = self.death_rate_modifier * self.direct_deaths + (1-self.death_rate_modifier) * mean_death_rate
+
+            elif self.deaths == 'Flat' or self.death_rate_modifier == 0:
+                self.direct_deaths = mean_death_rate*np.ones_like(_a)
+
             else:
                 raise NotImplementedError("deaths must be Reyburn or Flat")
             # indirect death parameters of clinical cases from Ross et al 2006 model 2
@@ -408,6 +537,8 @@ class Parameters:
             if self.lsv:
                 liver_vac_args = self.ν_liver, self.τ_liver, self.period_liver, self.nboosters_liver
                 self.liver_vac = self.liver_vac_fn(_a, liver_vac_args)
+            else:
+                self.liver_vac = None
 
         if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'bsv', 'vac_profile_blood', 'ν_blood', 'τ_blood', 'period_blood', 'nboosters_blood', 'nboosters')).intersection(update_set):
             # initialise blood-stage vaccine protection
@@ -420,8 +551,10 @@ class Parameters:
             if self.bsv:
                 blood_vac_args = self.ν_blood, self.τ_blood, self.period_blood, self.nboosters_blood
                 self.blood_vac = self.blood_vac_fn(_a, blood_vac_args)
+            else:
+                self.blood_vac = None
 
-        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'smc', 'smc_ramp', 'smc_rounds', 'smc_repeats', 'nboosters')).intersection(update_set):
+        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'smc', 'smc_ramp', 'smc_rounds', 'smc_repeats', 'smc_coverage', 'nboosters')).intersection(update_set):
             # initialise seasonal malaria chemoprevention protection
             assert isinstance(self.smc, bool), f'smc must be boolean, got {self.smc}'
             assert 0 <= self.smc_coverage <= 1, f'smc_coverage must be 0 to 1, got {self.smc_coverage}'
@@ -430,8 +563,10 @@ class Parameters:
             assert isinstance(self.smc_repeats, int) and self.smc_repeats >= 0, f'smc_repeats must be non-negative integer, got {self.smc_repeats}'
 
             if self.smc:
-                smc_args = self.smc_ramp, self.smc_rounds, self.smc_repeats
+                smc_args = self.smc_ramp, self.smc_rounds, self.smc_repeats, self.smc_coverage
                 self.smc_protection = smc_protection(_a, smc_args)
+            else:
+                self.smc_protection = None
 
         if set(('all', 'case_def_clinical')).intersection(update_set):
             assert 0 <= self.case_def_clinical <= 1, f'case_def_clinical must be 0 to 1, got {self.case_def_clinical}'
@@ -504,11 +639,10 @@ class Measures:
 
 
 class Cohort:
-    def __init__(self, duration, pars, t_record_first=None, max_bite_bins=15, time_warning=False):
+    def __init__(self, max_weeks, pars, t_record_first=None, max_bite_bins=15, time_warning=False):
         """ initial chort of children across a range of age classes
             children are vaccinated ages min_vac_age to minvac_age+vac_age_range-1
         """
-        assert isinstance(duration, int) and duration > 0, f'duration must be positive integer, got {duration}'
         assert isinstance(max_bite_bins, int) and max_bite_bins > 0, f'max_bite_bins must be positive integer, got {max_bite_bins}'
         assert t_record_first is None or (isinstance(t_record_first, int) and t_record_first >= 0), f't_record_first must be non-negative integer or None, got {t_record_first}'
         assert isinstance(time_warning, int), f'time_warning must be a non-negative integer got {time_warning}'
@@ -517,6 +651,7 @@ class Cohort:
         self.size = pars.cohort_size_at_birth # cohort size at birth (adjusted to maintain "popsize" fully vaccinated children, eg 100,000)
         self.min_vac_age = pars.min_vac_age
         self.max_vac_age = pars.max_vac_age
+        self.max_weeks = max_weeks
         self.age_classes = pars.vac_age_range
         self.max_bite_bins = max_bite_bins
         self.β = pars.β
@@ -534,14 +669,11 @@ class Cohort:
         self.sum_L_min = 0
         self.sum_L_max = 0
 
-        # the maximum number of possible infections (ie at most one infection per child per week)
-        max_infections = duration
-
         # the number of children by, axis 0: exposures, axis 1: bite rate, axis 2: age class
         # distribute uninfected children (column 0) according to their bite rate and equally across age classes
         x1 = np.array([self.p_bite_rates] * self.age_classes).T * self.size
         x2 = np.zeros_like(x1)
-        self.num_children = np.array([x1] + [x2]*max_infections)
+        self.num_children = np.array([x1] + [x2]*pars.max_weeks)
 
         # number of new infections clinical episodes, severe episodes and deaths in a timesteo
         # axis 0: time, axis 1: exposures, axis 2: age class
@@ -551,23 +683,23 @@ class Cohort:
         self.direct_deaths = np.zeros_like(self.num_children)
 
         # a record of the total number of blood-stage infections, clinical and severe episodes and deaths on each time step
-        self.all_infections = np.zeros(duration)
-        self.all_clinical = np.zeros(duration)
-        self.all_severe = np.zeros(duration)
-        self.all_direct_deaths = np.zeros(duration)
+        self.all_infections = np.zeros(pars.max_weeks)
+        self.all_clinical = np.zeros(pars.max_weeks)
+        self.all_severe = np.zeros(pars.max_weeks)
+        self.all_direct_deaths = np.zeros(pars.max_weeks)
 
         if t_record_first:
             # a record of the number of blood-stage infections since time t_record_first
-            self.first_infections = np.zeros(duration)
+            self.first_infections = np.zeros(pars.max_weeks)
             # a record of the number of first clinical cases since time t_record_first
-            self.first_clinical = np.zeros(duration)
+            self.first_clinical = np.zeros(pars.max_weeks)
             # the number of children not infected since time t_record_first (earlier cases are ignored for recording purposes)
             self.non_infected = np.zeros(self.nbr * self.age_classes).reshape(self.nbr, self.age_classes)
             # the number of children not meeting clinical case definition since time t_record_first (earlier cases are ignored for recording purposes)
             self.non_clinical = np.zeros(self.nbr * self.age_classes).reshape(self.nbr, self.age_classes)
 
         if time_warning:
-            self.calculate_simulation_duration(duration, pars)
+            self.calculate_simulation_duration(pars)
 
     def bite_rate_pmf(self, β, nbins):
         assert 0 <= β <= 1, f'β must be 0 to 1, got {β}'
@@ -606,9 +738,9 @@ class Cohort:
         """ cohort age at first dose of SMC """
         self.age_smc = max(0, self.min_vac_age + offset)
 
-    def calculate_simulation_duration(self, duration, pars):
+    def calculate_simulation_duration(self, pars):
         """ calculate an approximate simulation time if time_warning is positive"""
-        L_t = self.Lmod[-1, self.age_classes:self.age_classes+duration]
+        L_t = self.Lmod[-1, self.age_classes:self.age_classes+pars.max_weeks]
         n = len(L_t)
         t = np.arange(n)
         L_m = pars.Λ * self.Lmod[0, :n] * t
@@ -618,11 +750,11 @@ class Cohort:
         N1 = np.where(N1 < 0, 0, N1)
         N2 = np.where(N2 < 2, 2, N2)
         N2 = np.where(t < N2, t, N2) + 1
-        s1 = (N2-N1).sum() * self.nbr * duration * self.age_classes
-        s2 = (duration+1)**2//2 * self.nbr * duration * self.age_classes
+        s1 = (N2-N1).sum() * self.nbr * pars.max_weeks * self.age_classes
+        s2 = (pars.max_weeks+1)**2//2 * self.nbr * pars.max_weeks * self.age_classes
         sim_time = s1/2048162916800*22
         if sim_time > pars.time_warning:
-            print(f'approx. simulation time={sim_time:.0f} sec, weeks={duration}, age classes={self.age_classes}, bite rates={self.nbr}')
+            print(f'approx. simulation time={sim_time:.0f} sec, weeks={pars.max_weeks}, age classes={self.age_classes}, bite rates={self.nbr}')
 
 
 def timestep(cohort, t, t_record_first, pars):
@@ -654,8 +786,7 @@ def timestep(cohort, t, t_record_first, pars):
     ages = slice(cohort.minage, cohort.minage + cohort.age_classes)
 
     # natural deaths
-    if pars.μ is not None:
-        cohort.num_children *= 1-pars.μ[ages]
+    cohort.num_children *= pars.survival[ages]
 
     # commence recording new infections if required
     # if t_record_first and t == t_record_first:
@@ -722,7 +853,7 @@ def timestep(cohort, t, t_record_first, pars):
         cohort.all_direct_deaths[t] = cohort.direct_deaths[exposuresB].sum()
         cohort.all_severe[t] = cohort.severe[exposuresB].sum()
         # do not count severe as clinical and adjust for clinical case definition
-        cohort.all_clinical[t] = max(0, cohort.clinical[exposuresB].sum() * pars.case_def_clinical)
+        cohort.all_clinical[t] = max(0, cohort.clinical[exposuresB].sum() * pars.case_def_clinical - cohort.all_severe[t])
         cohort.all_infections[t] = cohort.new_infections[exposuresB].sum()
 
         # if t_record_first and t >= t_record_first:
@@ -761,7 +892,7 @@ def timestep(cohort, t, t_record_first, pars):
     cohort.minage += 1
 
 
-def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile=''):
+def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C'):
     """
         Start with a single, unvaccincated cohort at birth and follow until the last primary does
         Record init_cohort infections from min_vac_age to max_vac_age
@@ -771,9 +902,16 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile=''):
         log_simulation(logfile, pars)
 
     init_cohort = Cohort(cohort.max_vac_age, pars, t_record_first=t_record_first, max_bite_bins=cohort.max_bite_bins)
+    if code == 'C':
+        cohort_c = convert_Cohort_to_C_struct(init_cohort)
+        pars_c = convert_Pars_to_C_struct(pars)
 
     for t in np.arange(1, cohort.max_vac_age):
-        timestep(init_cohort, t, t_record_first, pars)
+        if code == 'C':
+            timestep_C(int(t), byref(cohort_c), byref(pars_c))
+        else:
+            timestep(init_cohort, t, t_record_first, pars)
+
 
         cohort.all_infections[t] = init_cohort.all_infections[t]
         cohort.all_clinical[t] = init_cohort.all_clinical[t]
@@ -805,14 +943,22 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile=''):
     cohort.minage = cohort.min_vac_age
 
 
-def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars):
+def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, code='C'):
     """
         Simulate a cohort of children of initial ages min_vac_age to max_vac_age
         from the end of their last primary dose for t_end minus t_start weeks
         If t_record_first is True then also record first infections and first clinical cases
     """
+
+    if code == 'C':
+        cohort_c = convert_Cohort_to_C_struct(cohort)
+        pars_c = convert_Pars_to_C_struct(pars)
+
     for t in np.arange(t_start, t_end):
-        timestep(cohort, t, t_record_first, pars)
+        if code == 'C':
+            timestep_C(int(t), byref(cohort_c), byref(pars_c))
+        else:
+            timestep(cohort, t, t_record_first, pars)
 
 
 def divide(a, b):

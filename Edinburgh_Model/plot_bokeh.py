@@ -217,15 +217,14 @@ def plot(doc):
             'ρ_clinical',
             'δ_clinical',
             'γ_clinical',
+            # 'case_def_clinical',
         ],
         [
             'Severe risk',
             'ρ_severe',
             'δ_severe',
             'ε_severe',
-            # 'SPACE',
-            # 'case_def_clinical',
-            # 'death_rate_multiplier',
+            'death_rate_modifier',
         ]
     ]
 

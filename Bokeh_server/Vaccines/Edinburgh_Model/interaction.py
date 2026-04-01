@@ -58,7 +58,7 @@ class Interaction:
         if isinstance(button_types, str):
             button_types = [button_types]
 
-        buttons = ['all', 'children', 'recording', 'death rate', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
+        buttons = ['all', 'season', 'children', 'recording', 'death rate', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
         for b in button_types:
             assert b in buttons, f'Available buttons are {str(buttons)}, got {str(b)}'
 
@@ -128,8 +128,10 @@ class Interaction:
         def change_deaths(attr, old, new):
             if new == 0:
                 self.pars.deaths = list(death_labels)[0]
+                self.pars.death_rate_modifier = 0
             else:
                 self.pars.deaths = list(death_labels)[1]
+                self.pars.death_rate_modifier = 1
             self.pars.update_pars('deaths')
             self.sim_source.data = self.simulation_fn(self)
             if self.show_death_rates:
@@ -205,6 +207,25 @@ class Interaction:
                                            These values can also be adjusted with sliders"""), position='top')
             self.buttons['blood vaccine'] = (self.Blood_vaccination_button, HelpButton(tooltip=tooltip))
 
+        ######################### SEASON BUTTON ##################################
+        season_labels = {'Seasonal':0, 'Perennial':1}
+        def change_season(attr, old, new):
+            if new == 0:
+                self.pars.season_width = 0.11
+            elif new == 1:
+                self.pars.season_width = 1
+            self.pars.update_pars('season_width')
+            self.sim_source.data = self.simulation_fn(self)
+            if self.show_season:
+                s = self.panels_fn(self, ['season'])
+                self.panel_source['season'].data = s['season']
+
+        if 'all' in button_types or 'season' in button_types:
+            self.Season_button = RadioButtonGroup(labels=list(season_labels), active=0)
+            self.Season_button.on_change('active', change_season)
+            tooltip = Tooltip(content=HTML("""Seasonal or perennial transmission"""), position='top')
+            self.buttons['season'] = (self.Season_button, HelpButton(tooltip=tooltip))
+
         ######################### VACCINATION BUTTON ##################################
         vaccination_labels = {'Liver':0, 'Blood':1, 'Both':2, 'None':3}
         vl = {(True, False):0, (False, True):1, (True, True):2, (False, False):3}
@@ -225,10 +246,13 @@ class Interaction:
             self.pars.update_pars(('lsv', 'bsv'))
             self.sim_source.data = self.simulation_fn(self)
             if self.show_vac:
-                s = self.panels_fn(self, ['liver_vac_prot'])
+                s = self.panels_fn(self, ['liver_vac_prot', 'blood_vac_prot', 'min_vac_age'])
                 self.panel_source['liver_vac_prot'].data = s['liver_vac_prot']
-                s = self.panels_fn(self, ['blood_vac_prot'])
                 self.panel_source['blood_vac_prot'].data = s['blood_vac_prot']
+            if self.show_death_rates:
+                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'death rates')['min_vac_age']
+
+                self.panel_source['min_vac_age'].data = s['min_vac_age']
 
         if 'all' in button_types or 'vaccines' in button_types:
             self.Vaccination_button = RadioButtonGroup(labels=list(vaccination_labels), active=vl[(self.pars.lsv, self.pars.bsv)])
@@ -346,12 +370,12 @@ class Interaction:
             self.pars.update_pars('ε_severe')
             self.sim_source.data = self.simulation_fn(self)
 
-        def update_death_rate_multiplier(attr, old, new):
-            self.pars.death_rate_multiplier = new
-            self.pars.update_pars('death_rate_multiplier')
+        def update_death_rate_modifier(attr, old, new):
+            self.pars.death_rate_modifier = new
+            self.pars.update_pars('death_rate_modifier')
             self.sim_source.data = self.simulation_fn(self)
             if self.show_death_rates:
-                self.panel_source['death_rate_multiplier'].data = self.panels_fn(self, 'death rates')['death rates']
+                self.panel_source['death rates'].data = self.panels_fn(self, 'death rates')['death rates']
 
         def update_min_vac_age(attr, old, new):
             self.pars.min_vac_age = new
@@ -520,7 +544,7 @@ class Interaction:
         if 'core' in slider_types or 'all' in slider_types or 'λ' in slider_types:
             self.sl_λ = Slider(width=sw, start=np.log10(0.1), end=np.log10(20), value=np.log10(self.pars.λ), step=0.01, format=CustomJSTickFormatter(code="return Math.pow(10, tick).toFixed(2)"), title='Infections per year', name='λ')
             self.sl_λ.on_change(value, update_λ)
-            tooltip = Tooltip(content=HTML("<center>Annual average number of blood infections<br>from independent mosquito bites<br>per person per year</center>"), position='left')
+            tooltip = Tooltip(content=HTML("<center>Annual average number of blood infections<br>per person per year</center>"), position='left')
             self.sliders['λ'] = self.sl_λ, HelpButton(tooltip=tooltip)
 
         if 'all' in slider_types or 'β' in slider_types:
@@ -595,11 +619,11 @@ class Interaction:
             tooltip = Tooltip(content=HTML("<center>Decay rate age-modifier<br>in risk of severe malaria</center>"), position='left')
             self.sliders['ε_severe'] = self.sl_ε_severe, HelpButton(tooltip=tooltip)
 
-        if 'all' in slider_types or 'death_rate_multiplier' in slider_types:
-            self.sl_death_rate_multiplier = Slider(width=sw, start=0, end=10, value=self.pars.death_rate_multiplier, step=0.1, title='Minimum vaccination age (weeks)', name='death_rate_multiplier')
-            self.sl_death_rate_multiplier.on_change(value, update_death_rate_multiplier)
-            tooltip = Tooltip(content=HTML("<center>Factor multiplying severe<br>malaria associated mortality rate</center>"), position='left')
-            self.sliders['death_rate_multiplier'] = self.sl_death_rate_multiplier, HelpButton(tooltip=tooltip)
+        if 'all' in slider_types or 'death_rate_modifier' in slider_types:
+            self.sl_death_rate_modifier = Slider(width=sw, start=0, end=1, value=self.pars.death_rate_modifier, step=0.01, title='Death rate modifier', name='death_rate_modifier')
+            self.sl_death_rate_modifier.on_change(value, update_death_rate_modifier)
+            tooltip = Tooltip(content=HTML("<center>Modify severe-malaria associated age-specific death rate<br>0: No age specificity<br>1: As estimated from Reyburn et al. (2005)</center>"), position='left')
+            self.sliders['death_rate_modifier'] = self.sl_death_rate_modifier, HelpButton(tooltip=tooltip)
 
         if 'core' in slider_types or 'all' in slider_types or 'min_vac_age' in slider_types:
             self.sl_min_vac_age = Slider(width=sw, start=0, end=300, value=self.pars.min_vac_age, step=1, title='Min vaccination age (weeks)', name='min_vac_age')

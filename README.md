@@ -25,6 +25,7 @@ The model is designed to be parsimonious, is based on empirical data, and is val
 ### Prerequisites
 
 - Python 3.11 or higher
+- gcc for compiling C
 - Quarto for rendering Jupyter notebooks
 - Stan for Bayesian inference
 

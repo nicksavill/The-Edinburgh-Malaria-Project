@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
 from Edinburgh_Model.visualisation_utils import *
-from Edinburgh_Model.simulate_single_vaccine import *
+from Edinburgh_Model.C.simulate_single_vaccine import *
 
 from . import infection_rate
 
@@ -12,10 +12,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mt
 from matplotlib.colors import to_hex
-from copy import deepcopy
 from itertools import product
 from multiprocessing import Pool
-from math import ceil
 
 
 mpl.rcParams['xtick.major.size'] = 0

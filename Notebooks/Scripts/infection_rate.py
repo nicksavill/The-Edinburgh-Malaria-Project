@@ -204,7 +204,7 @@ def infection_rate_vs_clinical_rate(
         model.pars.λ = λ
         model.pars.control = λ
         model.pars.update_pars(('λ', 'control'))
-        r = paper.simulation_single_vaccine(model)
+        r = paper.simulate_single_vaccine(model)
 
         # average number of clinical cases per child per year in first five years of life
         clinical_rate_under_5.append(r[f'{λ} All clinical cdf'].iloc[-1] / model.pars.popsize / (months/12))
@@ -593,6 +593,8 @@ def sensitivity_net_deaths(map, count_mean_total_africa):
 def plot_net_deaths():
     def plot(xs, results, axs, xlabel):
         λ = np.linspace(0, 25, 1000)
+        lost = []
+        gained = []
         net_averted = []
         net_gain = []
 
@@ -604,13 +606,21 @@ def plot_net_deaths():
             mask = f_λ < 0
             loss = -np.trapz(f_λ[mask]*p_λ[mask], λ[mask])
             gain = np.trapz(f_λ[~mask]*p_λ[~mask], λ[~mask])
+            lost.append(loss)
+            gained.append(gain)
             net_averted.append(gain - loss)
             net_gain.append(gain / loss)
 
         ax = axs[0]
-        ax.plot(xs, net_averted)
+        ax.plot(xs, lost)
         ax.scatter(xs[0], 0, color='w')
         ax = axs[1]
+        ax.plot(xs, gained)
+        ax.scatter(xs[0], 0, color='w')
+        ax = axs[2]
+        ax.plot(xs, net_averted)
+        ax.scatter(xs[0], 0, color='w')
+        ax = axs[3]
         ax.plot(xs, net_gain)
         ax.set_xlabel(xlabel)
         ax.scatter(xs[0], 0, color='w')
@@ -619,20 +629,25 @@ def plot_net_deaths():
         (ρ_elp_results, τ_elp_results, ρ_clinical_results, ε_severe_results,
          x_ρ_elp, x_τ_elp, x_ρ_clinical, x_ε_severe) = pickle.load(f)
 
-    fig, axs = plt.subplots(2, 4, figsize=(12, 6), sharex='col', sharey='row')
+    fig, axs = plt.subplots(4, 4, figsize=(9, 9), sharex='col', sharey='row')
 
     plot(x_ρ_elp, ρ_elp_results, axs[:, 0], 'ρ_elp')
     plot(x_τ_elp, τ_elp_results, axs[:, 1], 'τ_elp')
     plot(x_ρ_clinical, ρ_clinical_results, axs[:, 2], 'ρ_clinical')
     plot(x_ε_severe, ε_severe_results, axs[:, 3], 'ε_severe')
 
-    axs[0, 0].set_ylabel('Net deaths averted\nper 100,000')
-    axs[1, 0].set_ylabel('Ratio of deaths averted\nto deaths caused')
+    axs[0, 0].set_ylabel('Indirectly caused\ndeaths per 100,000')
+    axs[1, 0].set_ylabel('Directly averted\ndeaths per 100,000')
+    axs[2, 0].set_ylabel('Net deaths averted\nper 100,000')
+    axs[3, 0].set_ylabel('Ratio of deaths averted\nto deaths caused')
 
     for ax in axs.flatten():
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.grid(visible=True, which='both', axis='both', color='lightgrey', linestyle='--', linewidth=0.5);
+    ymin = axs[0, 0].get_ylim()[0]
+    for ax in axs.flatten()[:12]:
+        ax.set_ylim(ymin, 100)
 
     return fig, axs
 

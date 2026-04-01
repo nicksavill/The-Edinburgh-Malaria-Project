@@ -20,7 +20,7 @@ def panels(model, update='all'):
     elif isinstance(update, str):
         update = [update]
 
-    if model.show_smc and 'smc' in update:
+    if model.show_vac and model.show_smc and 'smc' in update:
         if pars.smc:
             smc_args = pars.smc_ramp, pars.smc_rounds, pars.smc_repeats
             pars.smc_protection = smc_protection(ages, smc_args)
@@ -49,10 +49,10 @@ def panels(model, update='all'):
     if model.show_season and 'season' in update:
         panel['season'] = {'x':ages/scale, 'y':np.concatenate([model.pars.malaria_season / model.pars.malaria_season.max()]*(duration//52+1))[:duration]}
 
-    if model.show_death_rates and 'death rates' in update:
+    if model.show_death_rates and ('death rates' in update or 'min_vac_age' in update):
         panel['death rates'] = {'x':ages[:duration]/scale, 'y':pars.direct_deaths[:duration]}
         if pars.lsv or pars.bsv:
-            panel['min_vac_age'] = {'left':[pars.min_vac_age/scale], 'right':[(pars.min_vac_age+pars.vac_age_range)/scale], 'bottom':[0], 'top':[pars.death_rate_multiplier*0.15]}
+            panel['min_vac_age'] = {'left':[pars.min_vac_age/scale], 'right':[(pars.min_vac_age+pars.vac_age_range)/scale], 'bottom':[0], 'top':[0.15]}
 
     return panel
 

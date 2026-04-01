@@ -12,9 +12,6 @@ def simulate_single_vaccine(model):
     display_vars = model.variables.display_vars
     display_measures = model.measures.display_measures
 
-    # duration of simulation from birth of oldest vaccinated cohort to end of study
-    duration = int(round(weeks_per_month*pars.study_months + pars.max_vac_age, 0))
-
     # if first infections or first clinical cases are displayed then record these otherwise save time by not recording them
     if 'First infection' in display_vars or 'First clinical' in display_vars:
         t_record_first = pars.t_first
@@ -24,7 +21,7 @@ def simulate_single_vaccine(model):
     # run a single unvaccinated, multi-age cohort until the end of the last primary vaccine dose
     # note there is no vaccine induced protection until the last primary dose is given
     cohorts = {}
-    cohorts[pars.control] = Cohort(duration, pars, time_warning=model.time_warning)
+    cohorts[pars.control] = Cohort(pars.max_weeks, pars, time_warning=model.time_warning)
 
     # initialise SMC in the control cohort if it is given
     if pars.smc_control:
@@ -46,10 +43,10 @@ def simulate_single_vaccine(model):
             cohorts[pars.treatment].SMC(pars.smc_offset)
 
         # run the vaccinated cohort to the end of the study
-        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, duration, t_record_first, pars)
+        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, pars.max_weeks, t_record_first, pars)
 
     # simulate control cohort
-    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, duration, t_record_first, pars)
+    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars)
 
     ############################ construct data for plots
     y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_death_rates)
@@ -104,6 +101,6 @@ def simulate_single_vaccine(model):
             result[f'{c} severe mean age x'] = y[c]['severe_mean_age'] * np.ones(l) / dt
             if model.time_scale == 'Months':
                 result[f'{c} severe mean age x'] *= 4. / weeks_per_month
-            result[f'{c} severe mean age y'] = np.linspace(0, pars.death_rate_multiplier*0.15, l)
+            result[f'{c} severe mean age y'] = np.linspace(0, 0.15, l)
 
     return pd.DataFrame(result)
