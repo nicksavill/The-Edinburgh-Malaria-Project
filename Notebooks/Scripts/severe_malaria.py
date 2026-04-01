@@ -1,9 +1,9 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
+from Edinburgh_Model.simulate_single_vaccine import *
 
 from . import expectation_model as em
-from . import paper
 
 import numpy as np
 import pandas as pd
@@ -194,7 +194,7 @@ def ε_severe_calibration(fig_xscale=1, fig_yscale=1, legend_pos='last', legend_
         model.pars.control = c[-1]
         model.pars.ε_severe = ε_severe
         model.pars.update_pars(('control', 'ε_severe'))
-        rs.append(paper.simulate_single_vaccine(model))
+        rs.append(simulate_single_vaccine(model))
 
     df_joined = pd.concat(rs, axis=1).reset_index(drop=False)
     return paper.plot(model, {ε_severe:None for ε_severe in c}, sim_source=df_joined, legend_title=legend_title, legend_pos=legend_pos)
@@ -211,7 +211,7 @@ def validate_severe_malaria_risk():
     model.Config(**config)
     model.Sources()
 
-    r = paper.simulate_single_vaccine(model)
+    r = simulate_single_vaccine(model)
     f = 'control Severe malaria cases'
     fig, axs = plt.subplots(2, 3, figsize=(7, 4), sharex=True, sharey=True)
     fig.subplots_adjust(wspace=0.05, hspace=0.3)
@@ -219,7 +219,7 @@ def validate_severe_malaria_risk():
     for λ, ax in zip([0.5, 1, 2, 4, 8, 12][::-1], axs.flatten()):
         model.pars.λ = λ
         model.pars.update_pars('λ')
-        r = paper.simulate_single_vaccine(model)
+        r = simulate_single_vaccine(model)
         r['percent'] = r[f] / r[f].sum()*100
         ax.bar(r.index, r['percent'], label=f'λ={λ}')
         ax.spines['right'].set_visible(False)

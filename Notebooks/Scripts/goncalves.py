@@ -1,6 +1,4 @@
 import json
-import pickle
-import arviz as az
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -9,8 +7,7 @@ import matplotlib.pyplot as plt
 from numpy import ma
 from pandas import read_csv
 from bisect import bisect_left
-from numpy.random import binomial, poisson
-from scipy.stats.sampling import NumericalInverseHermite
+from numpy.random import poisson
 from collections import namedtuple
 
 Pars_goncalves = namedtuple('Parameters', 'λ, μ, σ, aF, cF, aS, cS, bS, dS, P_fever, P_detect, P_fever_and_detect, P_fever_and_5000, I , P_severe')
@@ -111,7 +108,7 @@ def fig2C():
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     for i, r in sm_risks.iterrows():
-        ax.annotate(f"{r['n']:.0f}/{r['m']:.0f}", xy=(i+1, r['p']+0.2), ha='center', va='bottom', fontsize=7)
+        ax.annotate(f"{r['n']:.0f}/{r['m']:.0f}", xy=(int(i)+1, r['p']+0.2), ha='center', va='bottom', fontsize=7)
 
     return fig, ax
 

@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
 from Edinburgh_Model.vaccination_types import *
-from Edinburgh_Model.C.simulate_single_vaccine import *
+from Edinburgh_Model.simulate_single_vaccine import *
 
 from . import paper
 from . import reyburn
@@ -138,7 +138,7 @@ def sim(model, λ, lsv, bsv, parameter, value):
         model.pars.death_rate_modifier = value
         model.pars.update_pars('death_rate_modifier')
 
-    return paper.simulate_single_vaccine(model)
+    return simulate_single_vaccine(model)
 
 def plot(sim, default_value=None):
     from scipy.optimize import elementwise

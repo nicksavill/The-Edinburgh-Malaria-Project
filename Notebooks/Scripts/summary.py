@@ -1,11 +1,11 @@
+import sys
+sys.path.append('..')
+from Edinburgh_Model.model import *
+
 import re
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
-import sys
-sys.path.append('..')
-from Edinburgh_Model.model import *
 
 pars = Parameters()
 

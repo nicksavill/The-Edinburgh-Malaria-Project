@@ -1,7 +1,7 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
-
+from Edinburgh_Model.simulate_single_vaccine import *
 from Scripts import paper, trape
 from Scripts import trape
 
@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 from numpy import log10
 from scipy.stats import norm
 from multiprocessing import Pool
-from collections import namedtuple
 from statsmodels.formula.api import ols
 
 # get the default parameters for the model
@@ -204,7 +203,7 @@ def infection_rate_vs_clinical_rate(
         model.pars.λ = λ
         model.pars.control = λ
         model.pars.update_pars(('λ', 'control'))
-        r = paper.simulate_single_vaccine(model)
+        r = simulate_single_vaccine(model)
 
         # average number of clinical cases per child per year in first five years of life
         clinical_rate_under_5.append(r[f'{λ} All clinical cdf'].iloc[-1] / model.pars.popsize / (months/12))

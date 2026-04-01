@@ -7,9 +7,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 from copy import deepcopy
-from math import ceil
 
-def monthly_predictions(model, duration, cohorts):
+def monthly_predictions(model, cohorts):
     pars = model.pars
 
     # switch these off for control cohort
@@ -17,7 +16,7 @@ def monthly_predictions(model, duration, cohorts):
     pars.smc = False
 
     # treated and control cohorts are the same until first dose
-    cohorts['control'] = Cohort(duration, pars)
+    cohorts['control'] = Cohort(pars.max_weeks, pars)
     init_unvaccinated_cohort(cohorts['control'], None, pars)
 
     # copy control cohort into treated cohorts
@@ -26,21 +25,21 @@ def monthly_predictions(model, duration, cohorts):
     cohorts['rtss_smc'] = deepcopy(cohorts['control'])
 
     # control cohort
-    sim_one_cohort_through_time(cohorts['control'], pars.max_vac_age, duration, None, pars)
+    sim_one_cohort_through_time(cohorts['control'], pars.max_vac_age, pars.max_weeks, None, pars)
 
     # rtss cohort
     pars.lsv = True
     pars.smc = False
     pars.update_pars(('lsv', 'smc'))
     cohorts['rtss'].liver_stage_vaccinate(pars.offset_liver)
-    sim_one_cohort_through_time(cohorts['rtss'], pars.max_vac_age, duration, None, pars)
+    sim_one_cohort_through_time(cohorts['rtss'], pars.max_vac_age, pars.max_weeks, None, pars)
 
     # SMC cohort
     pars.lsv = False
     pars.smc = True
     pars.update_pars(('lsv', 'smc'))
     cohorts['smc'].SMC(pars.smc_offset)
-    sim_one_cohort_through_time(cohorts['smc'], pars.max_vac_age, duration, None, pars)
+    sim_one_cohort_through_time(cohorts['smc'], pars.max_vac_age, pars.max_weeks, None, pars)
 
     # rtss_smc cohort
     pars.lsv = True
@@ -48,7 +47,7 @@ def monthly_predictions(model, duration, cohorts):
     pars.update_pars(('lsv', 'smc'))
     cohorts['rtss_smc'].liver_stage_vaccinate(pars.offset_liver)
     cohorts['rtss_smc'].SMC(pars.smc_offset)
-    sim_one_cohort_through_time(cohorts['rtss_smc'], pars.max_vac_age, duration, None, pars)
+    sim_one_cohort_through_time(cohorts['rtss_smc'], pars.max_vac_age, pars.max_weeks, None, pars)
 
     return cohorts
 
@@ -58,14 +57,13 @@ def dicko_simulation(model):
     display_vars = model.variables.display_vars
     display_measures = model.measures.display_measures
     # duration of simulation from birth of oldest vaccinated cohort to end of study
-    duration = ceil(weeks_per_month*pars.study_months) + pars.max_vac_age
 
-    cohorts = monthly_predictions(model, duration, {})
+    cohorts = monthly_predictions(model, {})
 
     ############################ construct data for dicko_calibration_plots
     y = get_results(cohorts, None, pars, display_vars)
 
-    ages = np.arange(duration - pars.max_vac_age)
+    ages = np.arange(pars.max_weeks - pars.max_vac_age)
     if model.time_scale == 'Months':
         result = {'ages':ages/weeks_per_month}
     else:

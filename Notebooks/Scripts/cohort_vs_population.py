@@ -1,6 +1,7 @@
 import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
+from Edinburgh_Model.simulate_single_vaccine import *
 from Scripts import paper
 
 import pandas as pd
@@ -22,11 +23,11 @@ def single_infection_rate():
 
     model.pars.children = 'cohort'
     model.pars.update_pars('children')
-    rc = paper.simulate_single_vaccine(model)
+    rc = simulate_single_vaccine(model)
 
     model.pars.children = 'population'
     model.pars.update_pars('children')
-    rp = paper.simulate_single_vaccine(model)
+    rp = simulate_single_vaccine(model)
 
     rc['averted'] = rc['control Direct deaths cases'] - rc['Vaccine Direct deaths cases']
     rp['averted'] = rp['control Direct deaths cases'] - rp['Vaccine Direct deaths cases']
@@ -48,7 +49,7 @@ def sim(model, λ, children):
     model.pars.children = children
     model.pars.λ = λ
     model.pars.update_pars(('children', 'λ'))
-    return paper.simulate_single_vaccine(model).set_index('ages')
+    return simulate_single_vaccine(model).set_index('ages')
 
 def efficacies_plot(all_sims, fig_xscale, fig_yscale):
     """ Plot predictions """

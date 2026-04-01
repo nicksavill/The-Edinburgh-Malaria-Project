@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
 from Edinburgh_Model.visualisation_utils import *
-from Edinburgh_Model.C.simulate_single_vaccine import *
+from Edinburgh_Model.simulate_single_vaccine import *
 
 from . import infection_rate
 

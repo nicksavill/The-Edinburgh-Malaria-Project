@@ -1,3 +1,7 @@
+import sys
+sys.path.append('..')
+from Edinburgh_Model.model import *
+
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -7,10 +11,6 @@ import warnings
 from pygam import LogisticGAM, s, f
 from matplotlib.collections import LineCollection
 from matplotlib.colors import LogNorm
-
-import sys
-sys.path.append('..')
-from Edinburgh_Model.model import *
 
 data = pd.read_csv('Data/rspb20142657supp2.csv')
 data['transmission'] = data['altitude band'].replace({1: 'high', 2: 'medium', 3: 'low'})
