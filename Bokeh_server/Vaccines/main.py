@@ -213,9 +213,7 @@ def plot(doc):
             vaccine_prot.line('x', 'y', color=c10[4][0], width=3, source=model.panel_source['smc'])
 
         if model.show_season:
-            vaccine_prot.line('x', 'y', color='DarkBlue', width=1, legend_label='Season', source=model.panel_source['season'])
-
-        vaccine_prot.legend.visible = False
+            vaccine_prot.line('x', 'y', color='DarkBlue', width=1, source=model.panel_source['season'])
 
     if model.show_death_rates:
         death_rates = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
@@ -237,9 +235,6 @@ def plot(doc):
                                             tooltips=[
                                                 (f'Mean age of severe episodes\nin {c} cohort', '@{'+f"{c} severe mean age x"+'}{0.1f}')
                                             ]))
-
-
-        death_rates.legend.visible = False
 
     ######################### LAYOUT ###########################
 
@@ -353,6 +348,7 @@ def plot(doc):
         children[3][4] = vaccine_prot
     if model.show_death_rates:
         children[3][5] = death_rates
+
     gp = gridplot(
         children=children,
         width=int(250*model.fig_xscale),
