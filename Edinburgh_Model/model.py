@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from ctypes import CDLL, c_void_p, c_int, c_double, POINTER, Structure, cast, byref
 
-timestep_C = CDLL(Path().absolute() / '../Edinburgh_Model/timestep.so').timestep
+timestep_C = CDLL(Path().absolute() / 'timestep.so').timestep
 timestep_C.restype = c_void_p
 
 variables = ['All infection', 'First infection', 'All clinical', 'First clinical', 'Severe malaria', 'Direct deaths', 'Indirect deaths', 'All deaths']

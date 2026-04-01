@@ -22,9 +22,9 @@ def panels(model, update='all'):
 
     if model.show_vac and model.show_smc and 'smc' in update:
         if pars.smc:
-            smc_args = pars.smc_ramp, pars.smc_rounds, pars.smc_repeats
+            smc_args = pars.smc_ramp, pars.smc_rounds, pars.smc_repeats, pars.smc_coverage
             pars.smc_protection = smc_protection(ages, smc_args)
-            panel['smc'] = {'x':(ages + pars.smc_offset)/scale, 'y':pars.smc_coverage * pars.smc_protection}
+            panel['smc'] = {'x':(ages + pars.smc_offset)/scale, 'y':pars.smc_protection}
         else:
             panel['smc'] = {'x':[0], 'y':[0]}
 

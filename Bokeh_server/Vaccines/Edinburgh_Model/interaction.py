@@ -622,7 +622,7 @@ class Interaction:
         if 'all' in slider_types or 'death_rate_modifier' in slider_types:
             self.sl_death_rate_modifier = Slider(width=sw, start=0, end=1, value=self.pars.death_rate_modifier, step=0.01, title='Death rate modifier', name='death_rate_modifier')
             self.sl_death_rate_modifier.on_change(value, update_death_rate_modifier)
-            tooltip = Tooltip(content=HTML("<center>Modify severe-malaria associated age-specific death rate<br>0: No age specificity<br>1: As estimated from Reyburn et al. (2005)</center>"), position='left')
+            tooltip = Tooltip(content=HTML("Modify severe-malaria associated age-specific death rate<br>0: No age specificity<br>1: As estimated from Reyburn et al. (2005)"), position='left')
             self.sliders['death_rate_modifier'] = self.sl_death_rate_modifier, HelpButton(tooltip=tooltip)
 
         if 'core' in slider_types or 'all' in slider_types or 'min_vac_age' in slider_types:
