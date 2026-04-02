@@ -43,15 +43,12 @@ class Parameters_c(Structure):
 class Cohort_c(Structure):
     _fields_ = [
         ("max_weeks", c_int),
-        ("minage", c_int),
         ("max_vac_age", c_int),
         ("age_classes", c_int),
         ("nbr", c_int),
         ("age_liver_vac", c_int),
         ("age_blood_vac", c_int),
         ("age_smc", c_int),
-        ("sum_L_min", c_double),
-        ("sum_L_max", c_double),
         ("Lmod", POINTER(c_double)),
         ("num_children", POINTER(c_double)),
         ("new_infections", POINTER(c_double)),
@@ -99,15 +96,12 @@ def convert_Cohort_to_C_struct(cohort):
     """ convert Cohort class to C struct for passing to C functions """
     return Cohort_c(
         max_weeks = cohort.max_weeks,
-        minage = cohort.minage,
         max_vac_age = cohort.max_vac_age,
         age_classes = cohort.age_classes,
         nbr = cohort.nbr,
         age_liver_vac = cohort.age_liver_vac if cohort.age_liver_vac is not None else -1,
         age_blood_vac = cohort.age_blood_vac if cohort.age_blood_vac is not None else -1,
         age_smc = cohort.age_smc if cohort.age_smc is not None else -1,
-        sum_L_min = cohort.sum_L_min,
-        sum_L_max = cohort.sum_L_max,
         Lmod = cast(cohort.Lmod.ctypes.data, POINTER(c_double)),
         num_children = cast(cohort.num_children.ctypes.data, POINTER(c_double)),
         new_infections = cast(cohort.new_infections.ctypes.data, POINTER(c_double)),
@@ -902,16 +896,21 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C')
         log_simulation(logfile, pars)
 
     init_cohort = Cohort(cohort.max_vac_age, pars, t_record_first=t_record_first, max_bite_bins=cohort.max_bite_bins)
+
     if code == 'C':
-        cohort_c = convert_Cohort_to_C_struct(init_cohort)
+        init_cohort_c = convert_Cohort_to_C_struct(init_cohort)
         pars_c = convert_Pars_to_C_struct(pars)
+        minage_c = c_int(init_cohort.minage)
+        sum_L_min_c = c_double(init_cohort.sum_L_min)
+        sum_L_max_c = c_double(init_cohort.sum_L_max)
 
     for t in np.arange(1, cohort.max_vac_age):
         if code == 'C':
-            timestep_C(int(t), byref(cohort_c), byref(pars_c))
+            timestep_C(c_int(t), byref(init_cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
+            init_cohort.sum_L_min = sum_L_min_c.value
+            init_cohort.sum_L_max = sum_L_max_c.value
         else:
             timestep(init_cohort, t, t_record_first, pars)
-
 
         cohort.all_infections[t] = init_cohort.all_infections[t]
         cohort.all_clinical[t] = init_cohort.all_clinical[t]
@@ -953,10 +952,13 @@ def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, co
     if code == 'C':
         cohort_c = convert_Cohort_to_C_struct(cohort)
         pars_c = convert_Pars_to_C_struct(pars)
+        minage_c = c_int(cohort.minage)
+        sum_L_min_c = c_double(cohort.sum_L_min)
+        sum_L_max_c = c_double(cohort.sum_L_max)
 
     for t in np.arange(t_start, t_end):
         if code == 'C':
-            timestep_C(int(t), byref(cohort_c), byref(pars_c))
+            timestep_C(c_int(t), byref(cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
         else:
             timestep(cohort, t, t_record_first, pars)
 

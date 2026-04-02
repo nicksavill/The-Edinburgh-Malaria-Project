@@ -78,7 +78,6 @@ typedef struct {
 typedef struct {
     /* ---- scalars ---- */
     int    max_weeks;
-    int    minage;          /* current minimum age (weeks); incremented each timestep */
     int    max_vac_age;     /* weeks */
     int    age_classes;     /* = vac_age_range: number of age-class slots */
     int    nbr;             /* number of bite-rate bins (= len(p_bite_rates)) */
@@ -92,9 +91,6 @@ typedef struct {
     int    age_blood_vac;
     int    age_smc;
 
-    /* cumulative infection rate bounds used to limit the inner exposure loops */
-    double sum_L_min;
-    double sum_L_max;
     double *Lmod;
 
     /*
@@ -143,16 +139,22 @@ typedef struct {
     ((cohort)->Lmod[(size_t)(br) * (cohort)->max_weeks \
      + (age_abs)])
 
+
+
 /* =========================================================================
  * Simulate cohort one timestep.
  * Pass t_record_first != 0 to record first infections / first clinical cases
  * (the actual accumulation code is currently commented out in the Python
  *  original; only the zero-fill in the off-season branch is active here).
  * ========================================================================= */
-void timestep(
-    int t,
+double* timestep(
+    int         t,
     Cohort     *cohort,
-    Parameters *pars)
+    Parameters *pars,
+    int        *minage,
+    double     *sum_L_min,
+    double     *sum_L_max
+)
 {
     const int BR = cohort->nbr;
     const int AC = cohort->age_classes;
@@ -160,10 +162,10 @@ void timestep(
     /* ------------------------------------------------------------------
     * Exposure window [N1, N2]
     * ------------------------------------------------------------------ */
-    int N1 = (int)fmax(0.0, cohort->sum_L_min - 3.0 * sqrt(cohort->sum_L_min));
-    int N2 = 1 + (int)fmin((double)t, fmax(2.0, cohort->sum_L_max + 4.0 * sqrt(cohort->sum_L_max)));
+    int N1 = (int)fmax(0.0, *sum_L_min - 3.0 * sqrt(*sum_L_min));
+    int N2 = 1 + (int)fmin((double)t, fmax(2.0, *sum_L_max + 4.0 * sqrt(*sum_L_max)));
 
-    int age_start = cohort->minage;      /* absolute age, inclusive */
+    int age_start = *minage;      /* absolute age, inclusive */
 
     /* ------------------------------------------------------------------
     * Natural deaths
@@ -198,16 +200,16 @@ void timestep(
         }
 
         /* Liver-stage vaccine (-1 means not vaccinated) */
-        if (cohort->age_liver_vac >= 0 && cohort->minage >= cohort->age_liver_vac) {
-            int wk = cohort->minage - cohort->age_liver_vac;
+        if (cohort->age_liver_vac >= 0 && *minage >= cohort->age_liver_vac) {
+            int wk = *minage - cohort->age_liver_vac;
             Lambda *= 1.0 - pars->liver_vac[wk];
         }
 
         /* Blood-stage vaccine */
         double v_clinical = 1.0;
         double v_severe   = 1.0;
-        if (cohort->age_blood_vac >= 0 && cohort->minage >= cohort->age_blood_vac) {
-            int    wk  = cohort->minage - cohort->age_blood_vac;
+        if (cohort->age_blood_vac >= 0 && *minage >= cohort->age_blood_vac) {
+            int    wk  = *minage - cohort->age_blood_vac;
             double bvp = pars->blood_vac[wk];
 
             if (pars->omega_infection > 0.0)
@@ -219,8 +221,8 @@ void timestep(
         }
 
         /* SMC (-1 means not in use) */
-        if (cohort->age_smc >= 0 && cohort->minage >= cohort->age_smc) {
-            int wk = cohort->minage - cohort->age_smc;
+        if (cohort->age_smc >= 0 && *minage >= cohort->age_smc) {
+            int wk = *minage - cohort->age_smc;
             Lambda *= 1.0 - pars->smc_protection[wk];
         }
 
@@ -238,8 +240,8 @@ void timestep(
         *   L[0][0]       = smallest bite rate × youngest age class
         *   L[BR-1][AC-1] = largest bite rate  × oldest  age class
         */
-        cohort->sum_L_min += L[0][0];
-        cohort->sum_L_max += L[BR-1][AC-1];
+        *sum_L_min += L[0][0];
+        *sum_L_max += L[BR-1][AC-1];
 
         /* ----------------------------------------------------------------
         * New blood-stage infections
@@ -353,5 +355,5 @@ void timestep(
     }
 
     /* Advance cohort minimum age by one week */
-    cohort->minage += 1;
+    *minage += 1;
 }

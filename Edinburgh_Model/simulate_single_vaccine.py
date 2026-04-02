@@ -27,7 +27,7 @@ def simulate_single_vaccine(model):
     if pars.smc_control:
         cohorts[pars.control].SMC(pars.smc_offset)
 
-    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile, code='python')
+    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile, code='C')
 
     # copy the unvaccinated cohort into the vaccinated cohort on last primary dose
     if pars.lsv or pars.bsv or pars.smc:

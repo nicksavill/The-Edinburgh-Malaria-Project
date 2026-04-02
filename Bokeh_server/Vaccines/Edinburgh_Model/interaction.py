@@ -128,10 +128,8 @@ class Interaction:
         def change_deaths(attr, old, new):
             if new == 0:
                 self.pars.deaths = list(death_labels)[0]
-                self.pars.death_rate_modifier = 0
             else:
                 self.pars.deaths = list(death_labels)[1]
-                self.pars.death_rate_modifier = 1
             self.pars.update_pars('deaths')
             self.sim_source.data = self.simulation_fn(self)
             if self.show_death_rates:
