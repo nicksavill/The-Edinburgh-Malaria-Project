@@ -89,7 +89,8 @@ def figS2():
     ax.bxp(goncalves_rows, patch_artist=True, boxprops={'facecolor': 'C0'}, showfliers=False);
     ax.set_yscale('log')
     ax.set_xticks((1, 2, 3), ['Severe', 'Mild', 'Asymptomatic'])
-    ax.set_ylabel('Parasitaemia (per 200 WBC)');
+    ax.set_xlabel('Disease severity');
+    ax.set_ylabel('Parasites per 200 WBC');
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     return fig, ax
@@ -104,7 +105,7 @@ def fig2C():
     fig, ax = plt.subplots(figsize=(5, 3))
     ax.scatter(n, sm_risks['p'], color='C0', s=75, edgecolor='w')
     ax.set_ylabel('Risk of clinical malaria\nbecoming severe (%)')
-    ax.set_xlabel('Number of infections');
+    ax.set_xlabel('Number of bllod infections');
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     for i, r in sm_risks.iterrows():
@@ -126,7 +127,7 @@ def risk_fever_with_parasitaemia():
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.set_xlabel('log-Parasitaemia')
-        ax.set_ylabel('Risk of fever')
+        ax.set_ylabel('Risk of blood infection\nbecoming clinical')
         ax.set_xticks([])
         ax.set_yticks([])
     return fig, ax
@@ -150,7 +151,7 @@ def risk_severe_with_parasitaemia():
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.set_xlabel('log-Parasitaemia')
-        ax.set_ylabel('Risk of severe malaria')
+        ax.set_ylabel('Risk of clinical malaria\nbecoming severe')
         ax.set_xticks([])
         ax.set_yticks([])
     return fig, ax
@@ -227,7 +228,7 @@ def distributions(filename):
     ax.plot(dists['x'], dists['p_x_no_fever'], label='Asymptomatic')
     ax.plot(dists['x'], dists['p_x_mild'], label='Mild')
     ax.plot(dists['x'], dists['p_x_SM'], label='Severe')
-    ax.set_xlabel('Parasitaemia (per 200 WBC)')
+    ax.set_xlabel('Parasites per 200 WBC')
     ax.set_ylabel('Probability density')
     ax.set_xscale('log')
     ax.legend(loc='upper left')
@@ -238,7 +239,8 @@ def distributions(filename):
     ax.bxp(boxes, positions=(1.2, 2.2, 3.2), showfliers=False);
     ax.set_yscale('log')
     ax.set_xticks((1, 2, 3), ['Severe', 'Mild', 'Asymptomatic'])
-    ax.set_ylabel('Parasitaemia (per 200 WBC)');
+    ax.set_xlabel('Disease severity');
+    ax.set_ylabel('Parasites per 200 WBC');
     ax.set_title('B', loc='left');
 
     for ax in axs.flatten():
@@ -317,21 +319,21 @@ def risk_estimates(filename):
 
     fig, axs = plt.subplots(2, 3, figsize=(12, 8))
     fig.subplots_adjust(hspace=0.3, wspace=0.3)
-    plot(axs[0, 0], x, 100*p_fever_given_x(logx), 'Parasitaemia (per 200 WBC)', 'Risk of fever (%)', 'A) Estimated risk of fever\nwith parasitaemia')
-    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 1), 'Parasitaemia (per 200 WBC)', 'Risk of severe malaria given fever (%)', '', label='1st infection')
-    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 5), 'Parasitaemia (per 200 WBC)', 'Risk of severe malaria given fever (%)', '', label='5th infection')
-    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 10), 'Parasitaemia (per 200 WBC)', 'Risk of severe malaria given fever (%)', 'B) Estimated risk of severe malaria\nwith parasitaemia', label='10th infection')
-    plot(axs[1, 0], n, 100*p_SM_given_fever_n(n), 'Infection number', 'Risk of severe malaria (%)', 'C) Fit of risk of severe malaria\nwith exposure', xaxis='linear')
-    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_x(logx), dx), 'Parasitaemia (per 200 WBC)', '', '', label='All')
-    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_mild_x(logx), dx), 'Parasitaemia (per 200 WBC)', '', '', label='Mild')
-    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_asym_x(logx), dx), 'Threshold parasitaemia (per 200 WBC)', 'Episodes above threshold parasitaemia', 'D) Fit of episodes\nabove threshold parasitaemia', label='Asymptomatic')
-    plot(axs[1, 2], x, 122*ccdf(p_SM_x(logx) / P_SM, dx), 'Threshold parasitaemia (per 200 WBC)', 'Episodes above threshold parasitaemia', 'E) Fit of severe malaria episodes\nabove threshold parasitaemia', color='C3', label='Severe')
+    plot(axs[0, 0], x, 100*p_fever_given_x(logx), 'Parasites per 200 WBC', 'Risk of blood infection\nbecoming clinical (%)', 'A) Estimated risk of fever\nwith parasitaemia')
+    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 1), 'Parasites per 200 WBC', 'Risk of clinical malaria\nbecoming severe (%)', '', label='1st infection')
+    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 5), 'Parasites per 200 WBC', 'Risk of clinical malaria\nbecoming severe (%)', '', label='5th infection')
+    plot(axs[0, 1], x, 100*p_SM_given_fever_n_x(logx, 10), 'Parasites per 200 WBC', 'Risk of clinical malaria\nbecoming severe (%)', 'B) Estimated risk of severe malaria\nwith parasitaemia', label='10th infection')
+    plot(axs[1, 0], n, 100*p_SM_given_fever_n(n), 'Number of blood infections', 'Risk of clinical malaria\nbecoming severe (%)', 'C) Fit of risk of severe malaria\nwith exposure', xaxis='linear')
+    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_x(logx), dx), 'Parasites per 200 WBC', '', '', label='All')
+    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_mild_x(logx), dx), 'Parasites per 200 WBC', '', '', label='Mild')
+    plot(axs[1, 1], x, λ * dj['child_years'] * ccdf(p_asym_x(logx), dx), 'Threshold parasites per 200 WBC', 'Episodes above threshold parasitaemia', 'D) Fit of episodes\nabove threshold parasitaemia', label='Asymptomatic')
+    plot(axs[1, 2], x, 122*ccdf(p_SM_x(logx) / P_SM, dx), 'Threshold parasites per 200 WBC', 'Episodes above threshold parasitaemia', 'E) Fit of severe malaria episodes\nabove threshold parasitaemia', color='C3', label='Severe')
 
     axs[0, 2].set_visible(False)
     axs[0, 0].set_ylim(-5, 100);
     axs[0, 1].legend(title='Infection number', loc='upper left')
-    axs[1, 1].legend(title='Severity type')
-    axs[1, 2].legend(title='Severity type')
+    axs[1, 1].legend(title='Disease severity')
+    axs[1, 2].legend(title='Disease severity')
 
     axs[1, 0].scatter(n, sm_risks['p'], color='C0', s=75, edgecolor='w')
     axs[1, 1].scatter(1, dj['cases'], color='C0', s=75, edgecolor='w')
@@ -406,7 +408,7 @@ def simulate_p_n():
     fig, ax = plt.subplots(figsize=(3, 2.5))
     ax = sns.lineplot(data=df, x='n', y='p', hue='λ', errorbar=('sd', 2), ax=ax)
 
-    ax.set_xlabel('Cumulative number of infections')
+    ax.set_xlabel('Number of blood infections')
     ax.set_ylabel(r'$p(n|\lambda\overline{t})$')
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)

@@ -134,7 +134,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
     display_vars = model.variables.display_vars
     display_measures = model.measures.display_measures
 
-    colours = [pink, purple, blue, turquoise, turquoise ]
+    colours = [pink, purple, blue, turquoise, 'C1']
     color  = {i:j for i, j in zip(cohorts, colours)}
 
     title_dict = {k:v for k, v in zip(vars, titles)}
@@ -163,18 +163,17 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
                     try:
                         # plot control and treatment for episodes and cdf but only treatment for efficacy and averted
                         ax.plot(sim_source['ages'], sim_source[f'{c} {f}'], color=color[c], label=c)
-
-                        # put legend only in one axis
-                        if i == 0:
-                            if legend_pos == 'last' and j == len(display_vars)-1:
-                                ax.legend(loc='upper right', title=legend_title, fontsize=8, title_fontsize=8)
-                            elif legend_pos == 'first' and j == 0:
-                                ax.legend(loc='lower right', title=legend_title, fontsize=8, title_fontsize=8)
-
                         if variable == 'Direct deaths' and min(sim_source[f'{c} {f}']) < 0 and (measure == 'averted' or measure == 'efficacy'):
                             ax.axhline(0, color='black', ls=':')
                     except:
                         pass
+
+            # put legend only in one axis
+            if i == 0:
+                if legend_pos == 'last' and j == len(display_vars)-1:
+                    ax.legend(loc='upper right', title=legend_title, fontsize=8, title_fontsize=8)
+                elif legend_pos == 'first' and j == 0:
+                    ax.legend(loc='lower right', title=legend_title, fontsize=8, title_fontsize=8)
 
             if i == 0:
                 # title only in row 1

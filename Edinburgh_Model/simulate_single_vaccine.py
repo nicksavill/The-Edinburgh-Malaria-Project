@@ -27,7 +27,7 @@ def simulate_single_vaccine(model):
     if pars.smc_control:
         cohorts[pars.control].SMC(pars.smc_offset)
 
-    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile, code='C')
+    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile, code=model.code)
 
     # copy the unvaccinated cohort into the vaccinated cohort on last primary dose
     if pars.lsv or pars.bsv or pars.smc:
@@ -43,10 +43,10 @@ def simulate_single_vaccine(model):
             cohorts[pars.treatment].SMC(pars.smc_offset)
 
         # run the vaccinated cohort to the end of the study
-        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code='C')
+        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code=model.code)
 
     # simulate control cohort
-    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code='C')
+    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code=model.code)
 
     ############################ construct data for plots
     y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_death_rates)

@@ -215,7 +215,7 @@ def plot(sim, default_value=None):
 
     return fig, axs
 
-def sensitivity(parameter, values, β=0, season_width=1, boosters=1, protection_blood=False):
+def sensitivity(parameter, values, β=0, season_width=1, boosters=1, protection_blood=False, code='C'):
     model = Model()
     model.pars = Parameters(
         lsv=True,
@@ -232,7 +232,7 @@ def sensitivity(parameter, values, β=0, season_width=1, boosters=1, protection_
     )
     model.variables = Variables(['Direct deaths'])
     model.measures = Measures(['efficacy', 'averted'])
-    model.Config()
+    model.Config(code=code)
 
     λs = np.logspace(np.log10(0.5), np.log10(5), 19)
     treatments = {(True, False):'R21', (False, True):'RH5', (True, True):'R21+RH5'}

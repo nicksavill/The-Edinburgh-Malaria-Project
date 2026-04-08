@@ -4,6 +4,7 @@ from Edinburgh_Model.model import *
 from Edinburgh_Model.simulate_single_vaccine import *
 
 from . import expectation_model as em
+from . import paper
 
 import numpy as np
 import pandas as pd
@@ -184,7 +185,6 @@ def ε_severe_calibration(fig_xscale=1, fig_yscale=1, legend_pos='last', legend_
     model.measures = Measures(['cases', 'cdf'])
     config = {'time_scale':'Years', 'fig_yscale':fig_yscale, 'fig_xscale':fig_xscale}
     model.Config(**config)
-    model.Sources()
 
     rs = []
     c = []
@@ -193,11 +193,11 @@ def ε_severe_calibration(fig_xscale=1, fig_yscale=1, legend_pos='last', legend_
         c.append(f'{ε_severe:.3g}')
         model.pars.control = c[-1]
         model.pars.ε_severe = ε_severe
-        model.pars.update_pars(('control', 'ε_severe'))
-        rs.append(simulate_single_vaccine(model))
+        model.pars.update_pars('ε_severe')
+        rs.append(simulate_single_vaccine(model).set_index('ages'))
 
     df_joined = pd.concat(rs, axis=1).reset_index(drop=False)
-    return paper.plot(model, {ε_severe:None for ε_severe in c}, sim_source=df_joined, legend_title=legend_title, legend_pos=legend_pos)
+    return paper.plot(model, c, sim_source=df_joined, legend_title=legend_title, legend_pos=legend_pos)
 
 def validate_severe_malaria_risk():
     model = Model()

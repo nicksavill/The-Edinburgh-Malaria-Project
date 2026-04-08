@@ -6,6 +6,7 @@ from bokeh.plotting import figure
 from bokeh.palettes import Category10 as c10
 from bokeh.io import show
 
+global model
 model = Interaction()
 
 def plot(doc):
@@ -164,7 +165,7 @@ def plot(doc):
             '',
             'study_months',
             'λ',
-            # 'β',
+            'β',
         ],
         [
             'Malaria season',

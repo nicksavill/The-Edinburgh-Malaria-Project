@@ -452,7 +452,7 @@ def plot_population_episodes_by_age(rate_file):
     sns.scatterplot(data=rates, x='age', y='rate', hue='site', ax=ax)
     sns.lineplot(data=rates, x='age', y='rate', hue='site', legend=False, ax=ax)
     ax.set_xlabel('Age (years)')
-    ax.set_ylabel('Clinical episodes per year');
+    ax.set_ylabel('Annual clinical episodes');
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     ax.legend(title='Village')
@@ -491,7 +491,7 @@ def fit_pop_model(pars_dielmo_sig, pars_ndiop_sig, ind_model_file, rate_file):
     sns.scatterplot(data=cases_by_age, x='age', y='rate', hue='site', ax=ax)
 
     ax.set_xlabel('Age (years)')
-    ax.set_ylabel('Clinical episodes per year')
+    ax.set_ylabel('Annual clinical episodes')
     ax.legend()
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)

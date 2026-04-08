@@ -194,7 +194,7 @@ def infection_rate_vs_clinical_rate(
     )
     model.variables = Variables(['All clinical'])
     model.measures = Measures(['cdf'])
-    model.Config({'time_scale':'Weeks'})
+    model.Config(time_scale='Weeks')
 
     λs = np.logspace(log10(0.01), log10(30), 50)
 

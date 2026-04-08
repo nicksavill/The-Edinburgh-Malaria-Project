@@ -140,21 +140,22 @@ class Model:
     def Config(self, show_smc=False, show_vac=False, show_season=False,
                show_death_rates=False, time_scale='Years',
                show_pre_vac=False, fig_xscale=1, fig_yscale=1, plotfile='', miscellaneous={},
-               time_warning=0, logfile=False):
+               time_warning=0, logfile=False, code='C'):
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
 
-        assert isinstance(show_smc, bool), 'show_smc must be boolean'
-        assert isinstance(show_vac, bool), 'show_vac must be boolean'
-        assert isinstance(show_season, bool), 'show_season must be boolean'
-        assert isinstance(show_death_rates, bool), 'show_death_rates must be boolean'
+        assert isinstance(show_smc, bool), f'show_smc must be boolean, got {show_smc}'
+        assert isinstance(show_vac, bool), f'show_vac must be boolean, got {show_vac}'
+        assert isinstance(show_season, bool), f'show_season must be boolean, got {show_season}'
+        assert isinstance(show_death_rates, bool), f'show_death_rates must be boolean, got {show_death_rates}'
         assert time_scale in ['Years', 'Months', 'Weeks', 'Days'], f'time_scale must be Years, Months, Weeks or Days, got {time_scale}'
-        assert fig_xscale > 0, 'fig_xscale must be positive'
-        assert fig_yscale > 0, 'fig_yscale must be positive'
-        assert isinstance(show_pre_vac, bool), 'show_pre_vac must be boolean'
-        assert isinstance(plotfile, str), 'plotfile must be string'
-        assert isinstance(miscellaneous, dict), 'miscellaneous must be dictionary'
+        assert fig_xscale > 0, f'fig_xscale must be positive, got {fig_xscale}'
+        assert fig_yscale > 0, f'fig_yscale must be positive, got {fig_yscale}'
+        assert isinstance(show_pre_vac, bool), f'show_pre_vac must be boolean, got {show_pre_vac}'
+        assert isinstance(plotfile, str), f'plotfile must be string, got {plotfile}'
+        assert isinstance(miscellaneous, dict), f'miscellaneous must be dictionary, got {miscellaneous}'
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
-        assert isinstance(logfile, bool), 'logfile must be boolean'
+        assert isinstance(logfile, bool), f'logfile must be boolean, got {logfile}'
+        assert code in ['C', 'python'], f'code must be C or python, got {code}'
 
         """ plotting and other configuration variables """
         self.show_smc = show_smc  # show SMC protection in vaccination protection panel
@@ -172,6 +173,7 @@ class Model:
             self.logfile = datetime.now().strftime("%Y-%m-%d-%H-%M-%S.log")
         else:
             self.logfile = ''
+        self.code = code # whether to run the model in C or python
 
 
 class Parameters:
@@ -526,7 +528,7 @@ class Parameters:
             assert self.ν_liver >= 0, f'ν_liver must be non-negative, got {self.ν_liver}'
             assert self.τ_liver > 0, f'τ_liver must be positive, got {self.τ_liver}'
             assert self.period_liver > 0, f'period_liver must be positive, got {self.period_liver}'
-            assert self.nboosters_liver is None or isinstance(self.nboosters_liver, int) and self.nboosters_liver >= 0, f'nboosters_liver must be None or non-negative integer, got {self.nboosters_liver}'
+            assert self.nboosters_liver is None or (isinstance(self.nboosters_liver, int) or isinstance(self.nboosters_liver, np.int64)) and self.nboosters_liver >= 0, f'nboosters_liver must be None or non-negative integer, got {self.nboosters_liver}'
 
             if self.lsv:
                 liver_vac_args = self.ν_liver, self.τ_liver, self.period_liver, self.nboosters_liver
@@ -540,7 +542,7 @@ class Parameters:
             assert self.ν_blood > 0, f'ν_blood must be positive, got {self.ν_blood}'
             assert self.τ_blood > 0, f'τ_blood must be positive, got {self.τ_blood}'
             assert self.period_blood > 0, f'period_blood must be positive, got {self.period_blood}'
-            assert self.nboosters_blood is None or isinstance(self.nboosters_blood, int) and self.nboosters_blood >= 0, f'nboosters_blood must be None or non-negative integer, got {self.nboosters_blood}'
+            assert self.nboosters_blood is None or (isinstance(self.nboosters_blood, int) or isinstance(self.nboosters_blood, np.int64)) and self.nboosters_blood >= 0, f'nboosters_liver must be None or non-negative integer, got {self.nboosters_liver}'
 
             if self.bsv:
                 blood_vac_args = self.ν_blood, self.τ_blood, self.period_blood, self.nboosters_blood
@@ -639,7 +641,7 @@ class Cohort:
         """
         assert isinstance(max_bite_bins, int) and max_bite_bins > 0, f'max_bite_bins must be positive integer, got {max_bite_bins}'
         assert t_record_first is None or (isinstance(t_record_first, int) and t_record_first >= 0), f't_record_first must be non-negative integer or None, got {t_record_first}'
-        assert isinstance(time_warning, int), f'time_warning must be a non-negative integer got {time_warning}'
+        assert isinstance(time_warning, int) or isinstance(time_warning, bool), f'time_warning must be a non-negative integer, got {time_warning}'
 
         self.minage = 0
         self.size = pars.cohort_size_at_birth # cohort size at birth (adjusted to maintain "popsize" fully vaccinated children, eg 100,000)
@@ -693,7 +695,7 @@ class Cohort:
             self.non_clinical = np.zeros(self.nbr * self.age_classes).reshape(self.nbr, self.age_classes)
 
         if time_warning:
-            self.calculate_simulation_duration(pars)
+            self.calculate_simulation_duration(pars, time_warning)
 
     def bite_rate_pmf(self, β, nbins):
         assert 0 <= β <= 1, f'β must be 0 to 1, got {β}'
@@ -732,7 +734,7 @@ class Cohort:
         """ cohort age at first dose of SMC """
         self.age_smc = max(0, self.min_vac_age + offset)
 
-    def calculate_simulation_duration(self, pars):
+    def calculate_simulation_duration(self, pars, time_warning):
         """ calculate an approximate simulation time if time_warning is positive"""
         L_t = self.Lmod[-1, self.age_classes:self.age_classes+pars.max_weeks]
         n = len(L_t)
@@ -747,7 +749,7 @@ class Cohort:
         s1 = (N2-N1).sum() * self.nbr * pars.max_weeks * self.age_classes
         s2 = (pars.max_weeks+1)**2//2 * self.nbr * pars.max_weeks * self.age_classes
         sim_time = s1/2048162916800*22
-        if sim_time > pars.time_warning:
+        if sim_time > time_warning:
             print(f'approx. simulation time={sim_time:.0f} sec, weeks={pars.max_weeks}, age classes={self.age_classes}, bite rates={self.nbr}')
 
 
