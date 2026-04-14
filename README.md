@@ -16,7 +16,7 @@ The core model is a deterministic, population-based simulation of *Plasmodium fa
 - **Disease Progression**: Infections can lead to clinical malaria (defined as fever) or severe malaria, with only severe cases potentially fatal.
 - **Immunity**: Exposure-dependent naturally acquired immunities to clinical and severe malaria.
 - **Interventions**: Vaccine protection profiles (e.g., RTS,S, R21 and RH5.1).
-- **Mortality**: Age-specific severe malaria-associated death rates.
+- **Mortality**: Age-specific severe case mortality risk.
 
 The model is designed to be parsimonious, is based on empirical data, and is validated against field trials of clinical cases, deaths, and vaccine efficacies. The code is designed to be fast to allow responsive [visualisations](https://temp.bio.ed.ac.uk/Vaccines). Model parameters are estimated from empirical data using Bayesian inference implemented in Stan.
 
@@ -85,7 +85,7 @@ Next, clinical attack data from Trape and Rogier (1996) and Trape et al. (2024) 
 
 ### 2. Model development
 
-Then we further develop and discuss the model in a series of Jupyter notebooks in the directory `Notebooks`. This includes seasonality, risk of severe malaria with cumulative number of infections, age-specific death rates, seasonal malaria chemoprevention and RH5.1 efficacy The notebooks use python scripts in the directory `Notebooks/Scripts` and datasets in `Notebooks/Data`. The notebooks are rendered as pdfs and published as supplementary material with the paper.
+Then we further develop and discuss the model in a series of Jupyter notebooks in the directory `Notebooks`. This includes seasonality, risk of severe malaria with cumulative number of infections, age-specific severe malaria fatality risk, seasonal malaria chemoprevention and RH5.1 efficacy The notebooks use python scripts in the directory `Notebooks/Scripts` and datasets in `Notebooks/Data`. The notebooks are rendered as pdfs and published as supplementary material with the paper.
 
 ### 3. Core model
 

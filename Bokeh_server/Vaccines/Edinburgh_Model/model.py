@@ -138,7 +138,7 @@ class Model:
         self.panels_fn = panels_fn
 
     def Config(self, show_smc=False, show_vac=False, show_season=False,
-               show_death_rates=False, time_scale='Years',
+               show_cfr=False, time_scale='Years',
                show_pre_vac=False, fig_xscale=1, fig_yscale=1, plotfile='', miscellaneous={},
                time_warning=0, logfile=False, code='C'):
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
@@ -146,7 +146,7 @@ class Model:
         assert isinstance(show_smc, bool), f'show_smc must be boolean, got {show_smc}'
         assert isinstance(show_vac, bool), f'show_vac must be boolean, got {show_vac}'
         assert isinstance(show_season, bool), f'show_season must be boolean, got {show_season}'
-        assert isinstance(show_death_rates, bool), f'show_death_rates must be boolean, got {show_death_rates}'
+        assert isinstance(show_cfr, bool), f'show_cfr must be boolean, got {show_cfr}'
         assert time_scale in ['Years', 'Months', 'Weeks', 'Days'], f'time_scale must be Years, Months, Weeks or Days, got {time_scale}'
         assert fig_xscale > 0, f'fig_xscale must be positive, got {fig_xscale}'
         assert fig_yscale > 0, f'fig_yscale must be positive, got {fig_yscale}'
@@ -161,7 +161,7 @@ class Model:
         self.show_smc = show_smc  # show SMC protection in vaccination protection panel
         self.show_vac = show_vac  # show vaccine protection panel
         self.show_season = show_season  # show seasonality in vaccine protection panel
-        self.show_death_rates = show_death_rates  # show death rate by age with vaccination age range overlaid
+        self.show_cfr = show_cfr  # show CFR by age with vaccination age range overlaid
         self.show_pre_vac = show_pre_vac  # show infections, etc before last primary dose
         self.time_scale = time_scale  # time scale eg 'Months', 'Years'
         self.fig_xscale = fig_xscale  # x-scale of graphs
@@ -207,8 +207,8 @@ class Parameters:
             ε_severe = 0.05,                      # decay rate of risk of severe malaria with age (from Abduallah 2007)
 
             # deaths
-            deaths = 'Reyburn',                   # age-specfic death rate function: 'Reyburn' or 'Flat'
-            death_rate_modifier = 1.,             # multiplier for death rate
+            deaths = 'Reyburn',                   # age-specfic CFR function: 'Reyburn' or 'Flat'
+            cfr_modifier = 1.,             # multiplier for CFR
 
             # general vaccination
             min_vac_age = 0,                      # minimum age at last primary dose (weeks)
@@ -277,7 +277,7 @@ class Parameters:
         self.ε_severe = ε_severe
 
         self.deaths = deaths
-        self.death_rate_modifier = death_rate_modifier
+        self.cfr_modifier = cfr_modifier
 
         self.min_vac_age = min_vac_age
         self.vac_age_range = vac_age_range
@@ -319,10 +319,10 @@ class Parameters:
         if lsv == False and bsv == False and vac_age_range != 1:
             print('Warning: no vaccination set, do you want vac_age_range != 1?')
 
-        # age-specific all-cause death rates from Tanzania 2019 life tables
+        # age-specific all-cause CFR from Tanzania 2019 life tables
         # ages in weeks
         ages = [0, 52, 260, 520, 780, 1040, 1300, 1560, 1820, 2080, 2340, 2600, 2860, 3120, 3380, 3640, 3900, 4160, 4420, 5200]
-        # corresponding death rates per week
+        # corresponding CFR per week
         μ = [7.15e-04, 7.26e-05, 3.07e-05, 1.33e-05, 2.14e-05, 2.96e-05, 3.86e-05, 5.19e-05, 7.04e-05, 9.77e-05, 1.31e-04, 1.85e-04, 2.53e-04, 3.83e-04, 5.60e-04, 8.80e-04, 1.34e-03, 2.08e-03, 3.48e-03, 1e-2]
         self.survival = 1 - np.interp(np.arange(ages[-1]+1), ages, μ)
 
@@ -430,26 +430,26 @@ class Parameters:
 
             self.severe_risk = self.ρ_severe * exp(-(self.δ_severe + self.ε_severe / 52. * _a[np.newaxis, :]) * (_n[:, np.newaxis]-1))
 
-        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'deaths', 'death_rate_modifier')).intersection(update_set):
-            # severe malaria associated, age-specfic death rate
+        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'deaths', 'cfr_modifier')).intersection(update_set):
+            # severe malaria associated, age-specfic CFR
             assert self.deaths in ['Reyburn', 'Flat'], f'deaths must be Reyburn or Flat, got {self.deaths}'
-            assert 0 <= self.death_rate_modifier <=1, f'death_rate_modifier must be 0 to 1, got {self.death_rate_modifier}'
+            assert 0 <= self.cfr_modifier <=1, f'cfr_modifier must be 0 to 1, got {self.cfr_modifier}'
 
-            mean_death_rate = 0.067 # (see Notebook S7)
+            mean_cfr = 0.067 # (see Notebook S7)
 
-            if self.deaths == 'Reyburn' and self.death_rate_modifier > 0:
-                # death rates at each year of age as estiated from Reyburn et al. 2005 (copied from Notebook S7)
-                direct_death_rate_by_age = [0.072, 0.06, 0.052,  0.049, 0.053, 0.065, 0.085, 0.108, 0.127, 0.139, 0.143, 0.143]
+            if self.deaths == 'Reyburn' and self.cfr_modifier > 0:
+                # CFR at each year of age as estiated from Reyburn et al. 2005 (copied from Notebook S7)
+                direct_cfr_by_age = [0.072, 0.06, 0.052,  0.049, 0.053, 0.065, 0.085, 0.108, 0.127, 0.139, 0.143, 0.143]
 
-                if _a[-1] < len(direct_death_rate_by_age)*52:
-                    self.direct_deaths = np.interp(_a, 52*_a[:len(direct_death_rate_by_age)], direct_death_rate_by_age)
+                if _a[-1] < len(direct_cfr_by_age)*52:
+                    self.direct_deaths = np.interp(_a, 52*_a[:len(direct_cfr_by_age)], direct_cfr_by_age)
                 else:
-                    self.direct_deaths = np.interp(_a, np.concatenate((52*_a[:len(direct_death_rate_by_age)-1], _a[-2:-1])), direct_death_rate_by_age)
+                    self.direct_deaths = np.interp(_a, np.concatenate((52*_a[:len(direct_cfr_by_age)-1], _a[-2:-1])), direct_cfr_by_age)
 
-                self.direct_deaths = self.death_rate_modifier * self.direct_deaths + (1-self.death_rate_modifier) * mean_death_rate
+                self.direct_deaths = self.cfr_modifier * self.direct_deaths + (1-self.cfr_modifier) * mean_cfr
 
-            elif self.deaths == 'Flat' or self.death_rate_modifier == 0:
-                self.direct_deaths = mean_death_rate*np.ones_like(_a)
+            elif self.deaths == 'Flat' or self.cfr_modifier == 0:
+                self.direct_deaths = mean_cfr*np.ones_like(_a)
 
             else:
                 raise NotImplementedError("deaths must be Reyburn or Flat")

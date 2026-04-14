@@ -116,7 +116,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
     if sim_source is None:
         sim_source = model.simulation_fn(model)
 
-    if model.show_vac or model.show_smc or model.show_season or model.show_death_rates:
+    if model.show_vac or model.show_smc or model.show_season or model.show_cfr:
         for c in [str(c) for c in cohorts]:
             if 'R21' in c or 'RTS,S' in c:
                 model.pars.lsv = True
@@ -265,12 +265,12 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
             ax.tick_params(axis='x', which='minor', length=4, color='grey')
             row += 1
 
-        if model.show_death_rates:
+        if model.show_cfr:
             ax = axs[row, 4]
             ax.set_xlabel('Age (years)')
             ax.set_ylabel('Risk of death')
             ax.scatter(x=0, y=0, color='white') # forces origin to
-            ax.plot(panel_source['death rates']['x'], panel_source['death rates']['SM'], color='Red')
+            ax.plot(panel_source['cfr']['x'], panel_source['cfr']['SM'], color='Red')
             max_x = 10
             # for c in cohorts:
             #     max_x = max(max_x, sim_source[f'{c} SM mean age x'].max())

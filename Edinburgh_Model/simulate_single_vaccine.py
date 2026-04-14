@@ -49,7 +49,7 @@ def simulate_single_vaccine(model):
     sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code=model.code)
 
     ############################ construct data for plots
-    y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_death_rates)
+    y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_cfr)
 
     if model.time_scale == 'Years':
         dt = 52
@@ -95,7 +95,7 @@ def simulate_single_vaccine(model):
         result['ages'] *= 4. / weeks_per_month
 
     # mean age of severe malaria episodes
-    if model.show_death_rates:
+    if model.show_cfr:
         l = len(result['ages'])
         for c in cohorts.keys():
             result[f'{c} severe mean age x'] = y[c]['severe_mean_age'] * np.ones(l) / dt

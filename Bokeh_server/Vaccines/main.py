@@ -55,7 +55,7 @@ def simulation(model):
     sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars)
 
     ############################ construct data for plots
-    y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_death_rates)
+    y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_cfr)
 
     if model.time_scale == 'Years':
         dt = 52
@@ -101,7 +101,7 @@ def simulation(model):
         result['ages'] *= 4. / weeks_per_month
 
     # mean age of severe malaria episodes
-    if model.show_death_rates:
+    if model.show_cfr:
         l = len(result['ages'])
         for c in cohorts.keys():
             result[f'{c} severe mean age x'] = y[c]['severe_mean_age'] * np.ones(l) / dt
@@ -113,7 +113,7 @@ def simulation(model):
 
 def plot(doc):
     model.sim_source = ColumnDataSource(simulation(model))
-    if model.show_vac or model.show_death_rates:
+    if model.show_vac or model.show_cfr:
         assert model.panels_fn is not None, 'Set model.Sources(panel_fn=panels)'
         model.panel_source = {f:ColumnDataSource(data=data) for f, data in model.panels_fn(model).items()}
     if model.data:
@@ -215,23 +215,23 @@ def plot(doc):
         if model.show_season:
             vaccine_prot.line('x', 'y', color='DarkBlue', width=1, source=model.panel_source['season'])
 
-    if model.show_death_rates:
-        death_rates = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
+    if model.show_cfr:
+        cfr = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
 
-        death_rates.scatter(x=0, y=0, color='white') # forces origin to be plotted
-        death_rates.line('x', 'y', color='Red', width=3, source=model.panel_source['death rates'])
+        cfr.scatter(x=0, y=0, color='white') # forces origin to be plotted
+        cfr.line('x', 'y', color='Red', width=3, source=model.panel_source['cfr'])
 
         if pars.lsv or pars.bsv:
-            l = death_rates.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', alpha=0.5, source=model.panel_source['min_vac_age'])
-            death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
+            l = cfr.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', alpha=0.5, source=model.panel_source['min_vac_age'])
+            cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 ('Minimum vaccination age', '@left'),
                                                 ('Maximum vaccination age', '@right'),
                                             ]))
 
         for c in cohorts:
-            l = death_rates.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, source=model.sim_source)
-            death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
+            l = cfr.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, source=model.sim_source)
+            cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 (f'Mean age of severe episodes\nin {c} cohort', '@{'+f"{c} severe mean age x"+'}{0.1f}')
                                             ]))
@@ -303,7 +303,7 @@ def plot(doc):
             'ρ_severe',
             'δ_severe',
             'ε_severe',
-            'death_rate_modifier',
+            'cfr_modifier',
         ]
     ]
 
@@ -312,7 +312,7 @@ def plot(doc):
         'season',
         'children',
         'recording',
-        'death rate',
+        'cfr',
         'liver vaccine',
         'blood vaccine',
         'vaccines',
@@ -346,8 +346,8 @@ def plot(doc):
 
     if model.show_vac or model.show_season:
         children[3][4] = vaccine_prot
-    if model.show_death_rates:
-        children[3][5] = death_rates
+    if model.show_cfr:
+        children[3][5] = cfr
 
     gp = gridplot(
         children=children,
@@ -361,7 +361,7 @@ model = Interaction()
 model.measures = Measures(['cases', 'cdf', 'averted', 'efficacy'])
 model.variables = Variables(['All infection', 'All clinical', 'Severe malaria', 'Direct deaths'])
 model.Sources(simulation_fn=simulation)
-config = {'show_season':True, 'show_vac':True, 'show_smc':True, 'show_death_rates':True}
+config = {'show_season':True, 'show_vac':True, 'show_smc':True, 'show_cfr':True}
 model.Config(**config)
 
 model.pars = Parameters(

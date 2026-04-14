@@ -20,14 +20,14 @@ class Interaction:
         self.panels_fn = panels_fn
 
     def Config(self, show_smc=False, show_vac=False, show_season=False,
-               show_death_rates=False, time_scale='Years',
+               show_cfr=False, time_scale='Years',
                show_pre_vac=False, fig_xscale=1, fig_yscale=1, plotfile='', miscellaneous={},
-               time_warning=0, logfile=False):
+               time_warning=0, logfile=False, code='C'):
 
         assert isinstance(show_smc, bool), 'show_smc must be boolean'
         assert isinstance(show_vac, bool), 'show_vac must be boolean'
         assert isinstance(show_season, bool), 'show_season must be boolean'
-        assert isinstance(show_death_rates, bool), 'show_death_rates must be boolean'
+        assert isinstance(show_cfr, bool), 'show_cfr must be boolean'
         assert time_scale in ['Years', 'Months', 'Weeks'], f'time_scale must be Years, Months or Weeks, got {time_scale}'
         assert fig_xscale > 0, 'fig_xscale must be positive'
         assert fig_yscale > 0, 'fig_yscale must be positive'
@@ -41,7 +41,7 @@ class Interaction:
         self.show_smc = show_smc  # show SMC protection in vaccination protection panel
         self.show_vac = show_vac  # show vaccine protection panel
         self.show_season = show_season  # show seasonality in vaccine protection panel
-        self.show_death_rates = show_death_rates  # show death rate by age with vaccination age range overlaid
+        self.show_cfr = show_cfr  # show CFR by age with vaccination age range overlaid
         self.show_pre_vac = show_pre_vac  # show infections, etc before last primary dose
         self.time_scale = time_scale  # time scale eg 'Months', 'Years'
         self.fig_xscale = fig_xscale  # x-scale of graphs
@@ -53,12 +53,13 @@ class Interaction:
             self.logfile = datetime.now().strftime("%Y-%m-%d-%H-%M-%S.log")
         else:
             self.logfile = ''
+        self.code = code # whether to run the model in C or python
 
     def Buttons(self, button_types):
         if isinstance(button_types, str):
             button_types = [button_types]
 
-        buttons = ['all', 'season', 'children', 'recording', 'death rate', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
+        buttons = ['all', 'season', 'children', 'recording', 'cfr', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
         for b in button_types:
             assert b in buttons, f'Available buttons are {str(buttons)}, got {str(b)}'
 
@@ -79,9 +80,9 @@ class Interaction:
                 self.panel_source['liver_vac_prot'].data = s['liver_vac_prot']
                 self.panel_source['blood_vac_prot'].data = s['blood_vac_prot']
 
-            if self.show_death_rates:
-                s = self.panels_fn(self, 'death rates')
-                self.panel_source['death rates'].data = s['death rates']
+            if self.show_cfr:
+                s = self.panels_fn(self, 'cfr')
+                self.panel_source['cfr'].data = s['cfr']
                 if self.pars.lsv or self.pars.bsv:
                     self.panel_source['min_vac_age'].data = s['min_vac_age']
 
@@ -132,17 +133,17 @@ class Interaction:
                 self.pars.deaths = list(death_labels)[1]
             self.pars.update_pars('deaths')
             self.sim_source.data = self.simulation_fn(self)
-            if self.show_death_rates:
-                s = self.panels_fn(self, 'death rates')
-                self.panel_source['death rates'].data = s['death rates']
+            if self.show_cfr:
+                s = self.panels_fn(self, 'cfr')
+                self.panel_source['cfr'].data = s['cfr']
                 if self.pars.lsv or self.pars.bsv:
                     self.panel_source['min_vac_age'].data = s['min_vac_age']
 
-        if 'all' in button_types or 'death rate' in button_types:
+        if 'all' in button_types or 'cfr' in button_types:
             self.Deaths_button = RadioButtonGroup(labels=list(death_labels), active=death_labels[self.pars.deaths])
             self.Deaths_button.on_change('active', change_deaths)
-            tooltip = Tooltip(content=HTML("<center>Age-specific death rates from<br>Reyburn at al. (2005) or flat</center>"), position='top')
-            self.buttons['death rate'] = (self.Deaths_button, HelpButton(tooltip=tooltip))
+            tooltip = Tooltip(content=HTML("<center>Age-specific CFR from<br>Reyburn at al. (2005) or flat</center>"), position='top')
+            self.buttons['cfr'] = (self.Deaths_button, HelpButton(tooltip=tooltip))
 
         ######################### DATA CASE DEFINITION BUTTON ###########################
         case_def_labels = {"primary":0, "secondary":1}
@@ -247,8 +248,8 @@ class Interaction:
                 s = self.panels_fn(self, ['liver_vac_prot', 'blood_vac_prot', 'min_vac_age'])
                 self.panel_source['liver_vac_prot'].data = s['liver_vac_prot']
                 self.panel_source['blood_vac_prot'].data = s['blood_vac_prot']
-            if self.show_death_rates:
-                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'death rates')['min_vac_age']
+            if self.show_cfr:
+                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'cfr')['min_vac_age']
 
                 self.panel_source['min_vac_age'].data = s['min_vac_age']
 
@@ -296,8 +297,8 @@ class Interaction:
                     self.panel_source['smc'].data = s['smc']
                 if self.show_season:
                     self.panel_source['season'].data = s['season']
-            if self.show_death_rates:
-                self.panel_source['death rates'].data = self.panels_fn(self, 'death rates')['death rates']
+            if self.show_cfr:
+                self.panel_source['cfr'].data = self.panels_fn(self, 'cfr')['cfr']
 
         def update_λ(attr, old, new):
             self.pars.λ = 10**new
@@ -368,12 +369,12 @@ class Interaction:
             self.pars.update_pars('ε_severe')
             self.sim_source.data = self.simulation_fn(self)
 
-        def update_death_rate_modifier(attr, old, new):
-            self.pars.death_rate_modifier = new
-            self.pars.update_pars('death_rate_modifier')
+        def update_cfr_modifier(attr, old, new):
+            self.pars.cfr_modifier = new
+            self.pars.update_pars('cfr_modifier')
             self.sim_source.data = self.simulation_fn(self)
-            if self.show_death_rates:
-                self.panel_source['death rates'].data = self.panels_fn(self, 'death rates')['death rates']
+            if self.show_cfr:
+                self.panel_source['cfr'].data = self.panels_fn(self, 'cfr')['cfr']
 
         def update_min_vac_age(attr, old, new):
             self.pars.min_vac_age = new
@@ -383,8 +384,8 @@ class Interaction:
                 self.pars.t_first = self.pars.min_vac_age + self.pars.vac_age_range
             self.pars.update_pars('min_vac_age')
             self.sim_source.data = self.simulation_fn(self)
-            if self.show_death_rates:
-                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'death rates')['min_vac_age']
+            if self.show_cfr:
+                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'cfr')['min_vac_age']
 
         def update_vac_age_range(attr, old, new):
             self.pars.vac_age_range = new
@@ -394,8 +395,8 @@ class Interaction:
                 self.pars.t_first = self.pars.min_vac_age + self.pars.vac_age_range
             self.pars.update_pars('vac_age_range')
             self.sim_source.data = self.simulation_fn(self)
-            if self.show_death_rates:
-                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'death rates')['min_vac_age']
+            if self.show_cfr:
+                self.panel_source['min_vac_age'].data = self.panels_fn(self, 'cfr')['min_vac_age']
 
         def update_nboosters(attr, old, new):
             self.pars.nboosters = new
@@ -617,11 +618,11 @@ class Interaction:
             tooltip = Tooltip(content=HTML("<center>Decay rate age-modifier<br>in risk of severe malaria</center>"), position='left')
             self.sliders['ε_severe'] = self.sl_ε_severe, HelpButton(tooltip=tooltip)
 
-        if 'all' in slider_types or 'death_rate_modifier' in slider_types:
-            self.sl_death_rate_modifier = Slider(width=sw, start=0, end=1, value=self.pars.death_rate_modifier, step=0.01, title='Death rate modifier', name='death_rate_modifier')
-            self.sl_death_rate_modifier.on_change(value, update_death_rate_modifier)
-            tooltip = Tooltip(content=HTML("Modify severe-malaria associated age-specific death rate<br>0: No age specificity<br>1: As estimated from Reyburn et al. (2005)"), position='left')
-            self.sliders['death_rate_modifier'] = self.sl_death_rate_modifier, HelpButton(tooltip=tooltip)
+        if 'all' in slider_types or 'cfr_modifier' in slider_types:
+            self.sl_cfr_modifier = Slider(width=sw, start=0, end=1, value=self.pars.cfr_modifier, step=0.01, title='CFR modifier', name='cfr_modifier')
+            self.sl_cfr_modifier.on_change(value, update_cfr_modifier)
+            tooltip = Tooltip(content=HTML("Modify severe-malaria associated age-specific CFR<br>0: No age specificity<br>1: As estimated from Reyburn et al. (2005)"), position='left')
+            self.sliders['cfr_modifier'] = self.sl_cfr_modifier, HelpButton(tooltip=tooltip)
 
         if 'core' in slider_types or 'all' in slider_types or 'min_vac_age' in slider_types:
             self.sl_min_vac_age = Slider(width=sw, start=0, end=300, value=self.pars.min_vac_age, step=1, title='Min vaccination age (weeks)', name='min_vac_age')

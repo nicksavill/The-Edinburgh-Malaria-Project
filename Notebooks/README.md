@@ -20,7 +20,7 @@
 | S4_goncalves.ipynb               | Goncalves data analysis (Supplement 4)                         |
 | S5_clinical_immunity.ipynb       | Clinical immunity analysis (Supplement 5)                      |
 | S6_severe_malaria_immunity.ipynb | Severe malaria immunity analysis (Supplement 6)                |
-| S7_death_rate.ipynb              | Death rate analysis (Supplement 7)                             |
+| S7_cfr.ipynb                     | Severe malaria fatality risk analysis (Supplement 7)           |
 | S8_SMC.ipynb                     | Seasonal malaria chemoprevention analysis (Supplement 8)       |
 | S9_RH5.ipynb                     | RH5 vaccine efficacy analysis (Supplement 9)                   |
 | S10_sensitivity_analysis.ipynb   | Sensitivity analysis (Supplement 10)                           |

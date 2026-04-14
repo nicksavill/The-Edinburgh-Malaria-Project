@@ -11,7 +11,7 @@ model = Interaction()
 
 def plot(doc):
     model.sim_source = ColumnDataSource(model.simulation_fn(model))
-    if model.show_vac or model.show_death_rates:
+    if model.show_vac or model.show_cfr:
         assert model.panels_fn is not None, 'Set model.Sources(panel_fn=panels)'
         model.panel_source = {f:ColumnDataSource(data=data) for f, data in model.panels_fn(model).items()}
     if model.data:
@@ -136,27 +136,27 @@ def plot(doc):
 
         vaccine_prot.legend.visible = False
 
-    if model.show_death_rates:
-        death_rates = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
+    if model.show_cfr:
+        cfr = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
 
-        death_rates.scatter(x=0, y=0, color='white') # forces origin to be plotted
-        death_rates.line('x', 'y', color='Red', width=3, source=model.panel_source['death rates'])
+        cfr.scatter(x=0, y=0, color='white') # forces origin to be plotted
+        cfr.line('x', 'y', color='Red', width=3, source=model.panel_source['cfr'])
 
         if pars.lsv or pars.bsv:
-            l = death_rates.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', legend_label=f'{pars.treatment} ages', alpha=0.5, source=model.panel_source['min_vac_age'])
-            death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
+            l = cfr.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', legend_label=f'{pars.treatment} ages', alpha=0.5, source=model.panel_source['min_vac_age'])
+            cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 ('Minimum vaccination age', '@left'),
                                                 ('Maximum vaccination age', '@right'),
                                             ]))
 
         for c in cohorts:
-            l = death_rates.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, legend_label=f'{c}', source=model.sim_source)
-            death_rates.add_tools(HoverTool(renderers=[l], attachment='above',
+            l = cfr.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, legend_label=f'{c}', source=model.sim_source)
+            cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 (f'Mean age of severe episodes\nin {c} cohort', '@{'+f"{c} severe mean age x"+'}{0.1f}')
                                             ]))
-        death_rates.legend.visible = False
+        cfr.legend.visible = False
 
     ######################### LAYOUT ###########################
 
@@ -225,7 +225,7 @@ def plot(doc):
             'ρ_severe',
             'δ_severe',
             'ε_severe',
-            'death_rate_modifier',
+            'cfr_modifier',
         ]
     ]
 
@@ -233,7 +233,7 @@ def plot(doc):
         'time_scale',
         'children',
         'recording',
-        'death rate',
+        'cfr',
         'liver vaccine',
         'blood vaccine',
         'vaccines',
@@ -266,8 +266,8 @@ def plot(doc):
 
     if model.show_vac or model.show_season:
         children[3][4] = vaccine_prot
-    if model.show_death_rates:
-        children[3][5] = death_rates
+    if model.show_cfr:
+        children[3][5] = cfr
     gp = gridplot(
         children=children,
         width=int(300*model.fig_xscale),

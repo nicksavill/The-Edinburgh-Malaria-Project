@@ -95,8 +95,8 @@ def imperial_vaccine_protection():
 def SMC_protection():
     a = np.arange(52, dtype=float)
 
-    smc_args = pars.smc_ramp, pars.smc_rounds, pars.smc_repeats
-    smc_profile = 100*pars.smc_coverage*smc_protection(a, smc_args)
+    smc_args = pars.smc_ramp, pars.smc_rounds, pars.smc_repeats, pars.smc_coverage
+    smc_profile = 100*smc_protection(a, smc_args)
 
     fig, ax = plt.subplots(figsize=(4, 3))
     ax.plot(a, smc_profile)

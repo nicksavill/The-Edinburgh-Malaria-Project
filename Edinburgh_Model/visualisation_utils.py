@@ -5,7 +5,7 @@ def panels(model, update='all'):
     pars = model.pars
     duration = int(weeks_per_month*pars.study_months) + pars.min_vac_age + pars.vac_age_range
     ages = np.arange(duration, dtype=float) # ages in weeks
-    panel = {'smc':{}, 'liver_vac_prot':{}, 'blood_vac_prot':{}, 'season':{}, 'death rates':{}, 'min_vac_age':{}}
+    panel = {'smc':{}, 'liver_vac_prot':{}, 'blood_vac_prot':{}, 'season':{}, 'cfr':{}, 'min_vac_age':{}}
 
     if model.time_scale == 'Years':
         scale = 52
@@ -49,8 +49,8 @@ def panels(model, update='all'):
     if model.show_season and 'season' in update:
         panel['season'] = {'x':ages/scale, 'y':np.concatenate([model.pars.malaria_season / model.pars.malaria_season.max()]*(duration//52+1))[:duration]}
 
-    if model.show_death_rates and ('death rates' in update or 'min_vac_age' in update):
-        panel['death rates'] = {'x':ages[:duration]/scale, 'y':pars.direct_deaths[:duration]}
+    if model.show_cfr and ('cfr' in update or 'min_vac_age' in update):
+        panel['cfr'] = {'x':ages[:duration]/scale, 'y':pars.direct_deaths[:duration]}
         if pars.lsv or pars.bsv:
             panel['min_vac_age'] = {'left':[pars.min_vac_age/scale], 'right':[(pars.min_vac_age+pars.vac_age_range)/scale], 'bottom':[0], 'top':[0.15]}
 

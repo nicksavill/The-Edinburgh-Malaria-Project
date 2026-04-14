@@ -27,11 +27,6 @@
  *
  * "None" optional fields use a sentinel value:
  *   age_liver_vac / age_blood_vac / age_smc == -1  means "not set" (Python None)
- *
- * OWNERSHIP
- * ---------
- * All pointer fields must be allocated by the caller before passing to any
- * function.  No allocation or free() is performed inside this file.
  */
 
 #include <math.h>   /* sqrt, fmax, fmin */
@@ -212,14 +207,15 @@ double* timestep(
             int    wk  = *minage - cohort->age_blood_vac;
             double bvp = pars->blood_vac[wk];
 
-            if (pars->omega_infection > 0.0)
-                Lambda *= 1.0 - pars->alpha_infection * pars->omega_infection * bvp;
-            if (pars->omega_clinical > 0.0)
-                v_clinical -= pars->alpha_clinical * pars->omega_clinical * bvp;
-            if (pars->omega_severe > 0.0)
-                v_severe   -= pars->alpha_severe   * pars->omega_severe   * bvp;
+            if (bvp > 0.0) {
+                if (pars->omega_infection > 0.0)
+                    Lambda *= 1.0 - pars->alpha_infection * pars->omega_infection * bvp;
+                if (pars->omega_clinical > 0.0)
+                    v_clinical -= pars->alpha_clinical    * pars->omega_clinical  * bvp;
+                if (pars->omega_severe > 0.0)
+                    v_severe   -= pars->alpha_severe      * pars->omega_severe    * bvp;
+           }
         }
-
         /* SMC (-1 means not in use) */
         if (cohort->age_smc >= 0 && *minage >= cohort->age_smc) {
             int wk = *minage - cohort->age_smc;
@@ -299,11 +295,11 @@ double* timestep(
             }
         }
 
-        cohort->all_direct_deaths[t] = sum_deaths;
-        cohort->all_severe       [t] = sum_severe;
+        cohort->all_infections   [t] = sum_infections;
         /* do not count severe episodes as clinical; apply case definition */
         cohort->all_clinical     [t] = fmax(0.0, sum_clinical * pars->case_def_clinical - sum_severe);
-        cohort->all_infections   [t] = sum_infections;
+        cohort->all_severe       [t] = sum_severe;
+        cohort->all_direct_deaths[t] = sum_deaths;
 
         /* ----------------------------------------------------------------
         * Update num_children
@@ -322,24 +318,24 @@ double* timestep(
         /* Row N1 */
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                cohort->num_children[IDX3(cohort, N1, br, ac)]
+                cohort->num_children         [IDX3(cohort, N1,   br, ac)]
                     -= cohort->new_infections[IDX3(cohort, N1+1, br, ac)];
 
         /* Rows N1+1 .. N2-1 */
         for (int n = N1+1; n < N2; n++)
             for (int br = 0; br < BR; br++)
                 for (int ac = 0; ac < AC; ac++)
-                    cohort->num_children[IDX3(cohort, n, br, ac)]
-                        += -cohort->new_infections [IDX3(cohort, n+1, br, ac)]
-                            + cohort->new_infections [IDX3(cohort, n,   br, ac)]
-                            - cohort->direct_deaths  [IDX3(cohort, n,   br, ac)];
+                    cohort->num_children          [IDX3(cohort, n,   br, ac)]
+                        += -cohort->new_infections[IDX3(cohort, n+1, br, ac)]
+                        + cohort->new_infections  [IDX3(cohort, n,   br, ac)]
+                        - cohort->direct_deaths   [IDX3(cohort, n,   br, ac)];
 
         /* Row N2 */
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                cohort->num_children[IDX3(cohort, N2, br, ac)] =
-                        cohort->new_infections [IDX3(cohort, N2, br, ac)]
-                    - cohort->direct_deaths  [IDX3(cohort, N2, br, ac)];
+                cohort->num_children       [IDX3(cohort, N2, br, ac)] =
+                    cohort->new_infections [IDX3(cohort, N2, br, ac)]
+                    - cohort->direct_deaths[IDX3(cohort, N2, br, ac)];
 
     } else {
         /* Out of malaria season */

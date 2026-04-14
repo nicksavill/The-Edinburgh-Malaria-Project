@@ -17,7 +17,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
         # simulation has not been run so simulate it here
         sim_source = model.simulation_fn(model)
 
-    if model.show_vac or model.show_smc or model.show_season or model.show_death_rates:
+    if model.show_vac or model.show_smc or model.show_season or model.show_cfr:
         assert model.panels_fn is not None, 'Set model.Sources(panel_fn=panels)'
         panel_source = {f:data for f, data in model.panels_fn(model).items()}
         ncols = len(model.variables.display_vars) + 1
@@ -35,7 +35,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
     linestyle  = {i:j for i, j in zip(cohorts, linestyles)}
     title_dict = {k:v for k, v in zip(vars, titles)}
 
-    nrows = max(len(display_measures), int(model.show_vac | model.show_season) + int(model.show_death_rates))
+    nrows = max(len(display_measures), int(model.show_vac | model.show_season) + int(model.show_cfr))
 
     fig, axs = plt.subplots(nrows, ncols, figsize=(3*ncols*model.fig_xscale, 3*nrows*model.fig_yscale), squeeze=False)
     fig.subplots_adjust(wspace=0.27, hspace=0.3)
@@ -161,7 +161,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
             ax.tick_params(axis='x', which='minor', length=4, color='grey')
             row += 1
 
-        if model.show_death_rates:
+        if model.show_cfr:
             ax = axs[row, ncols-1]
             if model.time_scale == 'Weeks':
                 ax.set_xlabel('Age (weeks)')
@@ -170,7 +170,7 @@ def plot(model, cohorts, sim_source=None, legend_title=None, legend_pos='last'):
 
             ax.set_ylabel('Risk of death')
             ax.scatter(x=0, y=0, color='white') # forces origin to
-            ax.plot(panel_source['death rates']['x'], panel_source['death rates']['y'], color='Red')
+            ax.plot(panel_source['cfr']['x'], panel_source['cfr']['y'], color='Red')
             max_x = 10
             for c in cohorts:
                 max_x = max(max_x, sim_source[f'{c} severe mean age x'].max())
