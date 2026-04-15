@@ -22,7 +22,7 @@ class Interaction:
     def Config(self, show_smc=False, show_vac=False, show_season=False,
                show_cfr=False, time_scale='Years',
                show_pre_vac=False, fig_xscale=1, fig_yscale=1, plotfile='', miscellaneous={},
-               time_warning=0, logfile=False, code='C'):
+               time_warning=0, logfile=False, code='C', fast=True):
 
         assert isinstance(show_smc, bool), 'show_smc must be boolean'
         assert isinstance(show_vac, bool), 'show_vac must be boolean'
@@ -36,6 +36,7 @@ class Interaction:
         assert isinstance(miscellaneous, dict), 'miscellaneous must be dictionary'
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
         assert isinstance(logfile, bool), 'logfile must be boolean'
+        assert isinstance(fast, bool), f'fast must be boolean, got {fast}'
 
         """ plotting and other configuration variables """
         self.show_smc = show_smc  # show SMC protection in vaccination protection panel
@@ -54,6 +55,7 @@ class Interaction:
         else:
             self.logfile = ''
         self.code = code # whether to run the model in C or python
+        self.fast = fast # whether to use the fast method of calculating the exposure window, this can speed up the simulation but may reduce accuracy
 
     def Buttons(self, button_types):
         if isinstance(button_types, str):
@@ -121,7 +123,7 @@ class Interaction:
         if 'all' in button_types or 'recording' in button_types:
             self.Recording_button = RadioButtonGroup(labels=list(recording_labels), active=recording_labels[self.pars.recording])
             self.Recording_button.on_change('active', change_recording)
-            tooltip = Tooltip(content=HTML("<center>Record cases from birth or<br>from last primary dose</center>"), position='top')
+            tooltip = Tooltip(content=HTML("<center>Record cases from first birth of oldest cohort or<br>from last primary dose of all cohorts</center>"), position='top')
             self.buttons['recording'] = (self.Recording_button, HelpButton(tooltip=tooltip))
 
         ######################### DEATHS BUTTON ###########################

@@ -165,7 +165,6 @@ def plot(sim, default_value=None):
             for t, c in zip(sim['treatment'].unique(), [purple, blue, turquoise]):
                 d = sim.query('treatment == @t and value == @v')
                 ax.plot('λ', measure, color=c, data=d, lw=1-abs(i-nv)/nv+0.2)
-                # ax.plot('λ', measure, color=c, data=d, lw=1)
                 if i == nv:
                     ax.text(d['λ'].iloc[-1]+0.2, d[measure].iloc[-1], t, color=c, fontsize=10, ha='left', va='center')
 

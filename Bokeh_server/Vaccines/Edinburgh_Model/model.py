@@ -49,6 +49,9 @@ class Cohort_c(Structure):
         ("age_liver_vac", c_int),
         ("age_blood_vac", c_int),
         ("age_smc", c_int),
+        ("minage", c_int),
+        ("sum_L_min", c_double),
+        ("sum_L_max", c_double),
         ("Lmod", POINTER(c_double)),
         ("num_children", POINTER(c_double)),
         ("new_infections", POINTER(c_double)),
@@ -102,6 +105,9 @@ def convert_Cohort_to_C_struct(cohort):
         age_liver_vac = cohort.age_liver_vac if cohort.age_liver_vac is not None else -1,
         age_blood_vac = cohort.age_blood_vac if cohort.age_blood_vac is not None else -1,
         age_smc = cohort.age_smc if cohort.age_smc is not None else -1,
+        minage = cohort.minage,
+        sum_L_min = cohort.sum_L_min,
+        sum_L_max = cohort.sum_L_max,
         Lmod = cast(cohort.Lmod.ctypes.data, POINTER(c_double)),
         num_children = cast(cohort.num_children.ctypes.data, POINTER(c_double)),
         new_infections = cast(cohort.new_infections.ctypes.data, POINTER(c_double)),
@@ -140,7 +146,7 @@ class Model:
     def Config(self, show_smc=False, show_vac=False, show_season=False,
                show_cfr=False, time_scale='Years',
                show_pre_vac=False, fig_xscale=1, fig_yscale=1, plotfile='', miscellaneous={},
-               time_warning=0, logfile=False, code='C'):
+               time_warning=0, logfile=False, code='C', fast=True):
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
 
         assert isinstance(show_smc, bool), f'show_smc must be boolean, got {show_smc}'
@@ -156,6 +162,7 @@ class Model:
         assert time_warning >= 0, f'time_warning must be non-negative, got {time_warning}'
         assert isinstance(logfile, bool), f'logfile must be boolean, got {logfile}'
         assert code in ['C', 'python'], f'code must be C or python, got {code}'
+        assert isinstance(fast, bool), f'fast must be boolean, got {fast}'
 
         """ plotting and other configuration variables """
         self.show_smc = show_smc  # show SMC protection in vaccination protection panel
@@ -174,6 +181,7 @@ class Model:
         else:
             self.logfile = ''
         self.code = code # whether to run the model in C or python
+        self.fast = fast # whether to use the fast method of calculating the exposure window, this can speed up the simulation but may reduce accuracy
 
 
 class Parameters:
@@ -438,15 +446,16 @@ class Parameters:
             mean_cfr = 0.067 # (see Notebook S7)
 
             if self.deaths == 'Reyburn' and self.cfr_modifier > 0:
-                # CFR at each year of age as estiated from Reyburn et al. 2005 (copied from Notebook S7)
+                # CFR at each year of age as estimated from Reyburn et al. 2005 (copied from Notebook S7)
                 direct_cfr_by_age = [0.072, 0.06, 0.052,  0.049, 0.053, 0.065, 0.085, 0.108, 0.127, 0.139, 0.143, 0.143]
+                # ages in years, converted to weeks
+                age_cfr = np.arange(0, len(direct_cfr_by_age)*52, 52)
+                # set the last age to a very high value to avoid extrapolation beyond the last CFR point
+                age_cfr[-1] = 1000*52
 
-                if _a[-1] < len(direct_cfr_by_age)*52:
-                    self.direct_deaths = np.interp(_a, 52*_a[:len(direct_cfr_by_age)], direct_cfr_by_age)
-                else:
-                    self.direct_deaths = np.interp(_a, np.concatenate((52*_a[:len(direct_cfr_by_age)-1], _a[-2:-1])), direct_cfr_by_age)
-
-                self.direct_deaths = self.cfr_modifier * self.direct_deaths + (1-self.cfr_modifier) * mean_cfr
+                self.direct_deaths = np.interp(_a, age_cfr, direct_cfr_by_age)
+                if self.cfr_modifier < 1:
+                    self.direct_deaths = self.cfr_modifier * self.direct_deaths + (1-self.cfr_modifier) * mean_cfr
 
             elif self.deaths == 'Flat' or self.cfr_modifier == 0:
                 self.direct_deaths = mean_cfr*np.ones_like(_a)
@@ -635,7 +644,7 @@ class Measures:
 
 
 class Cohort:
-    def __init__(self, max_weeks, pars, t_record_first=None, max_bite_bins=15, time_warning=False):
+    def __init__(self, max_weeks, nages, pars, t_record_first=None, max_bite_bins=15, time_warning=False):
         """ initial chort of children across a range of age classes
             children are vaccinated ages min_vac_age to minvac_age+vac_age_range-1
         """
@@ -648,7 +657,7 @@ class Cohort:
         self.min_vac_age = pars.min_vac_age
         self.max_vac_age = pars.max_vac_age
         self.max_weeks = max_weeks
-        self.age_classes = pars.vac_age_range
+        self.age_classes = nages
         self.max_bite_bins = max_bite_bins
         self.β = pars.β
         self.bite_rates, self.p_bite_rates = self.bite_rate_pmf(pars.β, max_bite_bins)
@@ -659,7 +668,7 @@ class Cohort:
 
         # an array of bite rates by age class which modifes the probability of infection each week
         # can initialise this here because it doesn't change with time
-        self.Lmod = self.bite_rates[:, np.newaxis] * (1 - pars.elp[np.newaxis, :])
+        self.Lmod = self.bite_rates[:, np.newaxis] * (1 - pars.elp[np.newaxis, :max_weeks])
 
         # min and max cumulative sum of infection rates used for calculating range of exposures to update
         self.sum_L_min = 0
@@ -669,7 +678,7 @@ class Cohort:
         # distribute uninfected children (column 0) according to their bite rate and equally across age classes
         x1 = np.array([self.p_bite_rates] * self.age_classes).T * self.size
         x2 = np.zeros_like(x1)
-        self.num_children = np.array([x1] + [x2]*pars.max_weeks)
+        self.num_children = np.array([x1] + [x2]*max_weeks)
 
         # number of new infections clinical episodes, severe episodes and deaths in a timesteo
         # axis 0: time, axis 1: exposures, axis 2: age class
@@ -679,16 +688,16 @@ class Cohort:
         self.direct_deaths = np.zeros_like(self.num_children)
 
         # a record of the total number of blood-stage infections, clinical and severe episodes and deaths on each time step
-        self.all_infections = np.zeros(pars.max_weeks)
-        self.all_clinical = np.zeros(pars.max_weeks)
-        self.all_severe = np.zeros(pars.max_weeks)
-        self.all_direct_deaths = np.zeros(pars.max_weeks)
+        self.all_infections = np.zeros(max_weeks)
+        self.all_clinical = np.zeros(max_weeks)
+        self.all_severe = np.zeros(max_weeks)
+        self.all_direct_deaths = np.zeros(max_weeks)
 
         if t_record_first:
             # a record of the number of blood-stage infections since time t_record_first
-            self.first_infections = np.zeros(pars.max_weeks)
+            self.first_infections = np.zeros(max_weeks)
             # a record of the number of first clinical cases since time t_record_first
-            self.first_clinical = np.zeros(pars.max_weeks)
+            self.first_clinical = np.zeros(max_weeks)
             # the number of children not infected since time t_record_first (earlier cases are ignored for recording purposes)
             self.non_infected = np.zeros(self.nbr * self.age_classes).reshape(self.nbr, self.age_classes)
             # the number of children not meeting clinical case definition since time t_record_first (earlier cases are ignored for recording purposes)
@@ -753,7 +762,7 @@ class Cohort:
             print(f'approx. simulation time={sim_time:.0f} sec, weeks={pars.max_weeks}, age classes={self.age_classes}, bite rates={self.nbr}')
 
 
-def timestep(cohort, t, t_record_first, pars):
+def timestep(cohort, t, t_record_first, pars, fast=True):
     """
         this timestep
         1. calculate number of new infections (new_infectionss) by bite rate and age class
@@ -763,16 +772,24 @@ def timestep(cohort, t, t_record_first, pars):
         4. if recording first episodes, save number of first infections and first clinical episodes (currently not implemented)
     """
 
-    # The simulation can be very slow if the number of years is high and bite rate/susceptibility is heterogeneous
-    # To speed up simulations we only have to update the number of children within a range of exposures N1->N2
-    # as the number of children with exposures outside this range is negligible.
-    # Given a cumulative infection rate λ, the number of infections in a population is Poisson distributed
-    # with parameter λ. Therefore we need to keep track of the minimum cumulative infection rate λmin and
-    # the maximum cumulative infection rate λmax. We then set the range as:
-    # N1 is the minimum cumulative infection rate minus 3 times its standard deviation (with lower bound zero)
-    # N2 is 1 plus the maximum cumulative infection rate plus 4 times its standard deviation (with upper bound t)
-    N1 = int(max(0, cohort.sum_L_min - 3*np.sqrt(cohort.sum_L_min)))
-    N2 = 1+int(min(t, max(2, cohort.sum_L_max + 4*np.sqrt(cohort.sum_L_max))))
+    if fast:
+        # The simulation can be very slow if the number of years is high and bite rate/susceptibility is heterogeneous
+        # To speed up simulations we only have to update the number of children within a range of exposures N1->N2
+        # as the number of children with exposures outside this range is negligible.
+        # Given a cumulative infection rate λ, the number of infections in a population is Poisson distributed
+        # with parameter λ. Therefore we need to keep track of the minimum cumulative infection rate λmin and
+        # the maximum cumulative infection rate λmax. We then set the range as:
+        # N1 is the minimum cumulative infection rate minus 3 times its standard deviation (with lower bound zero)
+        # N2 is 1 plus the maximum cumulative infection rate plus 4 times its standard deviation (with upper bound t)
+        # This method introduces a roughly 1% error
+        N1 = int(max(0, cohort.sum_L_min - 3*np.sqrt(cohort.sum_L_min)))
+        N2 = 1+int(min(t-1, max(2, cohort.sum_L_max + 4*np.sqrt(cohort.sum_L_max))))
+    else:
+        # the maximum range of cumulative infections, this can slow the simulation
+        # set fast=False in calls to init_unvaccinated_cohort() and sim_one_cohort_through_time()
+        N1 = 0
+        N2 = t
+
     exposuresA = slice(N1, N2)
     exposuresB = slice(N1+1, N2+1)
     exposuresC = slice(N1+1, N2)
@@ -888,44 +905,45 @@ def timestep(cohort, t, t_record_first, pars):
     cohort.minage += 1
 
 
-def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C'):
+def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C', fast=True):
     """
-        Start with a single, unvaccincated cohort at birth and follow until the last primary does
-        Record init_cohort infections from min_vac_age to max_vac_age
-        These will form the basis of the vaccinated cohort
+        Start with a single, unvaccincated cohort at birth and follow until the last primary dose
+        This cohort has a single age class. We use it to populate a multi-age cohort of children
+        of ages min_vac_age to max_vac_age at the time of vaccination
     """
     if logfile:
         log_simulation(logfile, pars)
 
-    init_cohort = Cohort(cohort.max_vac_age, pars, t_record_first=t_record_first, max_bite_bins=cohort.max_bite_bins)
+    init_cohort = Cohort(cohort.max_vac_age, 1, pars, t_record_first=t_record_first, max_bite_bins=cohort.max_bite_bins)
 
     if code == 'C':
         init_cohort_c = convert_Cohort_to_C_struct(init_cohort)
         pars_c = convert_Pars_to_C_struct(pars)
-        minage_c = c_int(init_cohort.minage)
-        sum_L_min_c = c_double(init_cohort.sum_L_min)
-        sum_L_max_c = c_double(init_cohort.sum_L_max)
 
     for t in np.arange(1, cohort.max_vac_age):
         if code == 'C':
-            timestep_C(c_int(t), byref(init_cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
-            init_cohort.sum_L_min = sum_L_min_c.value
-            init_cohort.sum_L_max = sum_L_max_c.value
+            timestep_C(byref(init_cohort_c), c_int(t), 0, byref(pars_c), c_int(fast))
+            # copy these values back to the Python init_cohort class for copying into the multi-age cohort below
+            init_cohort.sum_L_min = init_cohort_c.sum_L_min
+            init_cohort.sum_L_max = init_cohort_c.sum_L_max
         else:
-            timestep(init_cohort, t, t_record_first, pars)
+            timestep(init_cohort, t, t_record_first, pars, fast=fast)
 
-        cohort.all_infections[t] = init_cohort.all_infections[t]
-        cohort.all_clinical[t] = init_cohort.all_clinical[t]
-        cohort.all_severe[t] = init_cohort.all_severe[t]
-        cohort.all_direct_deaths[t] = init_cohort.all_direct_deaths[t]
-        if t_record_first:
-            cohort.first_infections[t] = init_cohort.first_infections[t]
-            cohort.first_clinical[t] = init_cohort.first_clinical[t]
+        # at time tt in the future, future cohorts of children of the same age as this init_cohort (ie t) will have the same infection history,
+        # so copy the init_cohort infections, etc now to account for these future cohorts
+        for tt in range(t, min(cohort.max_vac_age, t+cohort.age_classes)):
+            cohort.all_infections[tt] += init_cohort.all_infections[t]
+            cohort.all_clinical[tt] += init_cohort.all_clinical[t]
+            cohort.all_severe[tt] += init_cohort.all_severe[t]
+            cohort.all_direct_deaths[tt] += init_cohort.all_direct_deaths[t]
+            if t_record_first:
+                cohort.first_infections[tt] += init_cohort.first_infections[t]
+                cohort.first_clinical[tt] += init_cohort.first_clinical[t]
 
-        # once init_cohort reaches min_vac_age, start copying init_cohort into the vaccinated cohort
+        # once init_cohort reaches min_vac_age, start copying num_children of init_cohort into the vaccinated cohort
         A = t-cohort.min_vac_age
         if A >= 0:
-            # set the minimum cumulative infection rate that the cohort will have experienced
+            # set the minimum cumulative infection rate that the youngest cohort will have experienced
             if A == 0:
                 cohort.sum_L_min = init_cohort.sum_L_min
 
@@ -935,7 +953,7 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C')
                 np.copyto(cohort.non_infected[:t, A], init_cohort.non_infected[:t, 0])
                 np.copyto(cohort.non_clinical[:t, A], init_cohort.non_clinical[:t, 0])
 
-    # set the maximum cumulative infection rate that the cohort will have experienced
+    # set the maximum cumulative infection rate that the oldest cohort will have experienced
     cohort.sum_L_max = init_cohort.sum_L_max
 
     # set the minimum age of vaccinated cohort to min_vac_age
@@ -944,25 +962,25 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C')
     cohort.minage = cohort.min_vac_age
 
 
-def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, code='C'):
+def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, code='C', fast=True):
     """
         Simulate a cohort of children of initial ages min_vac_age to max_vac_age
         from the end of their last primary dose for t_end minus t_start weeks
         If t_record_first is True then also record first infections and first clinical cases
     """
 
+    assert t_start > 0, f't_start must be > 0, got {t_start}'
+    assert t_end > t_start, f't_end must be greater than t_start, got {t_start} and {t_end}'
+
     if code == 'C':
         cohort_c = convert_Cohort_to_C_struct(cohort)
         pars_c = convert_Pars_to_C_struct(pars)
-        minage_c = c_int(cohort.minage)
-        sum_L_min_c = c_double(cohort.sum_L_min)
-        sum_L_max_c = c_double(cohort.sum_L_max)
 
     for t in np.arange(t_start, t_end):
         if code == 'C':
-            timestep_C(c_int(t), byref(cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
+            timestep_C(byref(cohort_c), c_int(t), 0, byref(pars_c), c_int(fast))
         else:
-            timestep(cohort, t, t_record_first, pars)
+            timestep(cohort, t, t_record_first, pars, fast=fast)
 
 
 def divide(a, b):

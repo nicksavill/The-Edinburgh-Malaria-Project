@@ -27,13 +27,13 @@ def simulation(model):
     # run a single unvaccinated, multi-age cohort until the end of the last primary vaccine dose
     # note there is no vaccine induced protection until the last primary dose is given
     cohorts = {}
-    cohorts[pars.control] = Cohort(pars.max_weeks, pars, time_warning=model.time_warning)
+    cohorts[pars.control] = Cohort(pars.max_weeks, pars.vac_age_range, pars, time_warning=model.time_warning)
 
     # initialise SMC in the control cohort if it is given
     if pars.smc_control:
         cohorts[pars.control].SMC(pars.smc_offset)
 
-    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile)
+    init_unvaccinated_cohort(cohorts[pars.control], t_record_first, pars, model.logfile, code=model.code, fast=model.fast)
 
     # copy the unvaccinated cohort into the vaccinated cohort on last primary dose
     if pars.lsv or pars.bsv or pars.smc:
@@ -49,10 +49,10 @@ def simulation(model):
             cohorts[pars.treatment].SMC(pars.smc_offset)
 
         # run the vaccinated cohort to the end of the study
-        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, pars.max_weeks, t_record_first, pars)
+        sim_one_cohort_through_time(cohorts[pars.treatment], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code=model.code, fast=model.fast)
 
     # simulate control cohort
-    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars)
+    sim_one_cohort_through_time(cohorts[pars.control], pars.max_vac_age, pars.max_weeks, t_record_first, pars, code=model.code, fast=model.fast)
 
     ############################ construct data for plots
     y = get_results(cohorts, t_record_first, pars, display_vars, display_measures, model.show_cfr)

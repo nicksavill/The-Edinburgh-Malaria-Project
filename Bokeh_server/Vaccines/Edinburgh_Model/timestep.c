@@ -86,6 +86,10 @@ typedef struct {
     int    age_blood_vac;
     int    age_smc;
 
+    int    minage;
+    double sum_L_min;
+    double sum_L_max;
+
     double *Lmod;
 
     /*
@@ -143,22 +147,28 @@ typedef struct {
  *  original; only the zero-fill in the off-season branch is active here).
  * ========================================================================= */
 double* timestep(
-    int         t,
     Cohort     *cohort,
+    int         t,
+    int         t_record_first,
     Parameters *pars,
-    int        *minage,
-    double     *sum_L_min,
-    double     *sum_L_max
+    int         fast
 )
 {
     const int BR = cohort->nbr;
     const int AC = cohort->age_classes;
+    int N1, N2;
 
     /* ------------------------------------------------------------------
     * Exposure window [N1, N2]
     * ------------------------------------------------------------------ */
-    int N1 = (int)fmax(0.0, *sum_L_min - 3.0 * sqrt(*sum_L_min));
-    int N2 = 1 + (int)fmin((double)t, fmax(2.0, *sum_L_max + 4.0 * sqrt(*sum_L_max)));
+    if (fast == 1) {
+        N1 = (int)fmax(0.0, cohort->sum_L_min - 3.0 * sqrt(cohort->sum_L_min));
+        N2 = 1 + (int)fmin((double)(t-1.0), fmax(2.0, cohort->sum_L_max + 4.0 * sqrt(cohort->sum_L_max)));
+    }
+    else {
+        N1 = 0;
+        N2 = t;
+    }
 
     /* ------------------------------------------------------------------
     * Natural deaths
@@ -166,7 +176,7 @@ double* timestep(
     for (int n = N1; n <= N2; n++)
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                cohort->num_children[IDX3(cohort, n, br, ac)] *= pars->survival[*minage + ac];
+                cohort->num_children[IDX3(cohort, n, br, ac)] *= pars->survival[cohort->minage + ac];
 
     /* ------------------------------------------------------------------
     * Malaria season check
@@ -193,16 +203,16 @@ double* timestep(
         }
 
         /* Liver-stage vaccine (-1 means not vaccinated) */
-        if (cohort->age_liver_vac >= 0 && *minage >= cohort->age_liver_vac) {
-            int wk = *minage - cohort->age_liver_vac;
+        if (cohort->age_liver_vac >= 0 && cohort->minage >= cohort->age_liver_vac) {
+            int wk = cohort->minage - cohort->age_liver_vac;
             Lambda *= 1.0 - pars->liver_vac[wk];
         }
 
         /* Blood-stage vaccine */
         double v_clinical = 1.0;
         double v_severe   = 1.0;
-        if (cohort->age_blood_vac >= 0 && *minage >= cohort->age_blood_vac) {
-            int    wk  = *minage - cohort->age_blood_vac;
+        if (cohort->age_blood_vac >= 0 && cohort->minage >= cohort->age_blood_vac) {
+            int    wk  = cohort->minage - cohort->age_blood_vac;
             double bvp = pars->blood_vac[wk];
 
             if (bvp > 0.0) {
@@ -215,8 +225,8 @@ double* timestep(
            }
         }
         /* SMC (-1 means not in use) */
-        if (cohort->age_smc >= 0 && *minage >= cohort->age_smc) {
-            int wk = *minage - cohort->age_smc;
+        if (cohort->age_smc >= 0 && cohort->minage >= cohort->age_smc) {
+            int wk = cohort->minage - cohort->age_smc;
             Lambda *= 1.0 - pars->smc_protection[wk];
         }
 
@@ -227,15 +237,13 @@ double* timestep(
         */
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                L[br][ac] = Lambda * LMOD(cohort, pars, br, *minage + ac);
+                L[br][ac] = Lambda * LMOD(cohort, pars, br, cohort->minage + ac);
 
         /*
         * Update cumulative min/max infection rates:
-        *   L[0][0]       = smallest bite rate × youngest age class
-        *   L[BR-1][AC-1] = largest bite rate  × oldest  age class
         */
-        *sum_L_min += L[0][*minage];
-        *sum_L_max += L[BR-1][*minage + AC - 1];
+        cohort->sum_L_min += L[0][0];
+        cohort->sum_L_max += L[BR-1][AC-1];
 
         /* ----------------------------------------------------------------
         * New blood-stage infections
@@ -275,7 +283,7 @@ double* timestep(
             int nb = n + 1;   /* index into exposuresB */
             for (int br = 0; br < BR; br++) {
                 for (int ac = 0; ac < AC; ac++) {
-                    int    age_abs = *minage + ac;
+                    int    age_abs = cohort->minage + ac;
                     double ni   = cohort->new_infections[IDX3(cohort, nb, br, ac)];
                     double clin = v_clinical * pars->clinical[n] * ni;
                     double sev  = v_severe   * SEVERE_RISK(pars, n, age_abs) * clin;
@@ -349,5 +357,5 @@ double* timestep(
     }
 
     /* Advance cohort minimum age by one week */
-    *minage += 1;
+    cohort->minage += 1;
 }

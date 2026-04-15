@@ -16,7 +16,7 @@ def monthly_predictions(model, cohorts):
     pars.smc = False
 
     # treated and control cohorts are the same until first dose
-    cohorts['control'] = Cohort(pars.max_weeks, pars)
+    cohorts['control'] = Cohort(pars.max_weeks, pars.vac_age_range, pars)
     init_unvaccinated_cohort(cohorts['control'], None, pars)
 
     # copy control cohort into treated cohorts
