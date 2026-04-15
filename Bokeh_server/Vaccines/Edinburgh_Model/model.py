@@ -208,7 +208,7 @@ class Parameters:
 
             # deaths
             deaths = 'Reyburn',                   # age-specfic CFR function: 'Reyburn' or 'Flat'
-            cfr_modifier = 1.,             # multiplier for CFR
+            cfr_modifier = 1.,                    # multiplier for CFR
 
             # general vaccination
             min_vac_age = 0,                      # minimum age at last primary dose (weeks)

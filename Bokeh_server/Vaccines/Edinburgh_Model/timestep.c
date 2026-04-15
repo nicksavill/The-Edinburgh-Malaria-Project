@@ -160,15 +160,13 @@ double* timestep(
     int N1 = (int)fmax(0.0, *sum_L_min - 3.0 * sqrt(*sum_L_min));
     int N2 = 1 + (int)fmin((double)t, fmax(2.0, *sum_L_max + 4.0 * sqrt(*sum_L_max)));
 
-    int age_start = *minage;      /* absolute age, inclusive */
-
     /* ------------------------------------------------------------------
     * Natural deaths
     * ------------------------------------------------------------------ */
     for (int n = N1; n <= N2; n++)
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                cohort->num_children[IDX3(cohort, n, br, ac)] *= pars->survival[age_start + ac];
+                cohort->num_children[IDX3(cohort, n, br, ac)] *= pars->survival[*minage + ac];
 
     /* ------------------------------------------------------------------
     * Malaria season check
@@ -229,15 +227,15 @@ double* timestep(
         */
         for (int br = 0; br < BR; br++)
             for (int ac = 0; ac < AC; ac++)
-                L[br][ac] = Lambda * LMOD(cohort, pars, br, age_start + ac);
+                L[br][ac] = Lambda * LMOD(cohort, pars, br, *minage + ac);
 
         /*
         * Update cumulative min/max infection rates:
         *   L[0][0]       = smallest bite rate × youngest age class
         *   L[BR-1][AC-1] = largest bite rate  × oldest  age class
         */
-        *sum_L_min += L[0][0];
-        *sum_L_max += L[BR-1][AC-1];
+        *sum_L_min += L[0][*minage];
+        *sum_L_max += L[BR-1][*minage + AC - 1];
 
         /* ----------------------------------------------------------------
         * New blood-stage infections
@@ -277,7 +275,7 @@ double* timestep(
             int nb = n + 1;   /* index into exposuresB */
             for (int br = 0; br < BR; br++) {
                 for (int ac = 0; ac < AC; ac++) {
-                    int    age_abs = age_start + ac;
+                    int    age_abs = *minage + ac;
                     double ni   = cohort->new_infections[IDX3(cohort, nb, br, ac)];
                     double clin = v_clinical * pars->clinical[n] * ni;
                     double sev  = v_severe   * SEVERE_RISK(pars, n, age_abs) * clin;

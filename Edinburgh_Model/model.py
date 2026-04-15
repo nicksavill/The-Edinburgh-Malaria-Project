@@ -438,15 +438,16 @@ class Parameters:
             mean_cfr = 0.067 # (see Notebook S7)
 
             if self.deaths == 'Reyburn' and self.cfr_modifier > 0:
-                # CFR at each year of age as estiated from Reyburn et al. 2005 (copied from Notebook S7)
+                # CFR at each year of age as estimated from Reyburn et al. 2005 (copied from Notebook S7)
                 direct_cfr_by_age = [0.072, 0.06, 0.052,  0.049, 0.053, 0.065, 0.085, 0.108, 0.127, 0.139, 0.143, 0.143]
+                # ages in years, converted to weeks
+                age_cfr = np.arange(0, len(direct_cfr_by_age)*52, 52)
+                # set the last age to a very high value to avoid extrapolation beyond the last CFR point
+                age_cfr[-1] = 1000*52
 
-                if _a[-1] < len(direct_cfr_by_age)*52:
-                    self.direct_deaths = np.interp(_a, 52*_a[:len(direct_cfr_by_age)], direct_cfr_by_age)
-                else:
-                    self.direct_deaths = np.interp(_a, np.concatenate((52*_a[:len(direct_cfr_by_age)-1], _a[-2:-1])), direct_cfr_by_age)
-
-                self.direct_deaths = self.cfr_modifier * self.direct_deaths + (1-self.cfr_modifier) * mean_cfr
+                self.direct_deaths = np.interp(_a, age_cfr, direct_cfr_by_age)
+                if self.cfr_modifier < 1:
+                    self.direct_deaths = self.cfr_modifier * self.direct_deaths + (1-self.cfr_modifier) * mean_cfr
 
             elif self.deaths == 'Flat' or self.cfr_modifier == 0:
                 self.direct_deaths = mean_cfr*np.ones_like(_a)
@@ -753,7 +754,7 @@ class Cohort:
             print(f'approx. simulation time={sim_time:.0f} sec, weeks={pars.max_weeks}, age classes={self.age_classes}, bite rates={self.nbr}')
 
 
-def timestep(cohort, t, t_record_first, pars):
+def timestep(cohort, t, t_record_first, pars, fast=True):
     """
         this timestep
         1. calculate number of new infections (new_infectionss) by bite rate and age class
@@ -763,16 +764,24 @@ def timestep(cohort, t, t_record_first, pars):
         4. if recording first episodes, save number of first infections and first clinical episodes (currently not implemented)
     """
 
-    # The simulation can be very slow if the number of years is high and bite rate/susceptibility is heterogeneous
-    # To speed up simulations we only have to update the number of children within a range of exposures N1->N2
-    # as the number of children with exposures outside this range is negligible.
-    # Given a cumulative infection rate λ, the number of infections in a population is Poisson distributed
-    # with parameter λ. Therefore we need to keep track of the minimum cumulative infection rate λmin and
-    # the maximum cumulative infection rate λmax. We then set the range as:
-    # N1 is the minimum cumulative infection rate minus 3 times its standard deviation (with lower bound zero)
-    # N2 is 1 plus the maximum cumulative infection rate plus 4 times its standard deviation (with upper bound t)
-    N1 = int(max(0, cohort.sum_L_min - 3*np.sqrt(cohort.sum_L_min)))
-    N2 = 1+int(min(t, max(2, cohort.sum_L_max + 4*np.sqrt(cohort.sum_L_max))))
+    if fast:
+        # The simulation can be very slow if the number of years is high and bite rate/susceptibility is heterogeneous
+        # To speed up simulations we only have to update the number of children within a range of exposures N1->N2
+        # as the number of children with exposures outside this range is negligible.
+        # Given a cumulative infection rate λ, the number of infections in a population is Poisson distributed
+        # with parameter λ. Therefore we need to keep track of the minimum cumulative infection rate λmin and
+        # the maximum cumulative infection rate λmax. We then set the range as:
+        # N1 is the minimum cumulative infection rate minus 3 times its standard deviation (with lower bound zero)
+        # N2 is 1 plus the maximum cumulative infection rate plus 4 times its standard deviation (with upper bound t)
+        # This method introduces a roughly 1% error
+        N1 = int(max(0, cohort.sum_L_min - 3*np.sqrt(cohort.sum_L_min)))
+        N2 = 1+int(min(t-1, max(2, cohort.sum_L_max + 4*np.sqrt(cohort.sum_L_max))))
+    else:
+        # the maximum range of cumulative infections, this can slow the simulation
+        # set fast=False in calls to init_unvaccinated_cohort() and sim_one_cohort_through_time()
+        N1 = 0
+        N2 = t
+
     exposuresA = slice(N1, N2)
     exposuresB = slice(N1+1, N2+1)
     exposuresC = slice(N1+1, N2)
@@ -841,7 +850,11 @@ def timestep(cohort, t, t_record_first, pars):
         np.copyto(cohort.new_infections[exposuresB], cohort.num_children[exposuresA] * L)
 
         ###################### calculate clinical and severe episodes and deaths by bite rate and age class
-        cohort.clinical[exposuresB] = v_clinical * pars.clinical[exposuresA, np.newaxis, np.newaxis] * cohort.new_infections[exposuresB]
+        try:
+            cohort.clinical[exposuresB] = v_clinical * pars.clinical[exposuresA, np.newaxis, np.newaxis] * cohort.new_infections[exposuresB]
+        except:
+            print(t, pars.max_weeks, exposuresA, exposuresB, N1, N2)
+            raise UserWarning("Error calculating clinical episodes, check dimensions of pars.clinical and cohort.new_infections")
         cohort.severe[exposuresB] = v_severe * pars.severe_risk[exposuresA, np.newaxis, ages] * cohort.clinical[exposuresB]
         cohort.direct_deaths[exposuresB] = pars.direct_deaths[ages] * cohort.severe[exposuresB]
 
@@ -888,7 +901,7 @@ def timestep(cohort, t, t_record_first, pars):
     cohort.minage += 1
 
 
-def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C'):
+def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C', fast=True):
     """
         Start with a single, unvaccincated cohort at birth and follow until the last primary does
         Record init_cohort infections from min_vac_age to max_vac_age
@@ -908,11 +921,11 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C')
 
     for t in np.arange(1, cohort.max_vac_age):
         if code == 'C':
-            timestep_C(c_int(t), byref(init_cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
+            timestep_C(c_int(t), byref(init_cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c), c_int(fast))
             init_cohort.sum_L_min = sum_L_min_c.value
             init_cohort.sum_L_max = sum_L_max_c.value
         else:
-            timestep(init_cohort, t, t_record_first, pars)
+            timestep(init_cohort, t, t_record_first, pars, fast=fast)
 
         cohort.all_infections[t] = init_cohort.all_infections[t]
         cohort.all_clinical[t] = init_cohort.all_clinical[t]
@@ -944,12 +957,15 @@ def init_unvaccinated_cohort(cohort, t_record_first, pars, logfile='', code='C')
     cohort.minage = cohort.min_vac_age
 
 
-def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, code='C'):
+def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, code='C', fast=True):
     """
         Simulate a cohort of children of initial ages min_vac_age to max_vac_age
         from the end of their last primary dose for t_end minus t_start weeks
         If t_record_first is True then also record first infections and first clinical cases
     """
+
+    assert t_start > 0, f't_start must be > 0, got {t_start}'
+    assert t_end > t_start, f't_end must be greater than t_start, got {t_start} and {t_end}'
 
     if code == 'C':
         cohort_c = convert_Cohort_to_C_struct(cohort)
@@ -960,9 +976,9 @@ def sim_one_cohort_through_time(cohort, t_start, t_end, t_record_first, pars, co
 
     for t in np.arange(t_start, t_end):
         if code == 'C':
-            timestep_C(c_int(t), byref(cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c))
+            timestep_C(c_int(t), byref(cohort_c), byref(pars_c), byref(minage_c), byref(sum_L_min_c), byref(sum_L_max_c), c_int(fast))
         else:
-            timestep(cohort, t, t_record_first, pars)
+            timestep(cohort, t, t_record_first, pars, fast=fast)
 
 
 def divide(a, b):
