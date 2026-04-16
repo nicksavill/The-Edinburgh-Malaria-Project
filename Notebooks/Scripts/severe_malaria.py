@@ -203,7 +203,7 @@ def validate_severe_malaria_risk():
     model = Model()
     model.pars = Parameters(
         λ=1,
-        study_months=12*12,
+        study_months=15*12,
     )
     model.variables = Variables(['Severe malaria'])
     model.measures = Measures(['cases'])
@@ -231,3 +231,23 @@ def validate_severe_malaria_risk():
     for i in range(3):
         axs[1, i].set_xlabel('Age (years)')
     return fig, axs
+
+def imbert():
+    model = Model()
+    model.pars = Parameters(
+        λ=0.05,
+        study_months=31*12,
+        control='0.05'
+    )
+    model.variables = Variables(['Severe malaria'])
+    model.measures = Measures(['cases'])
+    config = {'time_scale':'Years'}
+    model.Config(**config)
+    model.Sources()
+
+    r = simulate_single_vaccine(model)
+
+    fig, ax = paper.plot(model, [model.pars.control], r, legend_title='Infections per year')
+    ax[0, 0].set_ylabel('Annual severe malaria\nepsiodes per 100,000')
+    ax[0, 0].set_xlabel('Age (years)')
+    return fig, ax
