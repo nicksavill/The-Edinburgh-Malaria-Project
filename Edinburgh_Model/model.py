@@ -348,19 +348,10 @@ class Parameters:
         assert isinstance(self.min_vac_age, int) and self.min_vac_age >= 0, f'min_vac_age must be non-negative integer, got {self.min_vac_age}'
         assert isinstance(self.vac_age_range, int) and self.vac_age_range > 0, f'vac_age_range must be positive integer, got {self.vac_age_range}'
 
-        self.max_vac_age = self.min_vac_age + self.vac_age_range
-        self.max_weeks = int(round(weeks_per_month*self.study_months + self.max_vac_age, 0))
-
-        # setup arrays of age and exposure
-        _a = np.arange(self.max_weeks, dtype=float) # age
-        _n = _a[1:] # exposure
-
-
-        if set(('all', 'λ')).intersection(update_set):
-            # convert λ to weekly rate
-            assert self.λ > 0, f'λ must be positive, got {self.λ}'
-
-            self.Λ = self.λ / 52
+        assert self.children in ['cohort', 'population'], f'children must be cohort or population, got {self.children}'
+        if self.children == 'population':
+            self.popsize /= (self.study_months * weeks_per_month)
+            self.vac_age_range = 1
 
         if set(('all', 'season_width', 'season_peak')).intersection(update_set):
             # seasonal variation in force of infection
@@ -376,6 +367,22 @@ class Parameters:
                 x = np.arange(-np.pi, np.pi, 2*np.pi/52)
                 self.malaria_season = vonmises.pdf(x, kappa=-log(self.season_width), loc=2*np.pi*(self.season_peak-26)/52)
                 self.malaria_season *= 52 / self.malaria_season.sum()
+
+        if set(('all', 'λ')).intersection(update_set):
+            # convert λ to weekly rate
+            assert self.λ > 0, f'λ must be positive, got {self.λ}'
+
+            self.Λ = self.λ / 52
+
+
+        # initialise max_vac_age and max_weeks
+        self.max_vac_age = self.min_vac_age + self.vac_age_range
+        self.max_weeks = int(round(weeks_per_month*self.study_months + self.max_vac_age, 0))
+
+        # setup arrays of age and exposure
+        _a = np.arange(self.max_weeks, dtype=float) # age
+        _n = _a[1:] # exposure
+
 
         if set(('all', 'min_vac_age', 'vac_age_range', 'recording')).intersection(update_set):
             # record cases from birth or from end of primary vaccination or from a given age (in weeks)
@@ -401,26 +408,19 @@ class Parameters:
                 # exponentially decaying early life protection from infection
                 self.elp = self.ρ_elp * exp(-log(2)*_a/(52 * self.τ_elp))
 
-        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'children', 'popsize')).intersection(update_set):
-            # if counting all children born during the study then divide by the number of weeks in the study and only vaccinate at a single age
-            assert self.children in ['cohort', 'population'], f'children must be cohort or population, got {self.children}'
-            assert self.popsize > 0, f'popsize must be positive, got {self.popsize}'
-
-            self.cohort_size_at_birth = self.popsize
-            if self.children == 'population':
-                self.cohort_size_at_birth /= (self.study_months * weeks_per_month)
-                self.vac_age_range = 1
-
+        if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'popsize')).intersection(update_set):
             # calculate cohort_size_at_birth for natural death to achieve "popsize" fully vaccinated children
             # this doesn't account for malaria-associated deaths before vaccination so the actual number of
             # fully vaccinated children will be slightly less than popsize
+            assert self.popsize > 0, f'popsize must be positive, got {self.popsize}'
+
             prod = 1
             for age in range(self.min_vac_age + self.vac_age_range-1, self.min_vac_age, -1):
                 prod = 1 + self.survival[age]*prod
             for age in range(self.min_vac_age):
                 prod = self.survival[age]*prod
 
-            self.cohort_size_at_birth /= prod
+            self.cohort_size_at_birth = self.popsize / prod
 
         if set(('all', 'min_vac_age', 'vac_age_range', 'study_months', 'ρ_clinical', 'δ_clinical', 'γ_clinical')).intersection(update_set):
             # risk of clinical symptoms with exposure

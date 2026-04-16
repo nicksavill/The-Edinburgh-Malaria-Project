@@ -243,7 +243,7 @@ def plot(doc):
             '',
             'study_months',
             'λ',
-            # 'β',
+            'β',
         ],
         [
             'Malaria season',
@@ -310,7 +310,7 @@ def plot(doc):
     buttons_group1 = [
         'time_scale',
         'season',
-        'children',
+        # 'children',
         'recording',
         'cfr',
         'liver vaccine',

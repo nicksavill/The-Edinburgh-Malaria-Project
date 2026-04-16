@@ -231,7 +231,7 @@ def plot(doc):
 
     buttons_group1 = [
         'time_scale',
-        'children',
+        # 'children',
         'recording',
         'cfr',
         'liver vaccine',

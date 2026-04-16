@@ -66,7 +66,7 @@ class Interaction:
         if isinstance(button_types, str):
             button_types = [button_types]
 
-        buttons = ['all', 'season', 'children', 'recording', 'cfr', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
+        buttons = ['all', 'season', 'recording', 'cfr', 'case definition', 'liver vaccine', 'blood vaccine', 'vaccines', 'smc', 'time_scale']
         for b in button_types:
             assert b in buttons, f'Available buttons are {str(buttons)}, got {str(b)}'
 
@@ -100,20 +100,20 @@ class Interaction:
             self.buttons['time_scale'] = (self.Time_scale_button, HelpButton(tooltip=tooltip))
 
         ######################### COHORT BUTTON ###########################
-        children_labels = {"cohort":0, "population":1}
-        def change_children(attr, old, new):
-            if new == 0:
-                self.pars.children = list(children_labels)[0]
-            else:
-                self.pars.children = list(children_labels)[1]
-            self.pars.update_pars('children')
-            self.sim_source.data = self.simulation_fn(self)
+        # children_labels = {"cohort":0, "population":1}
+        # def change_children(attr, old, new):
+        #     if new == 0:
+        #         self.pars.children = list(children_labels)[0]
+        #     else:
+        #         self.pars.children = list(children_labels)[1]
+        #     self.pars.update_pars('children')
+        #     self.sim_source.data = self.simulation_fn(self)
 
-        if 'all' in button_types or 'children' in button_types:
-            self.Children_button = RadioButtonGroup(labels=list(children_labels), active=children_labels[self.pars.children])
-            self.Children_button.on_change('active', change_children)
-            tooltip = Tooltip(content=HTML("<center>Simulate a single, multi-age cohort<br>or a multi-cohort population</center>"), position='top')
-            self.buttons['children'] = (self.Children_button, HelpButton(tooltip=tooltip))
+        # if 'all' in button_types or 'children' in button_types:
+        #     self.Children_button = RadioButtonGroup(labels=list(children_labels), active=children_labels[self.pars.children])
+        #     self.Children_button.on_change('active', change_children)
+        #     tooltip = Tooltip(content=HTML("<center>Simulate a single, multi-age cohort<br>or a multi-cohort population</center>"), position='top')
+        #     self.buttons['children'] = (self.Children_button, HelpButton(tooltip=tooltip))
 
         ######################### RECORDING BUTTON ###########################
         recording_labels = {'Birth':0, 'Last primary dose':1}
