@@ -129,12 +129,10 @@ def plot(doc):
             vaccine_prot.line('x', 'y', color=c10[4][3], width=3, source=model.panel_source['blood_vac_prot'])
 
         if model.show_smc:
-            vaccine_prot.line('x', 'y', color=c10[4][0], width=3, legend_label='SMC', source=model.panel_source['smc'])
+            vaccine_prot.line('x', 'y', color=c10[4][0], width=3, source=model.panel_source['smc'])
 
         if model.show_season:
-            vaccine_prot.line('x', 'y', color='DarkBlue', width=1, legend_label='Season', source=model.panel_source['season'])
-
-        vaccine_prot.legend.visible = False
+            vaccine_prot.line('x', 'y', color='DarkBlue', width=1, source=model.panel_source['season'])
 
     if model.show_cfr:
         cfr = figure(x_axis_label=f'Age ({model.time_scale})', y_axis_label='Risk of death', toolbar_location=None)
@@ -143,7 +141,7 @@ def plot(doc):
         cfr.line('x', 'y', color='Red', width=3, source=model.panel_source['cfr'])
 
         if pars.lsv or pars.bsv:
-            l = cfr.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', legend_label=f'{pars.treatment} ages', alpha=0.5, source=model.panel_source['min_vac_age'])
+            l = cfr.quad(top='top', bottom='bottom', left='left', right='right', color='Grey', alpha=0.5, source=model.panel_source['min_vac_age'])
             cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 ('Minimum vaccination age', '@left'),
@@ -151,12 +149,11 @@ def plot(doc):
                                             ]))
 
         for c in cohorts:
-            l = cfr.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, legend_label=f'{c}', source=model.sim_source)
+            l = cfr.line(f'{c} severe mean age x', f'{c} severe mean age y', color=color[c], width=3, source=model.sim_source)
             cfr.add_tools(HoverTool(renderers=[l], attachment='above',
                                             tooltips=[
                                                 (f'Mean age of severe episodes\nin {c} cohort', '@{'+f"{c} severe mean age x"+'}{0.1f}')
                                             ]))
-        cfr.legend.visible = False
 
     ######################### LAYOUT ###########################
 
@@ -248,7 +245,6 @@ def plot(doc):
             children[r][c] = fig[f'{v} {m}']
 
     def make_slider_column(slider_group):
-        colours = "#E4DFCE" "#DEE4CE" "#CEDEE4"
         S = model.sliders
         b = []
         for group in slider_group:

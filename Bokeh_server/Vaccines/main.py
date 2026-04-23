@@ -309,7 +309,6 @@ def plot(doc):
 
     buttons_group1 = [
         'time_scale',
-        'season',
         # 'children',
         'recording',
         'cfr',
