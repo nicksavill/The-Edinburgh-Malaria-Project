@@ -22,9 +22,3 @@ pfpr_0-9.pickle | Distributions of *Pf*PR~2-10~ by age and location | MAP, World
 
 - infection_rate_distribution.csv
 - net_deaths.pickle
-- five_years.pkl
-- r21_rescue.pkl
-- five_years_perennial.pkl
-- two_years_blood_protect.pkl
-- two_years_monthly.pkl
-- two_years.pkl

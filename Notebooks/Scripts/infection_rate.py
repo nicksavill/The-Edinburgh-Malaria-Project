@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 from Edinburgh_Model.model import *
 from Edinburgh_Model.simulate_single_vaccine import *
-from Scripts import paper, trape
+from Scripts import paper
 from Scripts import trape
 
 import pickle
@@ -649,28 +649,3 @@ def plot_net_deaths():
         ax.set_ylim(ymin, 100)
 
     return fig, axs
-
-def test_min_study_months(λ=0.5, β=1):
-    """
-        test the minimum study months to get a 1% error in deaths averted
-        worst case is lowest λ and highest β
-        30 months appears to be the minimum
-    """
-    model = Model()
-    model.pars = Parameters(
-        lsv=True,
-        β=β,
-        λ=λ,
-        season_width=0.11,
-        nboosters_liver=1,
-        vac_age_range=52
-    )
-    model.variables = Variables(['Direct deaths'])
-    model.measures = Measures(['cdf', 'averted'])
-    model.Config(time_warning=False)
-
-    for y in np.arange(10, 90, 10):
-        model.pars.study_months = 12 * y
-        model.pars.update_pars('study_months')
-        r = paper.simulation_single_weekly(model)
-        print(y, r['Vaccine Direct deaths averted'].iloc[-1])

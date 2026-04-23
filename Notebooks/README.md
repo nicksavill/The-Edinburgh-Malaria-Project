@@ -8,12 +8,11 @@
 | Scripts                          | Directory for utility scripts                                  |
 | _metadata.yml                    | Metadata configuration for notebooks                           |
 | clinical_cases.wlnb              | Wolfram Language notebook for deriving clinical cases models   |
-| example.ipynb                    | Example Jupyter notebook demonstrating usage of the model      |
+| example_bokeh.ipynb              | Interactive Jupyter notebook of the model using Bokeh          |
+| example_matplotlib.ipynb         | Example notebook demonstrating model with matplotlib           |
 | geotiff.ipynb                    | Notebook for processing MAP and WordPop geotiff files          |
-| interactive.ipynb                | Interactive Jupyter notebook of the model using Bokeh          |
-| paper_figs.ipynb                 | Notebook for generating paper figures                          |
 | notebook_figs.ipynb              | Notebook for generating figures for Notebook S1                |
-| papers.bib                       | Bibliography file for references                               |
+| papers.bib                       | Bibliography file for Notebook references                      |
 | S1_model_summary.ipynb           | Model summary notebook (Supplement 1)                          |
 | S2_cohort_vs_population.ipynb    | Cohort vs population comparison (Supplement 2)                 |
 | S3_season_length.ipynb           | Season length analysis (Supplement 3)                          |

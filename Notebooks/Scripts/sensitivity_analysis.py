@@ -4,7 +4,6 @@ from Edinburgh_Model.model import *
 from Edinburgh_Model.vaccination_types import *
 from Edinburgh_Model.simulate_single_vaccine import *
 
-from . import paper
 from . import reyburn
 
 import pandas as pd
