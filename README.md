@@ -68,11 +68,11 @@ Install Quarto 1.8.27 to render the Jupyter notebooks to pdf.
 - `Data_Fitting/`: Stan models and data for parameter estimation
     - `Goncalves/`: Fit to data from Goncalves et al. (2014)
     - `Trape/`: Fit to data from Trape and Rogier (1996) and Trape et al. (2024).
-- `Notebooks/`: Jupyter notebooks for model development, paper figures, and example code
+- `Notebooks/`: Jupyter notebooks for model development and example code
     - `Data/`: Input and output data files
-    - `Figures/`: Notebook and paper figures
+    - `Figures/`: Notebook figures
     - `Scripts/`: Python scripts for the Jupyter notebooks
-    - `PDFS/`: Pdfs of the supplementary notebooks and paper figures
+    - `PDFS/`: PDFs of the supplementary notebooks
 
 
 ## Usage
@@ -93,11 +93,9 @@ The core model code is in directory `Edinburgh_Model/`. Default parameters, deri
 
 ### 4. Example simulation code
 
-Versions of the paper figures are produced in `Notebooks/paper_figs.ipynb` which uses the python script `Notebooks/Scripts/paper.py`. These are plotted using matplotlib and then were refined in Adobe Illustrator for publication.
+The notebook `example_matplotlib.ipynb` provides some example code for plotting static matplotlib figures of a simulation of R21 and a comparison of R21 and RTS,S.
 
-The notebook `example.ipynb` provides some example code for plotting static matplotlib figures of a simulation of R21 and a comparison of R21 and RTS,S.
-
-The notebook `interactive.ipynb` provides example code to create an interactive app which can be run in a Jupyter notebook. It uses Bokeh to render the plots and provides sliders and buttons to examine the sensitivity of the model outputs to parameter changes.
+The notebook `example_bokeh.ipynb` provides example code to create an interactive app which can be run in a Jupyter notebook. It uses Bokeh to render the plots and provides sliders and buttons to examine the sensitivity of the model outputs to parameter changes.
 
 
 ## License
