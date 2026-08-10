@@ -21,5 +21,6 @@ WorldPop/*.tif
 WorldPop/*.xml
 Paper/
 TODO.md
+TODO.qmd
 test.ipynb
 *.so
